@@ -75,7 +75,7 @@ Route::prefix('post-category')->group(function (){
 });
 
 
-Route::get('/homepage','website\HomeController@index');
+Route::get('/','website\HomeController@index');
 Route::get('/about',function(){
     return view('website.about');
 });
