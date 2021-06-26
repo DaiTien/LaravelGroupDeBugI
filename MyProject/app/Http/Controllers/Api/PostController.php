@@ -19,14 +19,14 @@ class PostController extends Controller
     public function index()
     {
         $data = Post::all();
-        return view('Post.index', compact('data'));
+        return view('admin.Post.index', compact('data'));
     }
 
     public function create()
     {
         //get post category
         $cate = PostCategory::all();
-        return view('Post.create', compact('cate'));
+        return view('admin.Post.create', compact('cate'));
     }
     /**
      * Store a newly created resource in storage.

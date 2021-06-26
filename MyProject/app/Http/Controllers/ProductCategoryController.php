@@ -26,13 +26,13 @@ class ProductCategoryController extends Controller
         // dd($data);
         // $data = ProductCategory::query()->paginate('5');
         // $parent = ProductCategory::query()->where('parent_id', 0)->get();
-        return view('ProductCategory.Index', compact('data'));
+        return view('admin.ProductCategory.Index', compact('data'));
     }
     //redirect form add category
     function AddProductCategory()
     {
         $parent = ProductCategory::query()->where('parent_id', 0)->get();
-        return view('ProductCategory.Add', compact('parent'));
+        return view('admin.ProductCategory.Add', compact('parent'));
     }
     //save product category
     function SaveProductCategory(Request $request)
@@ -72,7 +72,7 @@ class ProductCategoryController extends Controller
     {
         $category = ProductCategory::all()->find($id);
         $parent = ProductCategory::query()->where('parent_id', 0)->get();
-        return view('ProductCategory.Update', compact('category', 'parent'));
+        return view('admin.ProductCategory.Update', compact('category', 'parent'));
     }
     //save update
     function SaveUpdateProductCategory(Request $request)

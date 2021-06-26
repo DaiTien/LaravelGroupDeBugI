@@ -15,12 +15,12 @@ class UserManagerController extends Controller
     function getAll()
     {
         $data = User::paginate(10);
-        return view('UserManager.Index', compact('data'));
+        return view('admin.UserManager.Index', compact('data'));
     }
 
     function CreateUser()
     {
-        return view('UserManager.Create');
+        return view('admin.UserManager.Create');
     }
 
     function SaveCreate(Request $request)
@@ -45,7 +45,7 @@ class UserManagerController extends Controller
     function UpdateUser($id)
     {
         $user = User::find($id);
-        return view('UserManager.Update', compact('user'));
+        return view('admin.UserManager.Update', compact('user'));
     }
 
     function SaveUpdate(Request $request)

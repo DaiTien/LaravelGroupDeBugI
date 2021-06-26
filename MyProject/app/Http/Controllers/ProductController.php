@@ -17,14 +17,14 @@ class ProductController extends Controller
         // dd($data);
         // ->leftJoin('product_categories','product_categories.id','=','products.category_id')
         // ->selectRaw('products.*')
-        return view('Product.Index', compact('data'));
+        return view('admin.Product.Index', compact('data'));
     }
     //add-product
     function CreateProduct()
     {
         $category = ProductCategory::query()->where('parent_id', '!=', 0)->get();
         // dd($category);
-        return view('Product.Create', compact('category'));
+        return view('admin.Product.Create', compact('category'));
     }
     //save create
     function SaveCreate(Request $request)
@@ -63,7 +63,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $category = ProductCategory::query()->where('parent_id', '!=', 0)->get();
-        return view('Product.Update', compact('product', 'category'));
+        return view('admin.Product.Update', compact('product', 'category'));
     }
     //save update
     function SaveUpdate(Request $request)

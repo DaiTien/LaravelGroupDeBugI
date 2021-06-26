@@ -1,4 +1,4 @@
-@extends('Template.admin_layout')
+@extends('admin.Template.admin_layout')
 @section('titleForm')
     <div class="Page breadcrumb">
         <ol class="breadcrumb">
@@ -32,9 +32,9 @@
                             <td>{{ $item->description }}</td>
                             <td>
                                 <div class="text-center">
-                                    <a href="/product/update/{{ $item->id }}" class="btn btn-success"> <i
+                                    <a href="#" class="btn btn-success"> <i
                                             class="fas fa-edit"></i></a>
-                                    <a onclick="Delete({{$item->id}})" class="btn btn-danger"><i
+                                    <a class="btn btn-danger"><i
                                             class="fas fa-trash-alt"></i></a>
                                 </div>
                             </td>

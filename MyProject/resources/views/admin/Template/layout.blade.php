@@ -4,8 +4,8 @@
     <title>Tiêu đề trang</title>
 </head>
 <body>
-    @include('Template.header')
+    @include('admin.Template.header')
     @yield('noidung')
-    @include('Template.footer')
+    @include('admin.Template.footer')
 </body>
 </html>

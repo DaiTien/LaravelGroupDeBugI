@@ -27,13 +27,13 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         // dd($user);
-        return view('Template.admin_layout',compact('user'));
+        return view('admin.Template.admin_layout',compact('user'));
     }
     function layout()
     {
         $user = Auth::user();
         // dd($user);
-        return view('Template.admin_layout',compact('user'));
+        return view('admin.Template.admin_layout',compact('user'));
     }
     public function Logout(Request $request)
     {
