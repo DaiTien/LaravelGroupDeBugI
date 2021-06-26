@@ -97,10 +97,10 @@ Route::prefix('post-category')->group(function () {
 
 
 Route::get('/', 'website\HomeController@index');
-Route::get('/about', function () {
-    return view('website.about');
-});
-Route::get('/contract', function () {
-    return view('website.contract');
-});
+// Route::get('/about', function () {
+//     return view('website.about');
+// });
+// Route::get('/contract', function () {
+//     return view('website.contract');
+// });
 
