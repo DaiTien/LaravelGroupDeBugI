@@ -13,9 +13,9 @@ class CreateProductCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_categories', function (Blueprint $table) {
+        Schema::create('movie_categories', function (Blueprint $table) {
             $table->id();
-            $table->Integer('parent_id')->nullable();
+            // $table->Integer('parent_id')->nullable();
             $table->string('name');
             $table->string('description')->nullable();
             $table->string('tag')->nullable();
