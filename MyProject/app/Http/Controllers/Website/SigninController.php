@@ -10,4 +10,7 @@ class SigninController extends Controller
     public function signin(){
         return view('website.signin');
     }
+    public function signup(){
+        return view('website.signup');
+    }
 }
