@@ -97,6 +97,8 @@ Route::prefix('post-category')->group(function () {
 
 
 Route::get('/', 'website\HomeController@index');
+Route::get('/signin','website\SigninController@signin');
+Route::get('/signup','website\SigninController@signup');
 // Route::get('/about', function () {
 //     return view('website.about');
 // });
