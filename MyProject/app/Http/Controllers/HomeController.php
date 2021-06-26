@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,11 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = Auth::user();
+        // dd($user);
+        return view('Template.admin_layout',compact('user'));
     }
     function layout()
     {
-        return view('Template.admin_layout');
+        $user = Auth::user();
+        // dd($user);
+        return view('Template.admin_layout',compact('user'));
     }
     public function Logout(Request $request)
     {
@@ -39,5 +44,11 @@ class HomeController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+    //change language
+    public function ChangLanguage($language)
+    {
+        \Session::put('website_language', $language);
+        return redirect()->back();
     }
 }
