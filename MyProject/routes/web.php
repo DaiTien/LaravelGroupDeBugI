@@ -20,7 +20,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 //     // Alert::success('hello');
 //     return view('Template.admin_layout');
 // });
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->name('home');
 //change language
 Route::group(['middleware' => 'locale'], function () {
     Route::get('change-language/{language}', 'HomeController@ChangLanguage')
@@ -73,3 +73,13 @@ Route::prefix('post-category')->group(function (){
     Route::get('/create','PostCategoryController@create')->name('create-post-category');
     Route::post('save-creare','PostCategory@save_post_category')->name('save-post-category');
 });
+
+
+Route::get('/homepage','website\HomeController@index');
+Route::get('/about',function(){
+    return view('website.about');
+});
+Route::get('/contract',function(){
+    return view('website.contract');
+});
+
