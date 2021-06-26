@@ -1,5 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/website/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="/website/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/website/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/website/css/slider-radio.css">
+    <link rel="stylesheet" href="/website/css/select2.min.css">
+    <link rel="stylesheet" href="/website/css/magnific-popup.css">
+    <link rel="stylesheet" href="/website/css/plyr.css">
+    <link rel="stylesheet" href="/website/css/main.css">
+</head>
+
 <!-- sign in -->
-<div class="sign section--full-bg" data-bg="img/bg.jpg">
+<div class="sign section--full-bg" data-bg="website/img/bg.jpg">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -7,7 +20,7 @@
                     <!-- authorization form -->
                     <form action="#" class="sign__form">
                         <a href="index.html" class="sign__logo">
-                            <img src="img/logo.svg" alt="">
+                            <img src="website/img/logo.svg" alt="">
                         </a>
 
                         <div class="sign__group">
@@ -44,3 +57,4 @@
     </div>
 </div>
 <!-- end sign in -->
+</html>
