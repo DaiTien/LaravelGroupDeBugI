@@ -96,16 +96,11 @@ Route::prefix('post-category')->group(function () {
 });
 
 
-<<<<<<< HEAD
-Route::get('/homepage','website\HomeController@index');
-Route::get('/about',function(){
-=======
 Route::get('/', 'website\HomeController@index');
-Route::get('/about', function () {
->>>>>>> 53e4387357fa3b6a690b9748d46705cdff68928b
-    return view('website.about');
-});
-Route::get('/contract', function () {
-    return view('website.contract');
-});
+// Route::get('/about', function () {
+//     return view('website.about');
+// });
+// Route::get('/contract', function () {
+//     return view('website.contract');
+// });
 
