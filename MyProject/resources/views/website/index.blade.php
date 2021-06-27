@@ -27,7 +27,7 @@
             <div>
                 <h2>The Art of Political</h2>
                 <ul>
-                    <li>Free</li>
+                    <li>Freekh</li>
                     <li>Documentary</li>
                     <li>2015</li>
                 </ul>
