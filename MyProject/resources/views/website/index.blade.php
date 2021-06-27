@@ -25,7 +25,7 @@
                 <img src="website/img/home/2.jpg" alt="">
             </a>
             <div>
-                <h2>The Art of Political</h2>
+                <h2>The Art of Political part2</h2>
                 <ul>
                     <li>Freekh</li>
                     <li>Documentary</li>
