@@ -12,6 +12,15 @@
             <input type="text" placeholder="name" name="name" class="form-control" onchange="fncSlug(this.value)">
         </div>
         <div class="form-group">
+            <label>Danh mục cha</label>
+            <select id="slActive" name="parent_id" class="form-control">
+                <option value="0">Đây là danh mục chính</option>
+                @foreach($categories as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
             <label>Description</label>
             <input type="text" placeholder="description" name="description" class="form-control">
         </div>
@@ -23,14 +32,14 @@
             <label>Slug</label>
             <input type="text" id="txtSlug" placeholder="slug" name="slug" class="form-control">
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <input type="text" name="active" id="active" hidden>
             <label>Trạng thái</label>
             <select id="slActive" onchange="getValueSelected()" class="form-control">
                 <option value="0">Ẩn</option>
                 <option value="1">Hiện</option>
             </select>
-        </div>
+        </div> -->
         <div class="form-group">
             <input type="submit" class="btn btn-success" value="Thêm">
             <a href="/list-product-category" class="btn btn-warning ml-2">Back to list</a>

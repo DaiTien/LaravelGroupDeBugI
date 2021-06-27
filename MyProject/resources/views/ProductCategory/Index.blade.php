@@ -13,9 +13,10 @@
                 <tr class="text-center">
                     <th>STT</th>
                     <th>Tiêu đề</th>
+                    <th>Danh mục cha</th>
                     <th>Mô tả</th>
                     <th>Slug</th>
-                    <th>Trạng thái</th>
+                    <!-- <th>Trạng thái</th> -->
                     <th>Action</th>
                 </tr>
                 @php
@@ -25,15 +26,16 @@
                 <tr>
                     <td class="text-center">{{$i++}}</td>
                     <td>{{$item->name}}</td>
+                    <td>{{$item->parent_name}}</td>
                     <td>{{$item->description}}</td>
                     <td>{{$item->slug}}</td>
-                    <td class="text-center">
+                    <!-- <td class="text-center">
                         @if($item->active ==1)
                         <a href="" onclick="alert('davdjhsa')"><i class="fas fa-eye"></i></a>
                         @else
                         <a href="" onclick="alert('davdjhsa')"><i class="fas fa-eye-slash"></i></a>
                         @endif
-                    </td>
+                    </td> -->
                     <td>
                         <div class="text-center">
                             <a href="/update-product-category/{{$item->id}}" class="btn btn-success">Sửa</a>
@@ -43,6 +45,7 @@
                 </tr>
                 @endforeach
             </table>
+            {{$data->links()}}
         </div>
     </div>
 </div>
