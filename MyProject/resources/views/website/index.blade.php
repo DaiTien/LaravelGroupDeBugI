@@ -9,7 +9,7 @@
                 <img src="website/img/home/1.jpg" alt="">
             </a>
             <div>
-                <h2>Money Plane</h2>
+                <h2>Money Plane Trường Kio</h2>
                 <ul>
                     <li>Free</li>
                     <li>Action</li>
