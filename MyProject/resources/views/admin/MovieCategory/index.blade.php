@@ -3,15 +3,16 @@
     <div class="Page breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<a
-                    href="/">{{__('Home')}}</a></li>
+                        href="/">{{__('Home')}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Movie category</li>
         </ol>
     </div>
 @endsection
 @section('content')
     <div class="card mb-4">
         <div class="m-2">
-            <h3>List post category</h3>
-            <a href="{{route('create-post-category')}}" class="btn btn-primary"><i class="fa fa-plus"aria-hidden="true"></i> </a>
+            <h3 class="text-center">Danh sách loại phim</h3>
+            <a href="{{route('moviecategory.create')}}" class="btn btn-primary m-7">{{__("textCreateBT")}}</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -19,7 +20,6 @@
                     <tr class="text-center">
                         <th>STT</th>
                         <th>Tên</th>
-                        <th>Mô tả</th>
                         <th>Action</th>
                     </tr>
                     @php
@@ -27,20 +27,20 @@
                     @endphp
                     @foreach ($data as $item)
                         <tr>
-                            <td>{{ $i++ }}</td>
-                            <td>{{ $item->name }}</td>
-                            <td>{{ $item->description }}</td>
-                            <td>
+                            <td class="__alignItemtable">{{ $i++ }}</td>
+                            <td class="__alignItemtable">{{ $item->name }}</td>
+                            <td class="__alignItemtable">
                                 <div class="text-center">
-                                    <a href="#" class="btn btn-success"> <i
-                                            class="fas fa-edit"></i></a>
-                                    <a class="btn btn-danger"><i
-                                            class="fas fa-trash-alt"></i></a>
+                                    <a href="{{route('moviecategory.edit', ['id' => $item->id])}}" class="btn btn-success"> <i
+                                                class="fas fa-edit"></i></a>
+                                    <a onclick="Delete({{$item->id}})" class="btn btn-danger"><i
+                                                class="fas fa-trash-alt"></i></a>
                                 </div>
                             </td>
                         </tr>
                     @endforeach
                 </table>
+                {{$data->links()}}
             </div>
         </div>
     </div>
@@ -61,7 +61,7 @@
                     $.ajax({
                         method: 'GET',
                         type: 'DELETE',
-                        url: '/product/delete/' + id,
+                        url: '/admin/movie-category/delete/'+id,
                         success: function () {
                             Swal.fire({
                                 position: 'center',
@@ -70,7 +70,7 @@
                                 showConfirmButton: false,
                                 timer: 1500
                             }).then(function () {
-                                location = "{{route('list-product')}}";
+                                location = "{{route('moviecategory.index')}}";
                             })
                         }
                     })
