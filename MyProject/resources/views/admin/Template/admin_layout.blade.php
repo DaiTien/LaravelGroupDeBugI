@@ -133,7 +133,7 @@
             <!--begin::Brand-->
             <div class="brand flex-column-auto" id="kt_brand">
                 <!--begin::Logo-->
-                <a href="/" class="brand-logo">
+                <a href="/admin" class="brand-logo">
                     <img class="img__debug" alt="Logo" src="/assets/images/favicon.png"/>
                     <h4>Debug FC</h4>
                 </a>
@@ -185,7 +185,7 @@
                     <!--begin::Menu Nav-->
                     <ul class="menu-nav">
                         <li class="menu-item menu-item-active" aria-haspopup="true">
-                            <a href="/" class="menu-link">
+                            <a href="/admin" class="menu-link">
                                     <span class="svg-icon menu-icon">
                                         <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Design/Layers.svg-->
                                         <svg xmlns="http://www.w3.org/2000/svg"
@@ -207,67 +207,71 @@
                             </a>
                         </li>
                         <li class="menu-section">
-                            <h4 class="menu-text">Product</h4>
+                            <h4 class="menu-text">Movie category</h4>
                             <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                         </li>
                         <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                            <a href="javascript:;" class="menu-link menu-toggle">
-                                <span class="menu-text">Product</span>
-                                <i class="menu-arrow"></i>
-                            </a>
-                            <div class="menu-submenu">
-                                <i class="menu-arrow"></i>
-                                <ul class="menu-subnav">
-                                    <li class="menu-item menu-item-parent" aria-haspopup="true">
-                                            <span class="menu-link">
-                                                <span class="menu-text">Product</span>
-                                            </span>
-                                    </li>
-                                    <li class="menu-item menu-item-submenu" aria-haspopup="true"
-                                        data-menu-toggle="hover">
-                                        <a href="/list-product-category" class="menu-link menu-toggle">
-                                            <i class="menu-bullet menu-bullet-line">
-                                                <span></span>
-                                            </i>
-                                            <span class="menu-text">Product Category</span>
-                                        </a>
-                                    </li>
-                                    <li class="menu-item menu-item-submenu" aria-haspopup="true"
-                                        data-menu-toggle="hover">
-                                        <a href="{{route('list-product')}}" class="menu-link menu-toggle">
-                                            <i class="menu-bullet menu-bullet-line">
-                                                <span></span>
-                                            </i>
-                                            <span class="menu-text">Product</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </li>
-                        <li class="menu-section">
-                            <h4 class="menu-text">User Manager</h4>
-                            <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
-                        </li>
-                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                            <a href="{{route('list-user')}}" class="menu-link menu-toggle">
-                                <span class="menu-text">User Manager</span>
+                            <a href="{{route('moviecategory.index')}}" class="menu-link menu-toggle">
+                                <span class="menu-text">Movie Category</span>
                             </a>
                         </li>
-                        <li class="menu-section">
-                            <h4 class="menu-text">Post</h4>
-                            <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
-                        </li>
-                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                            <a href="{{route('list-post')}}" class="menu-link menu-toggle">
-                                <span class="menu-text">Post</span>
-                            </a>
-                        </li>
-                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                            <a href="{{route('list-post-category')}}" class="menu-link menu-toggle">
-                                <span class="menu-text">Post Category</span>
-                            </a>
-                        </li>
+{{--                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">--}}
+{{--                            <a href="javascript:;" class="menu-link menu-toggle">--}}
+{{--                                <span class="menu-text">Product</span>--}}
+{{--                                <i class="menu-arrow"></i>--}}
+{{--                            </a>--}}
+{{--                            <div class="menu-submenu">--}}
+{{--                                <i class="menu-arrow"></i>--}}
+{{--                                <ul class="menu-subnav">--}}
+{{--                                    <li class="menu-item menu-item-parent" aria-haspopup="true">--}}
+{{--                                            <span class="menu-link">--}}
+{{--                                                <span class="menu-text">Product</span>--}}
+{{--                                            </span>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="menu-item menu-item-submenu" aria-haspopup="true"--}}
+{{--                                        data-menu-toggle="hover">--}}
+{{--                                        <a href="/list-product-category" class="menu-link menu-toggle">--}}
+{{--                                            <i class="menu-bullet menu-bullet-line">--}}
+{{--                                                <span></span>--}}
+{{--                                            </i>--}}
+{{--                                            <span class="menu-text">Product Category</span>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="menu-item menu-item-submenu" aria-haspopup="true"--}}
+{{--                                        data-menu-toggle="hover">--}}
+{{--                                        <a href="{{route('list-product')}}" class="menu-link menu-toggle">--}}
+{{--                                            <i class="menu-bullet menu-bullet-line">--}}
+{{--                                                <span></span>--}}
+{{--                                            </i>--}}
+{{--                                            <span class="menu-text">Product</span>--}}
+{{--                                        </a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </li>--}}
+{{--                        <li class="menu-section">--}}
+{{--                            <h4 class="menu-text">User Manager</h4>--}}
+{{--                            <i class="menu-icon ki ki-bold-more-hor icon-md"></i>--}}
+{{--                        </li>--}}
+{{--                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">--}}
+{{--                            <a href="{{route('list-user')}}" class="menu-link menu-toggle">--}}
+{{--                                <span class="menu-text">User Manager</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="menu-section">--}}
+{{--                            <h4 class="menu-text">Post</h4>--}}
+{{--                            <i class="menu-icon ki ki-bold-more-hor icon-md"></i>--}}
+{{--                        </li>--}}
+{{--                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">--}}
+{{--                            <a href="{{route('list-post')}}" class="menu-link menu-toggle">--}}
+{{--                                <span class="menu-text">Post</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">--}}
+{{--                            <a href="{{route('list-post-category')}}" class="menu-link menu-toggle">--}}
+{{--                                <span class="menu-text">Post Category</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                     </ul>
                     <!--end::Menu Nav-->
                 </div>
