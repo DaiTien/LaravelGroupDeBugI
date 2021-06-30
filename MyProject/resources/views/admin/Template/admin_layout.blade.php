@@ -206,9 +206,10 @@
                                 <span class="menu-text">Dashboard</span>
                             </a>
                         </li>
-                        <li class="menu-section">
-                            <h4 class="menu-text">Movie category</h4>
-                            <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
+                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                            <a href="{{route('introduce.index')}}" class="menu-link menu-toggle">
+                                <span class="menu-text">Introduce</span>
+                            </a>
                         </li>
                         <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                             <a href="{{route('moviecategory.index')}}" class="menu-link menu-toggle">

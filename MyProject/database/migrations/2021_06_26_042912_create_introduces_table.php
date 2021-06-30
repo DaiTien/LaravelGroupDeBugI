@@ -19,6 +19,7 @@ class CreateIntroducesTable extends Migration
             $table->string('summary')->nullable();
             $table->string('image')->nullable();
             $table->longText('content')->nullable();
+            $table->string('slug')->nullable();
             $table->timestamps();
         });
     }
