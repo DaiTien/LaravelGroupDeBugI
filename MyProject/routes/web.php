@@ -54,6 +54,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('update', 'Admin\MovieController@update')->name('movie.update');
         Route::get('delete/{id}', 'Admin\MovieController@delete')->name('movie.delete');
     });
+    //room
+    Route::group(['prefix' => 'room'], function () {
+        Route::get('/', 'Admin\RoomController@index')->name('room.index');
+        Route::get('create', 'Admin\RoomController@create')->name('room.create');
+        Route::post('save-create', 'Admin\RoomController@store')->name('room.store');
+        Route::get('update/{id}', 'Admin\RoomController@edit')->name('room.edit');
+        Route::post('save-update', 'Admin\RoomController@update')->name('room.update');
+        Route::get('delete/{id}', 'Admin\RoomController@Delete')->name('room.delete');
+    });
 });
 
 Auth::routes();
