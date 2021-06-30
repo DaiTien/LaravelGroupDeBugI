@@ -24,7 +24,7 @@ class CreateMoviesTable extends Migration
             $table->string('video')->nullable();
             $table->string('duration')->nullable();
             $table->date('release_date')->nullable();
-            $table->string('derector')->nullable();
+            $table->string('director')->nullable();
             $table->string('actors')->nullable();
             $table->string('country')->nullable();
             $table->integer('movie_category_id')->nullable();

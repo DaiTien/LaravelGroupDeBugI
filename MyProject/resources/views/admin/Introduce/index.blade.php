@@ -3,7 +3,7 @@
     <div class="Page breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<a href="/admin">{{__('Home')}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">About</li>
+            <li class="breadcrumb-item active" aria-current="page">{{__('Introduce')}}</li>
         </ol>
     </div>
 @endsection
@@ -20,7 +20,7 @@
                         <th>STT</th>
                         <th>Title</th>
                         <th>Image</th>
-                        <th></th>
+                        <th>Action</th>
                     </tr>
                     @php
                         $i = 1;

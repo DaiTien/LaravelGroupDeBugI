@@ -19,7 +19,30 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b3d5d3b-8841-4a13-b8ac-769daa058ac9" name="Default Changelist" comment="" />
+    <list default="true" id="0b3d5d3b-8841-4a13-b8ac-769daa058ac9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/Movie/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/Movie/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/Movie/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/IntroduceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/IntroduceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Introduce.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Introduce.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Movie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/MovieCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/MovieCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/MovieFavorite.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/MovieFavorite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Room.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Room.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/RoomSeat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/RoomSeat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ShowTime.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ShowTime.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_06_29_152224_create_movies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_06_29_152224_create_movies_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/vi.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/vi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Introduce/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Introduce/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Introduce/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Introduce/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/MovieCategory/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/MovieCategory/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/MovieCategory/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/MovieCategory/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/MovieCategory/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/MovieCategory/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Template/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Template/admin_layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,9 +171,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../dangkitinchi" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -176,6 +199,7 @@
       <workItem from="1624928947323" duration="9000" />
       <workItem from="1624972695021" duration="9296000" />
       <workItem from="1625019524974" duration="9421000" />
+      <workItem from="1625032697635" duration="15623000" />
     </task>
     <servers />
   </component>
@@ -199,29 +223,29 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1625024882708" />
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1625027952577">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1625044361423">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1625027952577" />
-    <state x="484" y="127" key="FileChooserDialogImpl" timestamp="1624928954121">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1625044361423" />
+    <state x="484" y="127" key="FileChooserDialogImpl" timestamp="1625041099584">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="484" y="127" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1624928954121" />
-    <state x="538" y="296" key="NewPhpFileDialog" timestamp="1625021770315">
+    <state x="484" y="127" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1625041099584" />
+    <state x="538" y="296" key="NewPhpFileDialog" timestamp="1625045458632">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="538" y="296" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1625021770315" />
-    <state x="184" y="8" key="SettingsEditor" timestamp="1624975291376">
+    <state x="538" y="296" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1625045458632" />
+    <state x="184" y="8" key="SettingsEditor" timestamp="1625036473215">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1624975291376" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1625022733307">
+    <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1625036473215" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1625036033735">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1625022733307" />
-    <state x="339" y="17" width="670" height="676" key="search.everywhere.popup" timestamp="1624974635731">
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1625036033735" />
+    <state x="339" y="17" width="670" height="676" key="search.everywhere.popup" timestamp="1625046747186">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="17" width="670" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1624974635731" />
+    <state x="339" y="17" width="670" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1625046747186" />
   </component>
 </project>

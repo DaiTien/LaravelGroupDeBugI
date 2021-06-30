@@ -8,5 +8,10 @@ class Room extends Model
 {
     //
     protected $table = 'rooms';
-    protected $fillable = array('*');
+    protected $fillable
+        = [
+            'name',
+            'total_seats',
+            'status'
+        ];
 }

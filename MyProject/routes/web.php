@@ -23,7 +23,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 //Route::get('/admin', 'HomeController@index')->name('home');
 //change language
 Route::group(['middleware' => 'locale'], function () {
-    Route::get('change-language/{language}', 'HomeController@ChangLanguage')
+    Route::get('change-language/{language}', 'Admin\HomeController@ChangLanguage')
         ->name('user.change-language');
 });
 
@@ -32,27 +32,28 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/home', 'Admin\HomeController@layout')->name('home');
     Route::get('/logout', 'Admin\HomeController@Logout');
     //introduce
-    Route::group(['prefix' => 'introduce'], function (){
-       Route::get('/', 'Admin\IntroduceController@index')->name('introduce.index');
-       Route::get('edit/{id}', 'Admin\IntroduceController@edit')->name('introduce.edit');
-       Route::post('update', 'Admin\IntroduceController@update')->name('introduce.update');
+    Route::group(['prefix' => 'introduce'], function () {
+        Route::get('/', 'Admin\IntroduceController@index')->name('introduce.index');
+        Route::get('edit/{id}', 'Admin\IntroduceController@edit')->name('introduce.edit');
+        Route::post('update', 'Admin\IntroduceController@update')->name('introduce.update');
     });
     //movie category
-    Route::group(['prefix' =>'movie-category'], function (){
-        Route::get('list', 'Admin\MovieCategoryController@index')->name('moviecategory.index');
+    Route::group(['prefix' => 'movie-category'], function () {
+        Route::get('/', 'Admin\MovieCategoryController@index')->name('moviecategory.index');
         Route::get('create', 'Admin\MovieCategoryController@create')->name('moviecategory.create');
         Route::post('save-create', 'Admin\MovieCategoryController@store')->name('moviecategory.store');
         Route::get('update/{id}', 'Admin\MovieCategoryController@edit')->name('moviecategory.edit');
         Route::post('save-update', 'Admin\MovieCategoryController@update')->name('moviecategory.update');
         Route::get('delete/{id}', 'Admin\MovieCategoryController@DeleteMovieCategory')->name('moviecategory.delete');
-
     });
-//    Route::get('movie-category', 'Admin\MovieCategoryController@index')->name('moviecategory.index');
-//    Route::get('movie-category/create', 'Admin\MovieCategoryController@create')->name('moviecategory.create');
-//    Route::post('movie-category/create', 'Admin\MovieCategoryController@store')->name('moviecategory.store');
-//    Route::get('movie-category/update/{id}', 'Admin\MovieCategoryController@edit')->name('moviecategory.edit');
-//    Route::post('movie-category/save-update', 'Admin\MovieCategoryController@update')->name('moviecategory.update');
-//    Route::get('/delete-movie-category/{id}','Admin\MovieCategoryController@DeleteMovieCategory')->name('moviecategory.delete');
+    Route::group(['prefix' => 'movie'], function () {
+        Route::get('/', 'Admin\MovieController@index')->name('movie.index');
+        Route::get('create', 'Admin\MovieController@create')->name('movie.create');
+        Route::post('store', 'Admin\MovieController@store')->name('movie.store');
+        Route::get('edit/{id}', 'Admin\MovieController@edit')->name('movie.edit');
+        Route::post('update', 'Admin\MovieController@update')->name('movie.update');
+        Route::get('delete/{id}', 'Admin\MovieController@delete')->name('movie.delete');
+    });
 });
 
 Auth::routes();

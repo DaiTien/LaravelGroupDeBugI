@@ -3,14 +3,14 @@
     <div class="Page breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<a href="/admin">{{__('Home')}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('introduce.index')}}">About</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Update about</li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('introduce.index')}}">{{__('Introduce')}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{__('IntroduceUpdate')}}</li>
         </ol>
     </div>
 @endsection
 @section('content')
-    <div class="m-auto">
-        <h3 class="text-center text-uppercase">Update about</h3>
+    <div class="m-auto card pl-3">
+        <h3 class="text-center text-uppercase mt-3">{{__('IntroduceUpdate')}}</h3>
         <form action="{{route('introduce.update')}}" method="POST" style="width:95%" enctype="multipart/form-data">
             @csrf
             <div class=row>
