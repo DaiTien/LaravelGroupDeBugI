@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +19,13 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => Hash::make('12345'),
         ]);
+        \Illuminate\Support\Facades\DB::table('introduces')->insert([
+            'title'=>'This is introduce about my team',
+            'summary'=>'This is summary about my team',
+            'image'=>'upload/debug_team.jpg',
+            'content'=>'This is content about my team',
+            'slug'=> Str::slug('This is introduce about my team','-')
+        ]);
+
     }
 }

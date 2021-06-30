@@ -31,6 +31,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/', 'Admin\HomeController@index')->name('home');
     Route::get('/home', 'Admin\HomeController@layout')->name('home');
     Route::get('/logout', 'Admin\HomeController@Logout');
+    //introduce
+    Route::group(['prefix' => 'introduce'], function (){
+       Route::get('/', 'Admin\IntroduceController@index')->name('introduce.index');
+       Route::get('edit/{id}', 'Admin\IntroduceController@edit')->name('introduce.edit');
+       Route::post('update', 'Admin\IntroduceController@update')->name('introduce.update');
+    });
+    //movie category
     Route::group(['prefix' =>'movie-category'], function (){
         Route::get('list', 'Admin\MovieCategoryController@index')->name('moviecategory.index');
         Route::get('create', 'Admin\MovieCategoryController@create')->name('moviecategory.create');
