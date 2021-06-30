@@ -8,5 +8,24 @@ class Movie extends Model
 {
     //
     protected $table = 'movies';
-    protected $fillable = array('*');
+    protected $fillable
+        = [
+            'name',
+            'title',
+            'description',
+            'summary',
+            'content',
+            'image',
+            'video',
+            'duration',
+            'release_date',
+            'director',
+            'actors',
+            'country',
+            'movie_category_id',
+            'status'
+        ];
+    public function moviecategory(){
+        return $this->belongsTo(MovieCategory::class);
+    }
 }

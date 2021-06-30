@@ -30,19 +30,6 @@ class IntroduceController extends Controller
 
     public function update(Request $request)
     {
-//        $validated = Validator::make(
-//            $request->all(),
-//            [
-//                'title'    => 'required|min:10',
-//                'summary'  => 'required',
-//                'contents' => 'required'
-//            ],
-//            [
-//                'title.require'    => trans('validation.required'),
-//                'title.min'        => trans('validation.min'),
-//                'summary.require'  => trans('validation.required'),
-//                'contents.require' => trans('validation.required'),
-//            ]);
         $validated = $request->validate([
             'title'    => 'required|min:10',
             'summary'  => 'required',

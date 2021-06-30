@@ -8,5 +8,12 @@ class RoomSeat extends Model
 {
     //
     protected $table = 'room_seats';
-    protected $fillable = array('*');
+    protected $fillable
+        = [
+            'name',
+            'sroom_id',
+            'type',
+            'seat_number',
+            'tatus'
+        ];
 }

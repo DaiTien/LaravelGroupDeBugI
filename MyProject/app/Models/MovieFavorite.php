@@ -8,5 +8,10 @@ class MovieFavorite extends Model
 {
     //
     protected $table = 'movie_favorites';
-    protected $fillable = array('*');
+    protected $fillable
+        = [
+            'user_id',
+            'movie_id',
+            'status'
+        ];
 }

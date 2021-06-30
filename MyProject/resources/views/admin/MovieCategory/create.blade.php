@@ -3,21 +3,21 @@
     <div class="Page breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<a href="/">{{__('Home')}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('moviecategory.index')}}">Movie category</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{__('CreateProduct')}}</li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('moviecategory.index')}}">{{__('TitleLinkMovieCategory')}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{__('TitleCreateMovieCategory')}}</li>
         </ol>
     </div>
 @endsection
 @section('content')
-    <div class="m-auto">
+    <div class="m-auto card pl-3">
         <div class="col-sm-8 m-auto">
-            <h3 class="text-center text-uppercase">creat movie category</h3>
-            <form action="{{route('moviecategory.store')}}" method="POST" style="width:95%"enctype="multipart/form-data" id="myForm">
+            <h3 class="text-center text-uppercase mt-3">{{__('TitleCreateMovieCategory')}}</h3>
+            <form action="{{route('moviecategory.store')}}" method="POST" style="width:95%" enctype="multipart/form-data" id="myForm">
                 @csrf
                 <div class="form-group row">
                     <label class="col-sm-3">Name</label>
                     <div class="col-sm-9">
-                        <input type="text" placeholder="name" name="name" class="form-control" id="txtName">
+                        <input type="text" placeholder="name" name="name" class="form-control" id="txtName" autocomplete="off" value="{{old('name')}}">
                         <span class="text-danger font-weight-bold" id="txtErrorName"></span>
                     </div>
                 </div>
@@ -29,6 +29,10 @@
         </div>
     </div>
     <script>
+        //hidden txterror
+        $("#txtName").focus(function () {
+            $("#txtErrorName").hide();
+        })
         function checkvalidation() {
             var name = $("#txtName").val();
             $.ajax({
@@ -40,9 +44,9 @@
                 method: "POST",
                 dataType: "json",
                 success: function (data) {
-                    console.log(data);
                     if (data.errors == true) {
                         $("#txtErrorName").html('').append(data.name);
+                        $("#txtErrorName").show();
                     } else {
                         $("#txtErrorName").html('');
                         Swal.fire({
@@ -52,7 +56,7 @@
                             showConfirmButton: false,
                             timer: 1500
                         }).then(function () {
-                            $('#myForm').trigger("reset");
+                            // $('#myForm').trigger("reset");
                             window.location.href = '{{route('moviecategory.index')}}'
                         })
                     }
