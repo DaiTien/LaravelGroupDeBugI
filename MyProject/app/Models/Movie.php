@@ -25,7 +25,12 @@ class Movie extends Model
             'movie_category_id',
             'status'
         ];
-    public function moviecategory(){
+
+    public function moviecategory()
+    {
         return $this->belongsTo(MovieCategory::class);
+    }
+    public function showTimes(){
+        return $this->hasMany(ShowTime::class);
     }
 }

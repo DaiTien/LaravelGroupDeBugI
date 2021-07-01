@@ -3,14 +3,14 @@
     <div class="Page breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<a href="/admin">{{__('Home')}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('room.index')}}">{{__('TitleLinkMovie')}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{__('TitleCreateMovie')}}</li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('room.index')}}">{{__('TitleLinkRoom')}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{__('TitleCreateRoom')}}</li>
         </ol>
     </div>
 @endsection
 @section('content')
     <div class="m-auto card pl-3">
-        <h3 class="text-center text-uppercase mt-3">{{__('TitleCreateMovie')}}</h3>
+        <h3 class="text-center text-uppercase mt-3">{{__('TitleCreateRoom')}}</h3>
         <form action="{{route('room.store')}}" method="POST" style="width:95%" enctype="multipart/form-data" id="myForm">
             @csrf
             <div class=row>
@@ -30,7 +30,7 @@
                             <input type="text" placeholder="total seats" name="total_seats" class="form-control" value="{{old('total_seats')}}"/>
                         </div>
                     </div>
-                
+
                     <div class="form-group row">
                         <label class="col-sm-3">Trạng thái</label>
                         <div class="col-sm-9">
@@ -51,9 +51,9 @@
                 <input type="submit" class="btn btn-primary" value="{{__('textCreateBT')}}">
                 <a href="{{route('room.index')}}" class="btn btn-secondary ml-2">{{__("textCancelBT")}}</a>
                     </div>
-               
+
             </div>
-           
+
         </form>
     </div>
     <script>

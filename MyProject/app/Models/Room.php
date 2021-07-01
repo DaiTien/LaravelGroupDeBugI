@@ -14,4 +14,8 @@ class Room extends Model
             'total_seats',
             'status'
         ];
+
+public function roomShowTimes(){
+    return $this->hasMany(ShowTime::class);
+}
 }

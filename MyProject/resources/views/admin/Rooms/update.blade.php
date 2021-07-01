@@ -3,14 +3,14 @@
     <div class="Page breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<a href="/adimin">{{__('Home')}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('room.index')}}">{{__('TitleLinkMovie')}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{__('Rooms')}}</li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('room.index')}}">{{__('TitleLinkRoom')}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{__('TitleUpdateRoom')}}</li>
         </ol>
     </div>
 @endsection
 @section('content')
     <div class="m-auto card pl-3">
-        <h3 class="text-center text-uppercase mt-3">{{__('TitleUpdateMovie')}}</h3>
+        <h3 class="text-center text-uppercase mt-3">{{__('TitleUpdateRoom')}}</h3>
         <form action="{{route('room.update')}}" method="POST" style="width:95%" enctype="multipart/form-data">
             @csrf
             <div class=row>
