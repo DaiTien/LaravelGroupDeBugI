@@ -17,6 +17,8 @@ class CreateRoomsTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('total_seats')->default(0);
+            $table->integer('row_seats')->default(0);
+            $table->integer('total_seats_of_row')->default(0);
             $table->integer('status')->default(0);
             $table->timestamps();
         });

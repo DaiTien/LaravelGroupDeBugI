@@ -11,7 +11,7 @@ class RoomSeat extends Model
     protected $fillable
         = [
             'name',
-            'sroom_id',
+            'room_id',
             'type',
             'seat_number',
             'tatus'
