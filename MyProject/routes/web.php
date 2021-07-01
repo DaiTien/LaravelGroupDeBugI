@@ -46,6 +46,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('save-update', 'Admin\MovieCategoryController@update')->name('moviecategory.update');
         Route::get('delete/{id}', 'Admin\MovieCategoryController@DeleteMovieCategory')->name('moviecategory.delete');
     });
+    //movie
     Route::group(['prefix' => 'movie'], function () {
         Route::get('/', 'Admin\MovieController@index')->name('movie.index');
         Route::get('create', 'Admin\MovieController@create')->name('movie.create');
@@ -62,6 +63,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('update/{id}', 'Admin\RoomController@edit')->name('room.edit');
         Route::post('save-update', 'Admin\RoomController@update')->name('room.update');
         Route::get('delete/{id}', 'Admin\RoomController@Delete')->name('room.delete');
+    });
+    //showtime
+    Route::group(['prefix' => 'show-time'], function () {
+        Route::get('/', 'Admin\ShowTimeController@index')->name('show_time.index');
+        Route::get('create', 'Admin\ShowTimeController@create')->name('show_time.create');
+        Route::post('save-create', 'Admin\ShowTimeController@store')->name('show_time.store');
+        Route::get('update/{id}', 'Admin\ShowTimeController@edit')->name('show_time.edit');
+        Route::post('save-update', 'Admin\ShowTimeController@update')->name('show_time.update');
+        Route::get('delete/{id}', 'Admin\ShowTimeController@Delete')->name('show_time.delete');
     });
 });
 
