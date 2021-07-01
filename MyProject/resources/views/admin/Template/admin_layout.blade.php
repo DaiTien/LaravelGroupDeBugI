@@ -226,6 +226,11 @@
                                 <span class="menu-text">Room</span>
                             </a>
                         </li>
+                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                            <a href="{{route('show_time.index')}}" class="menu-link menu-toggle">
+                                <span class="menu-text">Show time</span>
+                            </a>
+                        </li>
                         {{--                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">--}}
                         {{--                            <a href="javascript:;" class="menu-link menu-toggle">--}}
                         {{--                                <span class="menu-text">Product</span>--}}
@@ -394,7 +399,7 @@
                                     id="kt_quick_user_toggle">
                                 <span
                                         class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-                                <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">
+                                <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3"></span>
                                         <span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
                                             <span class="symbol-label font-size-h5 font-weight-bold">S</span>
                                         </span>

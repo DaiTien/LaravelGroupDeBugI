@@ -62,7 +62,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('save-create', 'Admin\RoomController@store')->name('room.store');
         Route::get('update/{id}', 'Admin\RoomController@edit')->name('room.edit');
         Route::post('save-update', 'Admin\RoomController@update')->name('room.update');
-        Route::get('delete/{id}', 'Admin\RoomController@Delete')->name('room.delete');
+        Route::get('delete/{id}', 'Admin\RoomController@delete')->name('room.delete');
     });
     //showtime
     Route::group(['prefix' => 'show-time'], function () {

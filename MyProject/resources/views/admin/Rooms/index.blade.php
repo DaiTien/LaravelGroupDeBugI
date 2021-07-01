@@ -3,14 +3,14 @@
     <div class="Page breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<a href="/admin">{{__('Home')}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{__('Rooms')}}</li>
+            <li class="breadcrumb-item active" aria-current="page">{{__('TitleLinkRoom')}}</li>
         </ol>
     </div>
 @endsection
 @section('content')
     <div class="card mb-4">
         <div class="m-2">
-            <h3 class="text-center">{{__('Room')}}</h3>
+            <h3 class="text-center">{{__('TitleListRoom')}}</h3>
             <a href="{{route('room.create')}}" class="btn btn-primary m-7">{{__("textCreateBT")}}</a>
         </div>
         <div class="card-body">

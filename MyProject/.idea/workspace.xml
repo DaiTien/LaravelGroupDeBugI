@@ -20,10 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b3d5d3b-8841-4a13-b8ac-769daa058ac9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/ShowTime/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/ShowTime/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/ShowTime/update.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ShowTimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ShowTimeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Movie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Room.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Room.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ShowTime.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ShowTime.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/vi.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/vi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Rooms/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Rooms/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Rooms/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Rooms/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Rooms/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Rooms/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/ShowTime/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/ShowTime/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/ShowTime/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/ShowTime/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/ShowTime/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/ShowTime/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Template/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Template/admin_layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,7 +193,7 @@
       <workItem from="1624972695021" duration="9296000" />
       <workItem from="1625019524974" duration="9421000" />
       <workItem from="1625032697635" duration="15743000" />
-      <workItem from="1625102866056" duration="1625000" />
+      <workItem from="1625102866056" duration="11530000" />
     </task>
     <servers />
   </component>
@@ -227,9 +237,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1625036033735" />
-    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup" timestamp="1625050249631">
+    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup" timestamp="1625108741656">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1625050249631" />
+    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1625108741656" />
   </component>
 </project>
