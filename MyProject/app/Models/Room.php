@@ -12,6 +12,8 @@ class Room extends Model
         = [
             'name',
             'total_seats',
+            'row_seats',
+            'total_seats_of_row',
             'status'
         ];
 

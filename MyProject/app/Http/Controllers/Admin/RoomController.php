@@ -27,17 +27,23 @@ class RoomController extends Controller
         $validated = $request->validate([
             'name'         => 'required|min:3',
             'total_seats'     => 'required',
+            'row_seats'     => 'required',
+            'total_seats_of_row'     => 'required',
             'status'     => 'required'
         ], [
             'name.required'         => trans('validation.required'),
             'name.min'              => trans('validation.min'),
             'total_seats.required'     => trans('validation.required'),
+            'row_seats.required'     => trans('validation.required'),
+            'total_seats_of_row.required'     => trans('validation.required'),
             'status.required'     => trans('validation.required')
         ]);
        
         Room::create([
             'name'              => $request->name,
             'total_seats' => $request->total_seats,
+            'row_seats' => $request->row_seats,
+            'total_seats_of_row' => $request->total_seats_of_row,
             'status'            => $request->status,
         ]);
         Alert::success('Create successfully!');
@@ -58,12 +64,16 @@ class RoomController extends Controller
         $validated = $request->validate([
             'name'         => 'required|min:3',
             'total_seats'     => 'required',
+            'row_seats'     => 'required',
+            'total_seats_of_row'     => 'required',
             'status'     => 'required'
             
         ], [
             'name.required'         => trans('validation.required'),
             'name.min'              => trans('validation.min'),
             'total_seats.required'     => trans('validation.required'),
+            'row_seats.required'     => trans('validation.required'),
+            'total_seats_of_row.required'     => trans('validation.required'),
             'status.required'     => trans('validation.required'),
         
         ]);
@@ -72,6 +82,8 @@ class RoomController extends Controller
         $room->update([
             'name'              => $request->name,
             'total_seats' => $request->total_seats,
+            'row_seats' => $request->row_seats,
+            'total_seats_of_row' => $request->total_seats_of_row,
             'status'          => $request->status,
         ]);
         Alert::success('Update successfully!');
