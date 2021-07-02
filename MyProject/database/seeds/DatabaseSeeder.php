@@ -19,6 +19,16 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => Hash::make('12345'),
         ]);
+        DB::table('user_groups')->insert([
+            'name' => "admin",
+            'status' => "1",
+            
+        ]);
+        DB::table('user_groups')->insert([
+            'name' => "customer",
+            'status' => "0",
+            
+        ]);
         \Illuminate\Support\Facades\DB::table('introduces')->insert([
             'title'=>'This is introduce about my team',
             'summary'=>'This is summary about my team',

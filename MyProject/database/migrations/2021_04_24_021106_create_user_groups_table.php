@@ -16,9 +16,7 @@ class CreateUserGroupsTable extends Migration
         Schema::create('user_groups', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('desc');
-            $table->boolean('active')->default(true);
-            $table->boolean('delete')->default(false);
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

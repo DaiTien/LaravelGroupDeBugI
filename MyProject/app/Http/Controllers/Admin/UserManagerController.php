@@ -1,147 +1,114 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use http\Env\Response;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\User;
+use App\Models\UserManager;
+use App\Models\UserGroup;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class UserManagerController extends Controller
 {
-    //
-    function getAll()
+    public function index()
     {
-        $data = User::paginate(10);
-        return view('admin.UserManager.Index', compact('data'));
+        $data = UserManager::paginate(10)->fragment('data');
+
+        return view('admin.UserManager.index', compact('data'));
     }
 
-    function CreateUser()
+    public function create()
     {
-        return view('admin.UserManager.Create');
+        $user_group = UserGroup::where('status', 0)->get();
+
+        return view('admin.UserManager.create', compact('user_group'));
     }
 
-    function SaveCreate(Request $request)
+    public function store(Request $request)
     {
-        User::create([
-            'firstname' => $request->firstname,
-            'lastname' => $request->lastname,
-            'dob' => $request->dob,
-            'phone' => $request->phone,
-            'email' => $request->email,
-            'password' => Hash::make($request->password)
+        $validated = $request->validate([
+            'name'         => 'required|min:3',
+            'phone'     => 'required',
+            'email'     => 'required',
+            'password' => 'required',
+            'address'  => 'required'
+        ], [
+            'name.required'         => trans('validation.required'),
+            'name.min'              => trans('validation.min'),
+            'phone.required'     => trans('validation.required'),
+            'email.required'     => trans('validation.required'),
+            'password.required' => trans('validation.required'),
+            'address.required'  => trans('validation.required'),
         ]);
-//        return response()->json([
-//            'code' => \Illuminate\Http\Response::HTTP_CREATED,
-//            'message' => 'Successfully'
-//        ]);
-        Alert::alert()->success('Thêm tài khoản thành công!', '');
-        return redirect(route('list-user'));
-        // hoặc có thể dùng alert('Post Created','Successfully', 'success');s
-    }
-
-    function UpdateUser($id)
-    {
-        $user = User::find($id);
-        return view('admin.UserManager.Update', compact('user'));
-    }
-
-    function SaveUpdate(Request $request)
-    {
-        $user = User::find($request->id);
-        $validated = Validator::make(
-            $request->all(),
-            [
-                'firstname' => 'required',
-                'lastname' => 'required',
-                'dob' => 'required',
-                'phone' => 'required',
-            ],
-            [
-                'required' => ':attribute không được để trống!',
-//                'lastname' => 'The lastname field is required',
-//                'dob' => 'The dob field is required',
-//                'phone' => 'The phone field is required',
-            ],
-            [
-                'firstname' => 'Họ',
-                'lastname' => 'Tên',
-                'dob' => 'Ngày sinh',
-                'phone' => 'Điện thoại',
-            ]
-        );
-        if ($validated->fails()) {
-            return response()->json([
-                'errors' => true,
-                'firstname' => $validated->errors()->first('firstname'),
-                'lastname' => $validated->errors()->first('lastname'),
-                'dob' => $validated->errors()->first('dob'),
-                'phone' => $validated->errors()->first('phone'),
-            ]);
-        }
-        $user->update([
-            'firstname' => $request->firstname,
-            'lastname' => $request->lastname,
-            'dob' => $request->dob,
-            'phone' => $request->phone,
+        
+        UserManager::create([
+            'name'              => $request->name,
+            'group_id' => $request->group_id,
+            'lastname'          => $request->lastname,
+            'firstname'            => $request->firstname,
+            'phone'          => $request->phone,
+            'email'      => $request->email,
+            'email_verified_at'           => $request->email_verified_at,
+            'password'       => $request->password,
+            'address'           => $request->address,
+            'active'           => $request->active,
+            
+            
         ]);
-        return response()->json(['success' => true]);
+        Alert::success('Create successfully!');
+
+        return redirect()->route('usermanager.index');
     }
 
-    function DeleteUser($id)
+    public function edit($id)
     {
-        $user = User::find($id);
-        if ($user->delete())
-            return response()->json(['success' => true]);
-        else
-            return response()->json(['success' => false]);
+        $user         = UserManager::find($id);
+        $user_group = UserGroup::where('status', 0)->get();
+
+        return view('admin.usermanager.update', compact('user', 'user_group'));
     }
 
-    // restfull API
-    function index()
+    public function update(Request $request)
     {
-        $user = User::all();
-        return response()->json($user, 200);
+        $validated = $request->validate([
+            'name'         => 'required|min:3',
+            'phone'     => 'required',
+            'email'     => 'required',
+            'password' => 'required',
+            'address'  => 'required'
+        ], [
+            'name.required'         => trans('validation.required'),
+            'name.min'              => trans('validation.min'),
+            'phone.required'     => trans('validation.required'),
+            'email.required'     => trans('validation.required'),
+            'password.required' => trans('validation.required'),
+            'address.required'  => trans('validation.required'),
+        ]);
+        $user     = UserManager::all()->find($request->id);
+        
+        $movie->update([
+            'name'              => $request->name,
+            'group_id' => $request->group_id,
+            'lastname'          => $request->lastname,
+            'firstname'            => $request->firstname,
+            'phone'          => $request->phone,
+            'email'      => $request->email,
+            'email_verified_at'           => $request->email_verified_at,
+            'password'       => $request->password,
+            'address'           => $request->address,
+            'active'           => $request->active,
+            
+        ]);
+        Alert::success('Update successfully!');
+
+        return redirect()->route('usermanager.index');
     }
 
-    function show($id)
+    public function delete($id)
     {
-        if ($user = User::find($id))
-            return response()->json($user, 200);
-        else
-            return response()->json('user not found', 200);
-    }
-
-    function store(Request $request)
-    {
-        if (User::create($request->all()))
-            return response()->json('User has been created', 201);
-        else
-            return response()->json('can not create');
-    }
-    // function edit($id)
-    // {
-    //     if ($user = User::find($id)) {
-    //         return response()->json($user);
-    //     } else
-    //         return response()->json('can not find data');
-    // }
-    function update(Request $request, $id)
-    {
-        if (User::find($id)->update($request->all())) {
-            $user = User::find($id);
-            return response()->json($user, 201);
-        } else
-            return response()->json('can not update');
-    }
-
-    function delete($id)
-    {
-        if (User::find($id)->delete())
-            return response()->json('Deleted succsessfully', 200);
-        else
-            return response()->json('Can not delete data');
+        $user = UserManager::all()->find($id);
+        $user->delete();
     }
 }

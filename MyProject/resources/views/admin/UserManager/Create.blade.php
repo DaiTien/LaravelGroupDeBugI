@@ -2,180 +2,143 @@
 @section('titleForm')
     <div class="Page breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<a
-                    href="/">{{__('Home')}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a
-                    href="{{route('list-user')}}">{{__('User')}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{__('CreateteUser')}}</li>
+            <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<a href="/admin">{{__('Home')}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('movie.index')}}">{{__('TitleLinkMovie')}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{__('TitleCreateuser')}}</li>
         </ol>
     </div>
 @endsection
 @section('content')
-    <div class="card mb-4">
-        <div class="m-auto">
-            <h3 class="text-center text-uppercase mt-2">{{__('TitleFormCreateUser')}}</h3>
-            <form action="{{route('save-user')}}" method="POST" style="width:95%" id="FormTaiKhoan">
-                @csrf
-                <div class=row>
-                    <div class="col-8 m-auto">
-                        <div class="form-group row">
-                            <label class="col-sm-2">First Name</label>
-                            <div class="col-sm-9">
-                                <input type="text" name="firstname" class="form-control">
-                                <span class="text-danger font-weight-bold " id="txtErrorFirstName"></span>
-                            </div>
+    <div class="m-auto card pl-3">
+        <h3 class="text-center text-uppercase mt-3">{{__('TitleCreateuser')}}</h3>
+        <form action="{{route('usermanager.store')}}" method="POST" style="width:95%" enctype="multipart/form-data" id="myForm">
+            @csrf
+            <div class=row>
+                <div class="col-8">
+                    <div class="form-group row">
+                        <label class="col-sm-3">Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" placeholder="name" name="name" class="form-control" value="{{old('name')}}">
+                            @error('name')
+                            <span class="text-danger font-weight-bold">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
-                    <div class="col-8 m-auto">
-                        <div class="form-group row">
-                            <label class="col-sm-2">Last Name</label>
-                            <div class="col-sm-9">
-                                <input type="text" name="lastname" class="form-control">
-                                <span class="text-danger font-weight-bold" id="txtErrorLastName"></span>
-                            </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3">role</label>
+                        <div class="col-sm-9">
+                            <select name="group_id" class="form-control">
+                                @foreach($user_group as $user_group)
+                                    <option value="{{$user_group->id}}" {{ (old("group_id") == $user_group->id ? "selected":"") }}>{{$user_group->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
-                    <div class="col-8 m-auto">
-                        <div class="form-group row">
-                            <label class="col-sm-2">Date of birth</label>
-                            <div class="col-sm-9">
-                                <input type="date" name="dob" class="form-control">
-                                <span class="text-danger font-weight-bold" id="txtErrorDob"></span>
-                            </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3">lastname</label>
+                        <div class="col-sm-9">
+                            <input type="text" placeholder="lastname" name="lastname" class="form-control" value="{{old('lastname')}}"/>
                         </div>
                     </div>
-                    <div class="col-8 m-auto">
-                        <div class="form-group row">
-                            <label class="col-sm-2">Number phone</label>
-                            <div class="col-sm-9">
-                                <input type="text" name="phone" class="form-control">
-                                <span class="text-danger font-weight-bold" id="txtErrorPhone"></span>
-                            </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3">firstname</label>
+                        <div class="col-sm-9">
+                            <input type="text" placeholder="firstname" name="firstname" class="form-control" value="{{old('firstname')}}"/>
                         </div>
                     </div>
-                    <div class="col-8 m-auto">
-                        <div class="form-group row">
-                            <label class="col-sm-2">Email</label>
-                            <div class="col-sm-9">
-                                <input type="email" name="email" class="form-control" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
-                            </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3">phone</label>
+                        <div class="col-sm-9">
+                            <input type="text" placeholder="phone" name="phone" class="form-control" value="{{old('phone')}}"/>
                         </div>
                     </div>
-                    <div class="col-8 m-auto">
-                        <div class="form-group row">
-                            <label class="col-sm-2">Mật khẩu</label>
-                            <div class="col-sm-9">
-                                <input type="password" name="password" id="password" class="form-control">
-                                <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password text-primary"></span>
+                    <div class="form-group row">
+                        <label class="col-sm-3">email</label>
+                        <div class="col-sm-9">
+                            <input type="email" placeholder="email" name="email" class="form-control" value="{{old('email')}}"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3">password</label>
+                        <div class="col-sm-9">
+                            <input type="password" placeholder="password" name="password" class="form-control" value="{{old('password')}}"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3">address</label>
+                        <div class="col-sm-9">
+                            <input type="text" placeholder="address" name="address" class="form-control" value="{{old('address')}}"/>
+                        </div>
+                    </div>
+                   
+                </div>
+                
+            </div>
+            <div class=row>
+                
+                
+               
+                <div class="col-12">
+                    <div class="form-group row">
+                        <label class="col-sm-3">Trạng thái</label>
+                        <div class="col-sm-9">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" value="0" name="active" checked="checked">hiện
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" value="1" name="active">ẩn
+                                </label>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="form-group text-center">
-                    {{--                <a href="javascript:void(0)" onclick="checkvalidation()"--}}
-                    {{--                   class="btn btn-primary">{{__("textUpdateBT")}}</a>--}}
-                    <button type="submit" class="btn btn-primary">{{__("textCreateBT")}}</button>
-                    <a href="{{route('list-user')}}" class="btn btn-warning ml-2">{{__("textCancelBT")}}</a>
-                </div>
-            </form>
-        </div>
+            </div>
+            <div class="form-group text-center">
+            <!-- <a href="javascript:void(0)" onclick="checkvalidation()" class="btn btn-primary">{{__("textCreateBT")}}</a> -->
+                <input type="submit" class="btn btn-primary" value="{{__('textCreateBT')}}">
+                <a href="{{route('usermanager.index')}}" class="btn btn-secondary ml-2">{{__("textCancelBT")}}</a>
+            </div>
+        </form>
     </div>
     <script>
-        // $(document).ready(function() {
-        //Khi bàn phím được nhấn và thả ra thì sẽ chạy phương thức này
-        $("#FormTaiKhoan").validate({
-            ignore: [],
-            rules: {
-                firstname: 'required',
-                lastname: 'required',
-                dob: 'required',
-                email: {
-                    required: true,
-                    email: true,
-                    // regex:'/^([\\w-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([\\w-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$/'
-                },
-                password:{
-                    required:true,
-                    minlength:6,
-                }
-            },
-            messages: {
-                firstname: 'Họ không được để trống!',
-                lastname: 'Tên không được để trống!',
-                dob: 'Ngày sinh không được để trống!',
-                email: {
-                    required: 'Email không được để trống!',
-                    email: 'Email không đúng định dạng',
-                   // regex : 'Email not Valids'
-                },
-                password:{
-                    required:'Mật khẩu không được để trống!',
-                    minlength: 'Độ dài tối thiểu là 6 kí tự!'
-                }
-            },
-            submitHandler: function (form) {
-                loading_show();
-                form.submit();
+        $(document).ready(function () {
+            setTimeout(function () {
+                $('span').hide();
+            }, 1500)
+        });
+        $('#CurrencyInput').on('change', function () {
+            const value = this.value.replace(/,/g, '');
+            if (value != "") {
+                this.value = parseFloat(value).toLocaleString('en-US', {
+                    style: 'decimal',
+                    maximumFractionDigits: 2,
+                    minimumFractionDigits: 0
+                });
             }
         });
-        $(".toggle-password").click(function () {
 
-            $(this).toggleClass("fa-eye fa-eye-slash");
-            var input = $($(this).attr("toggle"));
-            if (input.attr("type") == "password") {
-                input.attr("type", "text");
-            } else {
-                input.attr("type", "password");
+        function clickavatar1() {
+            $("#upload input[type=file]").click();
+        }
+
+        function showPreview1(input) {
+            if (input.files && input.files[0]) {
+                var filerdr = new FileReader();
+                filerdr.onload = function (e) {
+                    $('#imgPreview1').attr('src', e.target.result);
+                }
+                filerdr.readAsDataURL(input.files[0]);
             }
-        });
-        {{--function checkvalidation() {--}}
-        {{--    let id = $("input[name*='id']").val();--}}
-        {{--    let firstname = $("input[name*='firstname']").val();--}}
-        {{--    let lastname = $("input[name*='lastname']").val();--}}
-        {{--    let dob = $("input[name*='dob']").val();--}}
-        {{--    let phone = $("input[name*='phone']").val();--}}
-        {{--    console.log(firstname);--}}
-        {{--    console.log(lastname);--}}
-        {{--    console.log(dob);--}}
-        {{--    console.log(phone);--}}
-        {{--    $.ajax({--}}
-        {{--        data: {--}}
-        {{--            id: id,--}}
-        {{--            firstname: firstname,--}}
-        {{--            lastname: lastname,--}}
-        {{--            dob: dob,--}}
-        {{--            phone: phone,--}}
-        {{--            // email: email,--}}
-        {{--            // name: name,--}}
-        {{--            // password: password,--}}
-        {{--            "_token": "{{csrf_token()}}"--}}
-        {{--        },--}}
-        {{--        url: "{{route('save-update-user')}}",--}}
-        {{--        method: "POST",--}}
-        {{--        dataType: "json",--}}
-        {{--        success: function(data) {--}}
-        {{--            console.log(data);--}}
-        {{--            if (data.errors == true) {--}}
-        {{--                $("#txtErrorFirstName").html('').append(data.firstname);--}}
-        {{--                $("#txtErrorLastName").html('').append(data.lastname);--}}
-        {{--                $("#txtErrorDob").html('').append(data.dob);--}}
-        {{--                $("#txtErrorPhone").html('').append(data.phone);--}}
-        {{--                // $("#txtErrorEmail").html('').append(data.email);--}}
-        {{--                // $("#txtErrorName").html('').append(data.name);--}}
-        {{--                // $("#txtErrorPassword").html('').append(data.password);--}}
-        {{--            } else {--}}
-        {{--                Swal.fire({--}}
-        {{--                    position: 'center',--}}
-        {{--                    icon: 'success',--}}
-        {{--                    title: '{{__("TextUpdateSuccess")}}',--}}
-        {{--                    showConfirmButton: false,--}}
-        {{--                    timer: 1500--}}
-        {{--                }).then(function() {--}}
-        {{--                    location = "{{route('list-user')}}";--}}
-        {{--                })--}}
-        {{--            }--}}
-        {{--        }--}}
-        {{--    })--}}
-        {{--}--}}
+        }
+
+        function valid_numbers(e) {
+            var key = e.which || e.KeyCode;
+            if (key >= 48 && key <= 57)
+                return true;
+            else return false;
+        }
     </script>
 @endsection

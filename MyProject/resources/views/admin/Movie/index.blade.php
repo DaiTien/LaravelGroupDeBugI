@@ -42,7 +42,7 @@
                                 <img src="/{{$item->image}}" style="max-width:150px; height: 100px">
                             </td>
                             <td class="__alignItemtable">
-                                {{$item->status ==0 ? 'Sắp chiếu':$item->status ==1 ? 'Đang chiếu':""}}
+                                {{$item->status ==0 ? 'Sắp chiếu':($item->status ==1 ? 'Đang chiếu':"")}}
                             </td>
                             <td class="__alignItemtable">
                                 <div class="text-center d-flex">

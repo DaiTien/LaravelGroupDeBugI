@@ -19,14 +19,12 @@ class CreateUsersTable extends Migration
             $table->unsignedInteger('group_id')->nullable();
             $table->string('lastname',20)->nullable();
             $table->string('firstname', 10)->nullable();
-            $table->date('dob')->nullable();
             $table->string('phone')->unique()->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('address')->nullable();
             $table->boolean('active')->default(true);
-            $table->boolean('delete')->default(false);
             $table->integer('type')->default(0);
             $table->rememberToken();
             $table->timestamps();
