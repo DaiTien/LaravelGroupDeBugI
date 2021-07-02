@@ -64,6 +64,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('save-update', 'Admin\RoomController@update')->name('room.update');
         Route::get('delete/{id}', 'Admin\RoomController@delete')->name('room.delete');
     });
+    //user
+    Route::group(['prefix' => 'usermanager'], function () {
+        Route::get('/', 'Admin\UserManagerController@index')->name('usermanager.index');
+        Route::get('create', 'Admin\UserManagerController@create')->name('usermanager.create');
+        Route::post('save-create', 'Admin\UserManagerController@store')->name('usermanager.store');
+        Route::get('update/{id}', 'Admin\UserManagerController@edit')->name('usermanager.edit');
+        Route::post('save-update', 'Admin\UserManagerController@update')->name('usermanager.update');
+        Route::get('delete/{id}', 'Admin\UserManagerController@delete')->name('usermanager.delete');
+    });
     //showtime
     Route::group(['prefix' => 'show-time'], function () {
         Route::get('/', 'Admin\ShowTimeController@index')->name('show_time.index');
