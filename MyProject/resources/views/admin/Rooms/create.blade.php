@@ -14,7 +14,7 @@
         <form action="{{route('room.store')}}" method="POST" style="width:95%" enctype="multipart/form-data" id="myForm">
             @csrf
             <div class=row>
-                <div class="col-8">
+                <div class="col-8 mx-auto">
                     <div class="form-group row">
                         <label class="col-sm-3">Name</label>
                         <div class="col-sm-9">
@@ -24,46 +24,30 @@
                             @enderror
                         </div>
                     </div>
-                    {{--                    <div class="form-group row">--}}
-                    {{--                        <label class="col-sm-3">total seats</label>--}}
-                    {{--                        <div class="col-sm-9">--}}
-                    {{--                            <input type="text" placeholder="total seats" name="total_seats" class="form-control" value="{{old('total_seats')}}"/>--}}
-                    {{--                        </div>--}}
-                    {{--                    </div>--}}
                     <div class="form-group row">
                         <label class="col-sm-3">row seats</label>
                         <div class="col-sm-9">
                             <input type="text" placeholder="row seats" name="row_seats" class="form-control" value="{{old('row_seats')}}"/>
+                            @error('row_seats')
+                            <span class="text-danger font-weight-bold">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-3">total_seats_of_row</label>
                         <div class="col-sm-9">
                             <input type="text" placeholder="total_seats_of_row" name="total_seats_of_row" class="form-control" value="{{old('total_seats_of_row')}}"/>
+                            @error('total_seats_of_row')
+                            <span class="text-danger font-weight-bold">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
-
-                    <div class="form-group row hidden">
-                        <label class="col-sm-3">Trạng thái</label>
-                        <div class="col-sm-9">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" value="0" name="status" checked="checked">Còn ghế trống
-                                </label>
-                            </div>
-{{--                            <div class="form-check">--}}
-{{--                                <label class="form-check-label">--}}
-{{--                                    <input type="radio" class="form-check-input" value="1" name="status">Hết ghế trống--}}
-{{--                                </label>--}}
-{{--                            </div>--}}
-                        </div>
-                    </div>
-                    <div class="form-group text-center">
-                        <input type="submit" class="btn btn-primary" value="{{__('textCreateBT')}}"/>
-                        <a href="{{route('room.index')}}" class="btn btn-secondary ml-2">{{__("textCancelBT")}}</a>
-                    </div>
-
+                    <input type="text" name="status" value="0" hidden>
                 </div>
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" class="btn btn-primary" value="{{__('textCreateBT')}}"/>
+                <a href="{{route('room.index')}}" class="btn btn-secondary ml-2">{{__("textCancelBT")}}</a>
             </div>
         </form>
     </div>

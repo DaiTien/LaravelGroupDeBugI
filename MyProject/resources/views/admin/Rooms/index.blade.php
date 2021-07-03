@@ -22,7 +22,7 @@
                         <th>total_seats</th>
                         <th>row_seats</th>
                         <th>total_seats_of_row</th>
-                        <th>Status</th>
+{{--                        <th>Status</th>--}}
                         <th>Action</th>
                     </tr>
                     @php
@@ -35,9 +35,9 @@
                             <td class="__alignItemtable">{{ $item->total_seats }}</td>
                             <td class="__alignItemtable">{{ $item->row_seats }}</td>
                             <td class="__alignItemtable">{{ $item->total_seats_of_row }}</td>
-                            <td class="__alignItemtable">
-                               {{$item->status == 0 ? 'còn ghế trống': ($item->status ==1?'Hết ghế':'')}}
-                            </td>
+{{--                            <td class="__alignItemtable">--}}
+{{--                               {{$item->status == 0 ? 'còn ghế trống': ($item->status ==1?'Hết ghế':'')}}--}}
+{{--                            </td>--}}
                             <td class="__alignItemtable">
                                 <div class="text-center d-flex">
                                     <a hidden href="{{route('room.edit', ['id' => $item->id])}}" class="btn btn-success"> <i class="fas fa-edit"></i></a>

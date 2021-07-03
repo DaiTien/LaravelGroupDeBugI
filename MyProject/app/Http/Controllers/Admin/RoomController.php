@@ -30,17 +30,15 @@ class RoomController extends Controller
     {
         $validated = $request->validate([
             'name'               => 'required|min:3',
-            //            'total_seats'        => 'required',
-            'row_seats'          => 'required',
+            'row_seats'          => 'required|numeric|max:10',
             'total_seats_of_row' => 'required',
-            //            'status'             => 'required' //status required để làm gì :v
         ], [
             'name.required'               => trans('validation.required'),
             'name.min'                    => trans('validation.min'),
-            //            'total_seats.required'        => trans('validation.required'),
             'row_seats.required'          => trans('validation.required'),
+            'row_seats.numeric'          => trans('validation.numeric'),
+            'row_seats.max'               => trans('validation.max'),
             'total_seats_of_row.required' => trans('validation.required'),
-            //            'status.required'             => trans('validation.required')
         ]);
         $room      = Room::create([
             'name'               => $request->name,
@@ -115,7 +113,6 @@ class RoomController extends Controller
             if ($total_soghe < $seatByName[0]->count_seat) { //sô ghê mới ít hơn sô ghế ban đầu có
                 for ($i = 0; $i < $total_dayghe; $i++) {
                     for ($j = 1; $j <= $request->$total_soghe; $j++) {
-
                     }
                 }
             }
