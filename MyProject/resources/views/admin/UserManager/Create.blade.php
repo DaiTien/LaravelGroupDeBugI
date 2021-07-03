@@ -3,14 +3,14 @@
     <div class="Page breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<a href="/admin">{{__('Home')}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('movie.index')}}">{{__('TitleLinkMovie')}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{__('TitleCreateuser')}}</li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('usermanager.index')}}">{{__('TitleLinkUser')}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{__('TitleCreateUser')}}</li>
         </ol>
     </div>
 @endsection
 @section('content')
     <div class="m-auto card pl-3">
-        <h3 class="text-center text-uppercase mt-3">{{__('TitleCreateuser')}}</h3>
+        <h3 class="text-center text-uppercase mt-3">{{__('TitleCreateUser')}}</h3>
         <form action="{{route('usermanager.store')}}" method="POST" style="width:95%" enctype="multipart/form-data" id="myForm">
             @csrf
             <div class=row>
@@ -74,7 +74,7 @@
                 </div>
                 
             </div>
-            <div class=row>
+            <div class=row hidden>
                 
                 
                

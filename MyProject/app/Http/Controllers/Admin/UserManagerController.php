@@ -21,7 +21,7 @@ class UserManagerController extends Controller
 
     public function create()
     {
-        $user_group = UserGroup::where('status', 0)->get();
+        $user_group = UserGroup::all();
 
         return view('admin.UserManager.create', compact('user_group'));
     }
@@ -87,8 +87,8 @@ class UserManagerController extends Controller
             'address.required'  => trans('validation.required'),
         ]);
         $user     = UserManager::all()->find($request->id);
-        
-        $movie->update([
+
+        $user->update([
             'name'              => $request->name,
             'group_id' => $request->group_id,
             'lastname'          => $request->lastname,
