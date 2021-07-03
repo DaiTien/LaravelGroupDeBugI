@@ -38,6 +38,7 @@
                         <label class="col-sm-3">lastname</label>
                         <div class="col-sm-9">
                             <input type="text" placeholder="lastname" name="lastname" class="form-control" value="{{old('lastname')}}"/>
+                            
                         </div>
                     </div>
                     <div class="form-group row">
@@ -50,18 +51,27 @@
                         <label class="col-sm-3">phone</label>
                         <div class="col-sm-9">
                             <input type="text" placeholder="phone" name="phone" class="form-control" value="{{old('phone')}}"/>
+                            @error('phone')
+                            <span class="text-danger font-weight-bold">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-3">email</label>
                         <div class="col-sm-9">
                             <input type="email" placeholder="email" name="email" class="form-control" value="{{old('email')}}"/>
+                            @error('email')
+                            <span class="text-danger font-weight-bold">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-3">password</label>
                         <div class="col-sm-9">
                             <input type="password" placeholder="password" name="password" class="form-control" value="{{old('password')}}"/>
+                            @error('password')
+                            <span class="text-danger font-weight-bold">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
