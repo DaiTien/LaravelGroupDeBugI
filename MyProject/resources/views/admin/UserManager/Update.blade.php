@@ -71,9 +71,8 @@
                     </div>
                 </div>
                 <div class="form-group text-center">
-                    <a href="javascript:void(0)" onclick="checkvalidation()"
-                       class="btn btn-primary">{{__("textUpdateBT")}}</a>
-                    <a href="{{route('list-user')}}" class="btn btn-warning ml-2">{{__("textCancelBT")}}</a>
+                    <a href="javascript:void(0)" onclick="checkvalidation()"class="btn btn-primary">{{__("textUpdateBT")}}</a>
+                    <a href="{{route('usermanager.index')}}" class="btn btn-warning ml-2">{{__("textCancelBT")}}</a>
                 </div>
             </form>
         </div>

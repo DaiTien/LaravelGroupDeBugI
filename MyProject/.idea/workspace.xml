@@ -21,10 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0b3d5d3b-8841-4a13-b8ac-769daa058ac9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/Rooms/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Rooms/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/Rooms/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Rooms/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserManagerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserManagerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/vi.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/vi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/UserManager/Create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/UserManager/Create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/UserManager/Update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/UserManager/Update.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +187,7 @@
       <workItem from="1625102866056" duration="11530000" />
       <workItem from="1625199495731" duration="1405000" />
       <workItem from="1625211704558" duration="9080000" />
-      <workItem from="1625294132695" duration="293000" />
+      <workItem from="1625294132695" duration="1726000" />
     </task>
     <servers />
   </component>
