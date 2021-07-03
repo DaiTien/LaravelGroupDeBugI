@@ -21,20 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0b3d5d3b-8841-4a13-b8ac-769daa058ac9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ShowTimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ShowTimeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Movie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Room.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Room.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ShowTime.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ShowTime.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/vi.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/vi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/Rooms/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Rooms/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/Rooms/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Rooms/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/Rooms/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Rooms/update.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/ShowTime/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/ShowTime/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/ShowTime/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/ShowTime/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/ShowTime/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/ShowTime/update.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/Template/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Template/admin_layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +156,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -194,6 +184,9 @@
       <workItem from="1625019524974" duration="9421000" />
       <workItem from="1625032697635" duration="15743000" />
       <workItem from="1625102866056" duration="11530000" />
+      <workItem from="1625199495731" duration="1405000" />
+      <workItem from="1625211704558" duration="9080000" />
+      <workItem from="1625294132695" duration="293000" />
     </task>
     <servers />
   </component>
@@ -229,10 +222,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="538" y="296" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1625105657140" />
-    <state x="184" y="8" key="SettingsEditor" timestamp="1625036473215">
+    <state x="184" y="8" key="SettingsEditor" timestamp="1625218360269">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1625036473215" />
+    <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1625218360269" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1625036033735">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

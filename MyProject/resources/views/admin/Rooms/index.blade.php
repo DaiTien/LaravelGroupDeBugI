@@ -40,7 +40,7 @@
                             </td>
                             <td class="__alignItemtable">
                                 <div class="text-center d-flex">
-                                    <a href="{{route('room.edit', ['id' => $item->id])}}" class="btn btn-success"> <i class="fas fa-edit"></i></a>
+                                    <a hidden href="{{route('room.edit', ['id' => $item->id])}}" class="btn btn-success"> <i class="fas fa-edit"></i></a>
                                     <a onclick="Delete({{$item->id}})" class="btn btn-danger ml-2"><i class="fas fa-trash-alt"></i></a>
                                 </div>
                             </td>
