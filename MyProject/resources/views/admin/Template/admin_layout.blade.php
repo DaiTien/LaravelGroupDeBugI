@@ -227,6 +227,11 @@
                             </a>
                         </li>
                         <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                            <a href="{{route('room_seat.index')}}" class="menu-link menu-toggle">
+                                <span class="menu-text">Room seat</span>
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                             <a href="{{route('usermanager.index')}}" class="menu-link menu-toggle">
                                 <span class="menu-text">User</span>
                             </a>

@@ -29,7 +29,7 @@ Route::group(['middleware' => 'locale'], function () {
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', 'Admin\HomeController@index')->name('home');
-    Route::get('/home', 'Admin\HomeController@layout')->name('home');
+//    Route::get('/home', 'Admin\HomeController@layout')->name('home');
     Route::get('/logout', 'Admin\HomeController@Logout');
     //introduce
     Route::group(['prefix' => 'introduce'], function () {
@@ -82,6 +82,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('save-update', 'Admin\ShowTimeController@update')->name('show_time.update');
         Route::get('delete/{id}', 'Admin\ShowTimeController@Delete')->name('show_time.delete');
     });
+    //room seats
+    Route::group(['prefix' => 'room-seat'], function () {
+        Route::get('/', 'Admin\RoomSeatController@index')->name('room_seat.index');
+    });
+
 });
 
 Auth::routes();

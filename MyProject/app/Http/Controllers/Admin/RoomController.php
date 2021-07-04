@@ -31,7 +31,7 @@ class RoomController extends Controller
         $validated = $request->validate([
             'name'               => 'required|min:3',
             'row_seats'          => 'required|numeric|max:10',
-            'total_seats_of_row' => 'required',
+            'total_seats_of_row' => 'required|numeric',
         ], [
             'name.required'               => trans('validation.required'),
             'name.min'                    => trans('validation.min'),
@@ -39,6 +39,7 @@ class RoomController extends Controller
             'row_seats.numeric'          => trans('validation.numeric'),
             'row_seats.max'               => trans('validation.max'),
             'total_seats_of_row.required' => trans('validation.required'),
+            'total_seats_of_row.numeric' => trans('validation.numeric'),
         ]);
         $room      = Room::create([
             'name'               => $request->name,
