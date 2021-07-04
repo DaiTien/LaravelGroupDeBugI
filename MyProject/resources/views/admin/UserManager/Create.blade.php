@@ -38,6 +38,7 @@
                         <label class="col-sm-3">lastname</label>
                         <div class="col-sm-9">
                             <input type="text" placeholder="lastname" name="lastname" class="form-control" value="{{old('lastname')}}"/>
+                            
                         </div>
                     </div>
                     <div class="form-group row">

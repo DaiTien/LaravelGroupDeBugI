@@ -9,11 +9,11 @@
     </div>
 @endsection
 @section('content')
-    <div class="m-auto card pl-3">
-        <h3 class="text-center text-uppercase mt-2">{{__('TitleUpdateUser')}}</h3>
-        <form action="{{route('usermanager.update')}}" method="POST" style="width:95%" enctype="multipart/form-data">
-            @csrf
-            <div class=row>
+<div class="m-auto card pl-3">
+            <h3 class="text-center text-uppercase mt-2">{{__('TitleUpdateUser')}}</h3>
+            <form action="{{route('usermanager.update')}}" method="POST" style="width:95%" enctype="multipart/form-data">
+                @csrf
+                <div class=row>
                 <input type="text" name="id" value="{{$user->id}}" hidden>
                 <div class="col-8">
                     <div class="form-group row">
@@ -69,8 +69,22 @@
                         <label class="col-sm-3">address</label>
                         <div class="col-sm-9">
                             <input type="text" placeholder="address" name="address" class="form-control" value="{{old('address', $user->address)}}"/>
+                    <div class="form-group row">
+                        <label class="col-sm-3">password</label>
+                        <div class="col-sm-9">
+                            <input type="password" placeholder="password" name="password" class="form-control" value="{{old('password', $user->password)}}"/>
+                            @error('email')
+                            <span class="text-danger font-weight-bold">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3">address</label>
+                        <div class="col-sm-9">
+                            <input type="text" placeholder="address" name="address" class="form-control" value="{{old('address', $user->address)}}"/>
+                        </div>
+                    </div>
+                   
                 </div>
             </div>
             <div class=row hidden>
@@ -104,7 +118,6 @@
                 $('span.text-danger').hide();
             }, 1500)
         });
-
         function clickavatar1() {
             $("#upload input[type=file]").click();
         }
