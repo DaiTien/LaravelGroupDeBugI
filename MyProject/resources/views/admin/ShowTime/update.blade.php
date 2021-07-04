@@ -104,7 +104,7 @@
         $(document).ready(function () {
             set_mindate();
             setTimeout(function () {
-                $('span').hide();
+                $('span.text-danger').hide();
             }, 1500)
         });
         $('#CurrencyInput').on('change', function () {

@@ -20,18 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b3d5d3b-8841-4a13-b8ac-769daa058ac9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/RoomSeat/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/RoomSeat/change_room.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Api/PostController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/IntroduceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/IntroduceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomSeatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomSeatController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserManagerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserManagerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/style/custome.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/style/custome.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/vi.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/vi.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/Introduce/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Introduce/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/Template/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Template/admin_layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/MovieCategory/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/MovieCategory/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/RoomSeat/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/RoomSeat/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Rooms/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Rooms/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Rooms/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Rooms/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/ShowTime/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/ShowTime/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/ShowTime/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/ShowTime/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/UserManager/Create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/UserManager/Create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/UserManager/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/UserManager/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/UserManager/Update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/UserManager/Update.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +200,8 @@
       <workItem from="1625211704558" duration="9080000" />
       <workItem from="1625294132695" duration="1837000" />
       <workItem from="1625296117497" duration="25376000" />
-      <workItem from="1625363183065" duration="324000" />
+      <workItem from="1625363183065" duration="11612000" />
+      <workItem from="1625405891752" duration="6658000" />
     </task>
     <servers />
   </component>
@@ -228,10 +233,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="484" y="127" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1625041099584" />
-    <state x="538" y="296" key="NewPhpFileDialog" timestamp="1625324011857">
+    <state x="538" y="296" key="NewPhpFileDialog" timestamp="1625407390563">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="538" y="296" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1625324011857" />
+    <state x="538" y="296" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1625407390563" />
     <state x="461" y="66" key="RollbackChangesDialog" timestamp="1625337951670">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -244,9 +249,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1625036033735" />
-    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup" timestamp="1625108741656">
+    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup" timestamp="1625409759553">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1625108741656" />
+    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1625409759553" />
   </component>
 </project>

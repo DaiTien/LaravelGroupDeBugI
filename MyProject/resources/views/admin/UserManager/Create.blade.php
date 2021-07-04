@@ -80,14 +80,9 @@
                             <input type="text" placeholder="address" name="address" class="form-control" value="{{old('address')}}"/>
                         </div>
                     </div>
-                   
                 </div>
-                
             </div>
             <div class=row hidden>
-                
-                
-               
                 <div class="col-12">
                     <div class="form-group row">
                         <label class="col-sm-3">Trạng thái</label>
@@ -116,7 +111,7 @@
     <script>
         $(document).ready(function () {
             setTimeout(function () {
-                $('span').hide();
+                $('span.text-danger').hide();
             }, 1500)
         });
         $('#CurrencyInput').on('change', function () {

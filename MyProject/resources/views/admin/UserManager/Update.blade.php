@@ -2,10 +2,8 @@
 @section('titleForm')
     <div class="Page breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<a
-                    href="/">{{__('Home')}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a
-                    href="{{route('usermanager.index')}}">{{__('User')}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<a href="/admin">{{__('Home')}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('usermanager.index')}}">{{__('User')}}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{__('UpdateUser')}}</li>
         </ol>
     </div>
@@ -67,6 +65,10 @@
                             @enderror
                         </div>
                     </div>
+                    <div class="form-group row" >
+                        <label class="col-sm-3">address</label>
+                        <div class="col-sm-9">
+                            <input type="text" placeholder="address" name="address" class="form-control" value="{{old('address', $user->address)}}"/>
                     <div class="form-group row">
                         <label class="col-sm-3">password</label>
                         <div class="col-sm-9">
@@ -84,7 +86,6 @@
                     </div>
                    
                 </div>
-                
             </div>
             <div class=row hidden>
                 <div class="col-12">
@@ -108,14 +109,13 @@
             <div class="form-group text-center">
                 <input type="submit" class="btn btn-primary" value="{{__('textUpdateBT')}}">
                 <a href="{{route('usermanager.index')}}" class="btn btn-warning ml-2">{{__("textCancelBT")}}</a>
-                     </div>
-            </form>
-        
+            </div>
+        </form>
     </div>
     <script>
         $(document).ready(function () {
             setTimeout(function () {
-                $('span').hide();
+                $('span.text-danger').hide();
             }, 1500)
         });
         function clickavatar1() {
