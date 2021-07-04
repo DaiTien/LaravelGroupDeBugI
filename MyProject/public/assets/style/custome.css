@@ -6,9 +6,24 @@
     z-index: 2;
     font-size: 15px;
 }
+
 label.error {
     color: #f03;
     font-size: 13px;
     font-style: italic;
     font-weight: 500;
+}
+
+button.seat, button.row_seat {
+    width: 50px;
+    padding: 5px 0;
+    border-radius: 5px;
+    font-weight: bold;
+}
+button.active{
+    background-color: #3dd218;
+    border-color: #3dd218;
+    border-style: double;
+    color: #FFFFFF;
+    font-weight: bold;
 }

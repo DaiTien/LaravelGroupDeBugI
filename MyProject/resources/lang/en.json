@@ -22,6 +22,8 @@
     "TitleListUser": "List user",
     "TitleCreateUser": "Create user",
     "TitleUpdateUser": "Update user",
+    "TitleLinkRoomSeat": "Room seat",
+    "TitleListRoomSeat": "List room seat",
     "textCreateBT": "Create",
     "textUpdateBT": "Update",
     "textDeleteBT": "Delete",
