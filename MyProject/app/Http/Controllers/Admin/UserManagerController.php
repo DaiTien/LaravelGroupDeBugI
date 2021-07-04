@@ -50,10 +50,9 @@ class UserManagerController extends Controller
             'firstname'            => $request->firstname,
             'phone'          => $request->phone,
             'email'      => $request->email,
-            'email_verified_at'           => $request->email_verified_at,
             'password'       => $request->password,
             'address'           => $request->address,
-            'active'           => $request->active,
+          
             
             
         ]);
@@ -87,7 +86,7 @@ class UserManagerController extends Controller
             'address.required'  => trans('validation.required'),
         ]);
         $user     = UserManager::all()->find($request->id);
-
+        // dd($user);die();
         $user->update([
             'name'              => $request->name,
             'group_id' => $request->group_id,
@@ -95,10 +94,8 @@ class UserManagerController extends Controller
             'firstname'            => $request->firstname,
             'phone'          => $request->phone,
             'email'      => $request->email,
-            'email_verified_at'           => $request->email_verified_at,
             'password'       => $request->password,
             'address'           => $request->address,
-            'active'           => $request->active,
             
         ]);
         Alert::success('Update successfully!');

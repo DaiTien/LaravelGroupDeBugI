@@ -34,12 +34,18 @@
                         <label class="col-sm-3">row seats</label>
                         <div class="col-sm-9">
                             <input type="text" placeholder="row seats" name="row_seats" class="form-control" value="{{old('row_seats')}}"/>
+                            @error('row_seats')
+                            <span class="text-danger font-weight-bold">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-3">total_seats_of_row</label>
                         <div class="col-sm-9">
                             <input type="text" placeholder="total_seats_of_row" name="total_seats_of_row" class="form-control" value="{{old('total_seats_of_row')}}"/>
+                            @error('total_seats_of_row')
+                            <span class="text-danger font-weight-bold">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
 
