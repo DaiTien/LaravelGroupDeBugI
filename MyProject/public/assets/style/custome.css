@@ -14,13 +14,15 @@ label.error {
     font-weight: 500;
 }
 
-button.seat, button.row_seat {
-    width: 50px;
-    padding: 5px 0;
+a.seat, a.row_seat {
+    padding: 5px 19px;
     border-radius: 5px;
     font-weight: bold;
+    border-style: groove;
+    color: #000;
 }
-button.active{
+
+a.active {
     background-color: #3dd218;
     border-color: #3dd218;
     border-style: double;

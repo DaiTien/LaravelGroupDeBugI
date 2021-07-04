@@ -85,6 +85,9 @@ Route::group(['prefix' => 'admin'], function () {
     //room seats
     Route::group(['prefix' => 'room-seat'], function () {
         Route::get('/', 'Admin\RoomSeatController@index')->name('room_seat.index');
+        Route::post('/disable', 'Admin\RoomSeatController@disable')->name('room_seat.disable');
+        Route::post('/enable', 'Admin\RoomSeatController@enable')->name('room_seat.enable');
+        Route::get('/{id_room}', 'Admin\RoomSeatController@change_room')->name('room_seat.change_room');
     });
 
 });

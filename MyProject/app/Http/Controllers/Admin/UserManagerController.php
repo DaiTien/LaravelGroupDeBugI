@@ -51,7 +51,7 @@ class UserManagerController extends Controller
             'phone'          => $request->phone,
             'email'      => $request->email,
             'email_verified_at'           => $request->email_verified_at,
-            'password'       => $request->password,
+            'password'       => Hash::make($request->password),
             'address'           => $request->address,
             'active'           => $request->active,
             
@@ -83,7 +83,6 @@ class UserManagerController extends Controller
             'name.min'              => trans('validation.min'),
             'phone.required'     => trans('validation.required'),
             'email.required'     => trans('validation.required'),
-            'password.required' => trans('validation.required'),
             'address.required'  => trans('validation.required'),
         ]);
         $user     = UserManager::all()->find($request->id);
@@ -96,7 +95,6 @@ class UserManagerController extends Controller
             'phone'          => $request->phone,
             'email'      => $request->email,
             'email_verified_at'           => $request->email_verified_at,
-            'password'       => $request->password,
             'address'           => $request->address,
             'active'           => $request->active,
             

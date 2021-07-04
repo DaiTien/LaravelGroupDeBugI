@@ -30,7 +30,7 @@
                             @enderror
                         </div>
                     </div>
-                    
+
                     <div class="form-group row">
                         <label class="col-sm-3">total_seats</label>
                         <div class="col-sm-9">
@@ -65,20 +65,20 @@
                         </div>
                     </div>
                     <div class="form-group text-center">
-                <input type="submit" class="btn btn-primary" value="{{__('textUpdateBT')}}">
-                <a href="{{route('movie.index')}}" class="btn btn-warning ml-2">{{__("textCancelBT")}}</a>
-                     </div>
-               
+                        <input type="submit" class="btn btn-primary" value="{{__('textUpdateBT')}}"/>
+                        <a href="{{route('movie.index')}}" class="btn btn-warning ml-2">{{__("textCancelBT")}}</a>
+                    </div>
+                </div>
             </div>
-            
         </form>
     </div>
     <script>
         $(document).ready(function () {
             setTimeout(function () {
-                $('span').hide();
+                $('span.text-danger').hide();
             }, 1500)
         });
+
         function clickavatar1() {
             $("#upload input[type=file]").click();
         }

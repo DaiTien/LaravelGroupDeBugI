@@ -22,7 +22,6 @@
                         <th>group_id</th>
                         <th>phone</th>
                         <th>email</th>
-                        <th>password</th>
                         <th>address</th>
                         <th>active</th>
                         <th>Action</th>
@@ -37,7 +36,6 @@
                             <td class="__alignItemtable">{{ $item->group_id }}</td>
                             <td class="__alignItemtable">{{ $item->phone }}</td>
                             <td class="__alignItemtable">{{ $item->email }}</td>
-                            <td class="__alignItemtable">{{ $item->password }}</td>
                             <td class="__alignItemtable">{{ $item->address }}</td>
                             <td class="__alignItemtable">
                                 {{$item->active ==0 ? 'ẩn':($item->active ==1 ? 'hiện':"")}}

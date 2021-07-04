@@ -1,4 +1,4 @@
-@extends('admin.Template.admin_layout')
+s@extends('admin.Template.admin_layout')
 @section('titleForm')
     <div class="Page breadcrumb">
         <ol class="breadcrumb">

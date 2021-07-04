@@ -50,18 +50,27 @@
                         <label class="col-sm-3">phone</label>
                         <div class="col-sm-9">
                             <input type="text" placeholder="phone" name="phone" class="form-control" value="{{old('phone')}}"/>
+                            @error('phone')
+                            <span class="text-danger font-weight-bold">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-3">email</label>
                         <div class="col-sm-9">
                             <input type="email" placeholder="email" name="email" class="form-control" value="{{old('email')}}"/>
+                            @error('email')
+                            <span class="text-danger font-weight-bold">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-3">password</label>
                         <div class="col-sm-9">
                             <input type="password" placeholder="password" name="password" class="form-control" value="{{old('password')}}"/>
+                            @error('password')
+                            <span class="text-danger font-weight-bold">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-group row">
@@ -70,14 +79,9 @@
                             <input type="text" placeholder="address" name="address" class="form-control" value="{{old('address')}}"/>
                         </div>
                     </div>
-                   
                 </div>
-                
             </div>
             <div class=row hidden>
-                
-                
-               
                 <div class="col-12">
                     <div class="form-group row">
                         <label class="col-sm-3">Trạng thái</label>
@@ -106,7 +110,7 @@
     <script>
         $(document).ready(function () {
             setTimeout(function () {
-                $('span').hide();
+                $('span.text-danger').hide();
             }, 1500)
         });
         $('#CurrencyInput').on('change', function () {

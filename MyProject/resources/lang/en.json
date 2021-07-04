@@ -30,7 +30,7 @@
     "textCancelBT": "Back to list",
     "textSaveBT": "Save",
     "UpdateStatusSuccess": "Updata status successfully!",
-    "ConfirmDeleteTitle": "Are you sure delete!",
+    "ConfirmDeleteTitle": "Are you sure delete?",
     "ConfirmDeleteText": "If deleted, the data cannot be restored!",
     "confirmButtonText": "Yes",
     "cancelButtonText": "Cancel",
@@ -40,5 +40,12 @@
     "DeleteErrorTitle": "This data cannot be deleted!",
     "DeleteErrorText": "Please check again!",
     "TitleWarningChooseMovie" : "Please choose movie!",
-    "TitleWarningChooseRoom" : "Please choose room!"
+    "TitleWarningChooseRoom" : "Please choose room!",
+    "TextDisable": "Disable seats",
+    "TextEnable": "Enable seats",
+    "ConfirmDisableTitle": "Are you sure disable seats?",
+    "ConfirmEnableTitle": "Are you sure enable seats?",
+    "TextDisableSuccess": "Disable seats successfully!",
+    "TextEnableSuccess": "Enable seats successfully!",
+    "TextError": "Error! An error occurred. Please try again later!"
 }
