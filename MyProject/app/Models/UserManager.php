@@ -19,7 +19,7 @@ class UserManager extends Model
     ];
     public function user_group()
     {
-        return $this->belongsTo(UserGroup::class);
+        return $this->belongsTo(UserGroup::class,'group_id');
     }
     
 

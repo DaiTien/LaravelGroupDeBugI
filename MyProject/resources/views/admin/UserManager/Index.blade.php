@@ -11,7 +11,7 @@
     <div class="card mb-4">
         <div class="m-2">
             <h3 class="text-center">{{__('TitleListUser')}}</h3>
-            <a href="{{route('usermanager.create')}}" class="btn btn-primary m-7">{{__("textCreateBT")}}</a>
+            <a href="{{route('usermanager.create')}}" class="btn btn-primary m-7"><i class="fas fa-plus"></i></a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -19,7 +19,7 @@
                     <tr class="text-center">
                         <th>STT</th>
                         <th>Name</th>
-                        <th>group_id</th>
+                        <th>Phân quyền</th>
                         <th>phone</th>
                         <th>email</th>
                         <th>address</th>
@@ -33,7 +33,7 @@
                         <tr>
                             <td class="__alignItemtable">{{ $i++ }}</td>
                             <td class="__alignItemtable">{{ $item->name }}</td>
-                            <td class="__alignItemtable">{{ $item->group_id }}</td>
+                            <td class="__alignItemtable">{{ $item->user_group->name }}</td>
                             <td class="__alignItemtable">{{ $item->phone }}</td>
                             <td class="__alignItemtable">{{ $item->email }}</td>
                             <td class="__alignItemtable">{{ $item->address }}</td>
@@ -79,7 +79,7 @@
                                 showConfirmButton: false,
                                 timer: 1500
                             }).then(function () {
-                                location = "{{route('movie.index')}}";
+                                location = "{{route('usermanager.index')}}";
                             })
                         }
                     })

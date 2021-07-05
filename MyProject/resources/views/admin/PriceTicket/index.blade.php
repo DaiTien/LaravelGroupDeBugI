@@ -3,15 +3,15 @@
     <div class="Page breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<a href="/admin">{{__('Home')}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{__('TitleLinkRoom')}}</li>
+            <li class="breadcrumb-item active" aria-current="page">{{__('TitleLinkPriceTicket')}}</li>
         </ol>
     </div>
 @endsection
 @section('content')
     <div class="card mb-4">
         <div class="m-2">
-            <h3 class="text-center">{{__('TitleListRoom')}}</h3>
-            <a href="{{route('room.create')}}" class="btn btn-primary m-7"><i class="fas fa-plus"></i></a>
+            <h3 class="text-center">{{__('TitleListPriceTicket')}}</h3>
+            <a href="{{route('price_ticket.create')}}" class="btn btn-primary m-7"><i class="fas fa-plus"></i></a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -19,10 +19,7 @@
                     <tr class="text-center">
                         <th>STT</th>
                         <th>Name</th>
-                        <th>total_seats</th>
-                        <th>row_seats</th>
-                        <th>total_seats_of_row</th>
-{{--                        <th>Status</th>--}}
+                        <th>Price</th>
                         <th>Action</th>
                     </tr>
                     @php
@@ -32,22 +29,16 @@
                         <tr>
                             <td class="__alignItemtable">{{ $i++ }}</td>
                             <td class="__alignItemtable">{{ $item->name }}</td>
-                            <td class="__alignItemtable">{{ $item->total_seats }}</td>
-                            <td class="__alignItemtable">{{ $item->row_seats }}</td>
-                            <td class="__alignItemtable">{{ $item->total_seats_of_row }}</td>
-{{--                            <td class="__alignItemtable">--}}
-{{--                               {{$item->status == 0 ? 'còn ghế trống': ($item->status ==1?'Hết ghế':'')}}--}}
-{{--                            </td>--}}
-                            <td class="__alignItemtable">
+                            <td class="__alignItemtable">{{number_format($item->price,0,',',',') }} VND</td>
+                            <td class="__alignItemtable w-150px">
                                 <div class="text-center d-flex">
-                                    <a hidden href="{{route('room.edit', ['id' => $item->id])}}" class="btn btn-success"> <i class="fas fa-edit"></i></a>
+                                    <a  href="{{route('price_ticket.edit', ['id' => $item->id])}}" class="btn btn-success"> <i class="fas fa-edit"></i></a>
                                     <a onclick="Delete({{$item->id}})" class="btn btn-danger ml-2"><i class="fas fa-trash-alt"></i></a>
                                 </div>
                             </td>
                         </tr>
                     @endforeach
                 </table>
-                {{$data->links()}}
             </div>
         </div>
     </div>
@@ -68,7 +59,7 @@
                     $.ajax({
                         method: 'GET',
                         type: 'DELETE',
-                        url: '/admin/room/delete/' + id,
+                        url: '/admin/price-ticket/delete/' + id,
                         success: function () {
                             Swal.fire({
                                 position: 'center',
@@ -77,7 +68,7 @@
                                 showConfirmButton: false,
                                 timer: 1500
                             }).then(function () {
-                                location = "{{route('room.index')}}";
+                                location = "{{route('price_ticket.index')}}";
                             })
                         }
                     })

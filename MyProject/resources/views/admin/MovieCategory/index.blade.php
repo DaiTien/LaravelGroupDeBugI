@@ -11,7 +11,7 @@
     <div class="card mb-4">
         <div class="m-2">
             <h3 class="text-center">{{__('TitleListMovieCategory')}}</h3>
-            <a href="{{route('moviecategory.create')}}" class="btn btn-primary m-7">{{__("textCreateBT")}}</a>
+            <a href="{{route('moviecategory.create')}}" class="btn btn-primary m-7"><i class="fas fa-plus"></i></a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -28,7 +28,7 @@
                         <tr>
                             <td class="__alignItemtable">{{ $i++ }}</td>
                             <td class="__alignItemtable">{{ $item->name }}</td>
-                            <td class="__alignItemtable">
+                            <td class="__alignItemtable w-250px">
                                 <div class="text-center">
                                     <a href="{{route('moviecategory.edit', ['id' => $item->id])}}" class="btn btn-success"> <i class="fas fa-edit"></i></a>
                                     <a onclick="Delete({{$item->id}})" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>

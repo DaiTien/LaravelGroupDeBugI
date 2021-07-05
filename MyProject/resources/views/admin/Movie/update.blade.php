@@ -71,6 +71,15 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-sm-3">Year manufacture</label>
+                        <div class="col-sm-9">
+                            <input type="text" placeholder="Year manufacture" name="year_manufacture" class="form-control" value="{{old('year_manufacture',$movie->year_manufacture)}}"/>
+                            @error('year_manufacture')
+                            <span class="text-danger font-weight-bold">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-sm-3">Release date</label>
                         <div class="col-sm-9">
                             <input type="date" placeholder="release_date" name="release_date" class="form-control" value="{{old('release_date',$movie->release_date)}}"/>
@@ -92,6 +101,14 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label class="col-sm-12">Link trailer</label>
+                        <div class="col-sm-12">
+                            <div id=upload>
+                                <input type="text" placeholder="link trailer" name="video" class="form-control" value="{{old('video',$movie->video)}}">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class=row>
@@ -101,17 +118,6 @@
                         <div class="col-sm-9">
                             <textarea type="text" placeholder="description" name="description" class="form-control" rows="3">{{old('description', $movie->description)}}</textarea>
                             @error('description')
-                            <span class="text-danger font-weight-bold">{{ $message }}</span>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="form-group row">
-                        <label class="col-sm-2">Summary</label>
-                        <div class="col-sm-9">
-                            <textarea type="text" placeholder="summary" name="summary" class="form-control" rows="3">{{old('summary',$movie->summary)}}</textarea>
-                            @error('summary')
                             <span class="text-danger font-weight-bold">{{ $message }}</span>
                             @enderror
                         </div>
@@ -145,7 +151,7 @@
             </div>
             <div class="form-group text-center">
                 <input type="submit" class="btn btn-primary" value="{{__('textUpdateBT')}}">
-                <a href="{{route('movie.index')}}" class="btn btn-warning ml-2">{{__("textCancelBT")}}</a>
+                <a href="{{route('movie.index')}}" class="btn btn-secondary ml-2">{{__("textCancelBT")}}</a>
             </div>
         </form>
     </div>

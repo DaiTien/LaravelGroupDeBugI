@@ -241,63 +241,11 @@
                                 <span class="menu-text">Show time</span>
                             </a>
                         </li>
-                        {{--                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">--}}
-                        {{--                            <a href="javascript:;" class="menu-link menu-toggle">--}}
-                        {{--                                <span class="menu-text">Product</span>--}}
-                        {{--                                <i class="menu-arrow"></i>--}}
-                        {{--                            </a>--}}
-                        {{--                            <div class="menu-submenu">--}}
-                        {{--                                <i class="menu-arrow"></i>--}}
-                        {{--                                <ul class="menu-subnav">--}}
-                        {{--                                    <li class="menu-item menu-item-parent" aria-haspopup="true">--}}
-                        {{--                                            <span class="menu-link">--}}
-                        {{--                                                <span class="menu-text">Product</span>--}}
-                        {{--                                            </span>--}}
-                        {{--                                    </li>--}}
-                        {{--                                    <li class="menu-item menu-item-submenu" aria-haspopup="true"--}}
-                        {{--                                        data-menu-toggle="hover">--}}
-                        {{--                                        <a href="/list-product-category" class="menu-link menu-toggle">--}}
-                        {{--                                            <i class="menu-bullet menu-bullet-line">--}}
-                        {{--                                                <span></span>--}}
-                        {{--                                            </i>--}}
-                        {{--                                            <span class="menu-text">Product Category</span>--}}
-                        {{--                                        </a>--}}
-                        {{--                                    </li>--}}
-                        {{--                                    <li class="menu-item menu-item-submenu" aria-haspopup="true"--}}
-                        {{--                                        data-menu-toggle="hover">--}}
-                        {{--                                        <a href="{{route('list-product')}}" class="menu-link menu-toggle">--}}
-                        {{--                                            <i class="menu-bullet menu-bullet-line">--}}
-                        {{--                                                <span></span>--}}
-                        {{--                                            </i>--}}
-                        {{--                                            <span class="menu-text">Product</span>--}}
-                        {{--                                        </a>--}}
-                        {{--                                    </li>--}}
-                        {{--                                </ul>--}}
-                        {{--                            </div>--}}
-                        {{--                        </li>--}}
-                        {{--                        <li class="menu-section">--}}
-                        {{--                            <h4 class="menu-text">User Manager</h4>--}}
-                        {{--                            <i class="menu-icon ki ki-bold-more-hor icon-md"></i>--}}
-                        {{--                        </li>--}}
-                        {{--                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">--}}
-                        {{--                            <a href="{{route('list-user')}}" class="menu-link menu-toggle">--}}
-                        {{--                                <span class="menu-text">User Manager</span>--}}
-                        {{--                            </a>--}}
-                        {{--                        </li>--}}
-                        {{--                        <li class="menu-section">--}}
-                        {{--                            <h4 class="menu-text">Post</h4>--}}
-                        {{--                            <i class="menu-icon ki ki-bold-more-hor icon-md"></i>--}}
-                        {{--                        </li>--}}
-                        {{--                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">--}}
-                        {{--                            <a href="{{route('list-post')}}" class="menu-link menu-toggle">--}}
-                        {{--                                <span class="menu-text">Post</span>--}}
-                        {{--                            </a>--}}
-                        {{--                        </li>--}}
-                        {{--                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">--}}
-                        {{--                            <a href="{{route('list-post-category')}}" class="menu-link menu-toggle">--}}
-                        {{--                                <span class="menu-text">Post Category</span>--}}
-                        {{--                            </a>--}}
-                        {{--                        </li>--}}
+                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                            <a href="{{route('price_ticket.index')}}" class="menu-link menu-toggle">
+                                <span class="menu-text">Price ticket</span>
+                            </a>
+                        </li>
                     </ul>
                     <!--end::Menu Nav-->
                 </div>

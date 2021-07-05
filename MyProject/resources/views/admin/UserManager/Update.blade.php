@@ -9,13 +9,13 @@
     </div>
 @endsection
 @section('content')
-<div class="m-auto card pl-3">
-            <h3 class="text-center text-uppercase mt-2">{{__('TitleUpdateUser')}}</h3>
-            <form action="{{route('usermanager.update')}}" method="POST" style="width:95%" enctype="multipart/form-data">
-                @csrf
-                <div class=row>
+    <div class="m-auto card pl-3">
+        <h3 class="text-center text-uppercase mt-2">{{__('TitleUpdateUser')}}</h3>
+        <form action="{{route('usermanager.update')}}" method="POST" style="width:95%" enctype="multipart/form-data">
+            @csrf
+            <div class=row>
                 <input type="text" name="id" value="{{$user->id}}" hidden>
-                <div class="col-8">
+                <div class="col-8 mx-auto">
                     <div class="form-group row">
                         <label class="col-sm-3">Name</label>
                         <div class="col-sm-9">
@@ -30,7 +30,7 @@
                         <div class="col-sm-9">
                             <select name="group_id" class="form-control">
                                 @foreach($user_group as $user_group)
-                                    <option value="{{$user_group->id}}" {{ (old("group_id") == $user_group->id ? "selected":"") }}>{{$user_group->name}}</option>
+                                    <option value="{{$user_group->id}}" {{ (old("group_id", $user->group_id) == $user_group->id ? "selected":"") }}>{{$user_group->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -65,50 +65,20 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="form-group row" >
+                    <div class="form-group row">
                         <label class="col-sm-3">address</label>
                         <div class="col-sm-9">
                             <input type="text" placeholder="address" name="address" class="form-control" value="{{old('address', $user->address)}}"/>
-                    <div class="form-group row">
-                        <label class="col-sm-3">password</label>
-                        <div class="col-sm-9">
-                            <input type="password" placeholder="password" name="password" class="form-control" value="{{old('password', $user->password)}}"/>
-                            @error('email')
+                            @error('address')
                             <span class="text-danger font-weight-bold">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3">address</label>
-                        <div class="col-sm-9">
-                            <input type="text" placeholder="address" name="address" class="form-control" value="{{old('address', $user->address)}}"/>
-                        </div>
-                    </div>
-                   
-                </div>
-            </div>
-            <div class=row hidden>
-                <div class="col-12">
-                    <div class="form-group row">
-                        <label class="col-sm-3">Trạng thái</label>
-                        <div class="col-sm-9">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" value="0" name="active" checked="checked">hiện
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" value="1" name="active">ẩn
-                                </label>
-                            </div>
-                        </div>
+                    <div class="form-group text-center">
+                        <input type="submit" class="btn btn-primary" value="{{__('textUpdateBT')}}"/>
+                        <a href="{{route('usermanager.index')}}" class="btn btn-secondary ml-2">{{__("textCancelBT")}}</a>
                     </div>
                 </div>
-            </div>
-            <div class="form-group text-center">
-                <input type="submit" class="btn btn-primary" value="{{__('textUpdateBT')}}">
-                <a href="{{route('usermanager.index')}}" class="btn btn-warning ml-2">{{__("textCancelBT")}}</a>
             </div>
         </form>
     </div>
@@ -118,26 +88,5 @@
                 $('span.text-danger').hide();
             }, 1500)
         });
-        function clickavatar1() {
-            $("#upload input[type=file]").click();
-        }
-
-        function showPreview1(input) {
-            if (input.files && input.files[0]) {
-                var filerdr = new FileReader();
-                filerdr.onload = function (e) {
-                    $('#imgPreview1').attr('src', e.target.result);
-                }
-                filerdr.readAsDataURL(input.files[0]);
-            }
-        }
-
-        function valid_numbers(e) {
-            var key = e.which || e.KeyCode;
-            if (key >= 48 && key <= 57)
-                // to check whether pressed key is number or not
-                return true;
-            else return false;
-        }
     </script>
 @endsection
