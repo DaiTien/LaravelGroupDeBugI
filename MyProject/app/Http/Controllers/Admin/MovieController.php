@@ -29,18 +29,24 @@ class MovieController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name'         => 'required|min:3',
-            'director'     => 'required',
-            'duration'     => 'required',
-            'release_date' => 'required',
-            'description'  => 'required'
+            'name'             => 'required|min:3',
+            'director'         => 'required',
+            'actors'           => 'required',
+            'country'          => 'required',
+            'duration'         => 'required',
+            'year_manufacture' => 'required',
+            'release_date'     => 'required',
+            'description'      => 'required'
         ], [
-            'name.required'         => trans('validation.required'),
-            'name.min'              => trans('validation.min'),
-            'director.required'     => trans('validation.required'),
-            'duration.required'     => trans('validation.required'),
-            'release_date.required' => trans('validation.required'),
-            'description.required'  => trans('validation.required'),
+            'name.required'             => trans('validation.required'),
+            'name.min'                  => trans('validation.min'),
+            'director.required'         => trans('validation.required'),
+            'actors.required'           => trans('validation.required'),
+            'country.required'          => trans('validation.required'),
+            'duration.required'         => trans('validation.required'),
+            'year_manufacture.required' => trans('validation.required'),
+            'release_date.required'     => trans('validation.required'),
+            'description.required'      => trans('validation.required'),
         ]);
         $image     = '';
         if (!file_exists($request->image)) {
@@ -54,11 +60,12 @@ class MovieController extends Controller
             'movie_category_id' => $request->movie_category_id,
             'director'          => $request->director,
             'actors'            => $request->actors,
+            'video'             => $request->video,
+            'year_manufacture'  => $request->year_manufacture,
             'duration'          => $request->duration,
             'release_date'      => $request->release_date,
             'country'           => $request->country,
             'description'       => $request->description,
-            'summary'           => $request->summary,
             'content'           => $request->contents,
             'status'            => $request->status,
             'image'             => $image,
@@ -79,18 +86,24 @@ class MovieController extends Controller
     public function update(Request $request)
     {
         $validated = $request->validate([
-            'name'         => 'required|min:3',
-            'director'     => 'required',
-            'duration'     => 'required',
-            'release_date' => 'required',
-            'description'  => 'required'
+            'name'             => 'required|min:3',
+            'director'         => 'required',
+            'actors'           => 'required',
+            'country'          => 'required',
+            'duration'         => 'required',
+            'year_manufacture' => 'required',
+            'release_date'     => 'required',
+            'description'      => 'required'
         ], [
-            'name.required'         => trans('validation.required'),
-            'name.min'              => trans('validation.min'),
-            'director.required'     => trans('validation.required'),
-            'duration.required'     => trans('validation.required'),
-            'release_date.required' => trans('validation.required'),
-            'description.required'  => trans('validation.required'),
+            'name.required'             => trans('validation.required'),
+            'name.min'                  => trans('validation.min'),
+            'director.required'         => trans('validation.required'),
+            'actors.required'           => trans('validation.required'),
+            'country.required'          => trans('validation.required'),
+            'duration.required'         => trans('validation.required'),
+            'year_manufacture.required' => trans('validation.required'),
+            'release_date.required'     => trans('validation.required'),
+            'description.required'      => trans('validation.required'),
         ]);
         $movie     = Movie::all()->find($request->id);
         $image     = '';
@@ -109,8 +122,9 @@ class MovieController extends Controller
             'release_date'      => $request->release_date,
             'country'           => $request->country,
             'description'       => $request->description,
-            'summary'           => $request->summary,
+            'year_manufacture'  => $request->year_manufacture,
             'content'           => $request->contents,
+            'video'             => $request->video,
             'status'            => $request->status,
             'image'             => $image,
         ]);

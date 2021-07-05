@@ -16,8 +16,9 @@ class RoomSeatController extends Controller
 {
     //
 
-    public function index()
+    public function index(Request $request)
     {
+        dd($request->session()->has('admin'));
         //get list room;
         $room = Room::where('status', 0)->get();
         //lấy ds ghế của phòng đầu tiên

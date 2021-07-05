@@ -11,7 +11,7 @@
     <div class="card mb-4">
         <div class="m-2">
             <h3 class="text-center">{{__('TitleListMovie')}}</h3>
-            <a href="{{route('movie.create')}}" class="btn btn-primary m-7">{{__("textCreateBT")}}</a>
+            <a href="{{route('movie.create')}}" class="btn btn-primary m-7"><i class="fas fa-plus"></i></a>
         </div>
         <div class="card-body">
             <div class="table-responsive">

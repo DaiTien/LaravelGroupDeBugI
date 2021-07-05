@@ -66,7 +66,7 @@
                     </div>
                     <div class="form-group text-center">
                         <input type="submit" class="btn btn-primary" value="{{__('textUpdateBT')}}"/>
-                        <a href="{{route('movie.index')}}" class="btn btn-warning ml-2">{{__("textCancelBT")}}</a>
+                        <a href="{{route('movie.index')}}" class="btn btn-secondary ml-2">{{__("textCancelBT")}}</a>
                     </div>
                 </div>
             </div>

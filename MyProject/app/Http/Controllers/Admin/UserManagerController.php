@@ -14,8 +14,7 @@ class UserManagerController extends Controller
 {
     public function index()
     {
-        $data = UserManager::paginate(10)->fragment('data');
-
+        $data = UserManager::with('user_group')->paginate(10)->fragment('data');
         return view('admin.UserManager.index', compact('data'));
     }
 
@@ -29,32 +28,31 @@ class UserManagerController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name'         => 'required|min:3',
-            'phone'     => 'required',
-            'email'     => 'required',
+            'name'     => 'required|min:3',
+            'phone'    => 'required|unique:users',
+            'email'    => 'required',
             'password' => 'required',
             'address'  => 'required'
         ], [
-            'name.required'         => trans('validation.required'),
-            'name.min'              => trans('validation.min'),
-            'phone.required'     => trans('validation.required'),
-            'email.required'     => trans('validation.required'),
+            'name.required'     => trans('validation.required'),
+            'name.min'          => trans('validation.min'),
+            'phone.required'    => trans('validation.required'),
+            'phone.unique'      => trans('validation.unique'),
+            'email.required'    => trans('validation.required'),
             'password.required' => trans('validation.required'),
             'address.required'  => trans('validation.required'),
         ]);
-        
+
         UserManager::create([
-            'name'              => $request->name,
-            'group_id' => $request->group_id,
-            'lastname'          => $request->lastname,
-            'firstname'            => $request->firstname,
-            'phone'          => $request->phone,
-            'email'      => $request->email,
-            'password'       => Hash::make($request->password),
-            'address'           => $request->address,
-          
-            
-            
+            'name'      => $request->name,
+            'group_id'  => $request->group_id,
+            'lastname'  => $request->lastname,
+            'firstname' => $request->firstname,
+            'phone'     => $request->phone,
+            'email'     => $request->email,
+            'password'  => Hash::make($request->password),
+            'address'   => $request->address,
+
         ]);
         Alert::success('Create successfully!');
 
@@ -63,8 +61,8 @@ class UserManagerController extends Controller
 
     public function edit($id)
     {
-        $user         = UserManager::find($id);
-        $user_group = UserGroup::where('status', 0)->get();
+        $user       = UserManager::find($id);
+        $user_group = UserGroup::all();
 
         return view('admin.usermanager.update', compact('user', 'user_group'));
     }
@@ -72,29 +70,28 @@ class UserManagerController extends Controller
     public function update(Request $request)
     {
         $validated = $request->validate([
-            'name'         => 'required|min:3',
-            'phone'     => 'required',
-            'email'     => 'required',
+            'name'     => 'required|min:3',
+            'phone'    => 'required',
+            'email'    => 'required',
             'password' => 'required',
             'address'  => 'required'
         ], [
-            'name.required'         => trans('validation.required'),
-            'name.min'              => trans('validation.min'),
-            'phone.required'     => trans('validation.required'),
-            'email.required'     => trans('validation.required'),
-            'address.required'  => trans('validation.required'),
+            'name.required'    => trans('validation.required'),
+            'name.min'         => trans('validation.min'),
+            'phone.required'   => trans('validation.required'),
+            'email.required'   => trans('validation.required'),
+            'address.required' => trans('validation.required'),
         ]);
-        $user     = UserManager::all()->find($request->id);
-        // dd($user);die();
+        $user      = UserManager::all()->find($request->id);
         $user->update([
-            'name'              => $request->name,
-            'group_id' => $request->group_id,
-            'lastname'          => $request->lastname,
-            'firstname'            => $request->firstname,
-            'phone'          => $request->phone,
-            'email'      => $request->email,
-            'address'           => $request->address,
-            
+            'name'      => $request->name,
+            'group_id'  => $request->group_id,
+            'lastname'  => $request->lastname,
+            'firstname' => $request->firstname,
+            'phone'     => $request->phone,
+            'email'     => $request->email,
+            'address'   => $request->address,
+
         ]);
         Alert::success('Update successfully!');
 

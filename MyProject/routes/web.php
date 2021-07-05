@@ -89,79 +89,24 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/enable', 'Admin\RoomSeatController@enable')->name('room_seat.enable');
         Route::get('/{id_room}', 'Admin\RoomSeatController@change_room')->name('room_seat.change_room');
     });
-
+    //price ticket
+    Route::group(['prefix' => 'price-ticket'], function () {
+        Route::get('/', 'Admin\PriceTicketController@index')->name('price_ticket.index');
+        Route::get('create', 'Admin\PriceTicketController@create')->name('price_ticket.create');
+        Route::post('save-create', 'Admin\PriceTicketController@store')->name('price_ticket.store');
+        Route::get('update/{id}', 'Admin\PriceTicketController@edit')->name('price_ticket.edit');
+        Route::post('save-update', 'Admin\PriceTicketController@update')->name('price_ticket.update');
+        Route::get('delete/{id}', 'Admin\PriceTicketController@Delete')->name('price_ticket.delete');;
+    });
 });
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@layout')->name('home');
-//Route::get('/logout', 'HomeController@Logout');
-//quản lý sản phẩm
-//list nhóm sản phẩm
-//Route::get('list-product-category', 'ProductCategoryController@GetAll');
-////form create
-//Route::get('create-product-category',
-//    'ProductCategoryController@AddProductCategory');
-////save create
-//Route::post('save-product-category',
-//    'ProductCategoryController@SaveProductCategory');
-////form update
-//Route::get('update-product-category/{id}',
-//    'ProductCategoryController@UpdateProductCategory');
-////save update
-//Route::post('save-update-product-category',
-//    'ProductCategoryController@SaveUpdateProductCategory');
-////delete
-//Route::get('delete-product-category/{id}',
-//    'ProductCategoryController@DeleteProductCategory');
-////update active
-//Route::get('update-status-product-category',
-//    'ProductCategoryController@UpdateStatus');
-//
-////list product
-//Route::prefix('product')->group(function () {
-//    Route::get('/index', 'ProductController@getAll')->name('list-product');
-//    Route::get('/create', 'ProductController@CreateProduct')
-//        ->name('add-product');
-//    Route::post('/save-create', 'ProductController@SaveCreate')
-//        ->name('save-product');
-//    Route::get('/update/{id}', 'ProductController@UpdateProduct');
-//    Route::post('/save-update', 'ProductController@SaveUpdate')
-//        ->name('update-product');
-//    Route::get('/delete/{id}', 'ProductController@DeleteProduct');
-//});
-//
-////list user
-//Route::prefix('user')->group(function () {
-//    Route::get('index', 'UserManagerController@getAll')->name('list-user');
-//    Route::get('create', 'UserManagerController@CreateUser')
-//        ->name('create-user');
-//    Route::post('save-create', 'UserManagerController@SaveCreate')
-//        ->name('save-user');
-//    Route::get('update/{id}', 'UserManagerController@UpdateUser');
-//    Route::post('save-update', 'UserManagerController@SaveUpdate')
-//        ->name('save-update-user');
-//    Route::get('delete/{id}', 'UserManagerController@DeleteUser');
-//});
-//
-////post category
-//Route::prefix('post-category')->group(function () {
-//    Route::get('/index', 'PostCategoryController@index')
-//        ->name('list-post-category');
-//    Route::get('/create', 'PostCategoryController@create')
-//        ->name('create-post-category');
-//    Route::post('save-creare', 'PostCategory@save_post_category')
-//        ->name('save-post-category');
-//});
-
 Route::get('/', 'website\HomeController@index');
-Route::get('/signin', 'website\SigninController@signin');
-Route::get('/signup', 'website\SigninController@signup');
+Route::get('/signin', 'website\SigninController@signin')->name('signin');
+Route::get('/signup', 'website\SigninController@signup')->name('signup');
+Route::get('/logout', 'website\SigninController@logout')->name('logout');
 Route::get('/pricing', 'website\PricingController@pricing');
-// Route::get('/about', function () {
-//     return view('website.about');
-// });
-// Route::get('/contract', function () {
-//     return view('website.contract');
-// });
-
+Route::get('/movie/{id}.html', 'website\MovieController@detail')->name('movie.details');
+Route::get('/movie/add-favourite/{movie_id}', 'website\MovieController@add_favourite')->name('movie.add_favourite');
+Route::post('login-customer', 'website\SigninController@login_customer')->name('login_customer');

@@ -19,7 +19,41 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b3d5d3b-8841-4a13-b8ac-769daa058ac9" name="Default Changelist" comment="" />
+    <list default="true" id="0b3d5d3b-8841-4a13-b8ac-769daa058ac9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/PriceTicket/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/PriceTicket/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/PriceTicket/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MovieController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomSeatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomSeatController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserManagerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserManagerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Website/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Website/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Website/SigninController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Website/SigninController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Movie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/UserManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_06_29_152224_create_movies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_06_29_152224_create_movies_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_06_29_152808_create_rooms_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_06_29_152808_create_rooms_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/vi.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/vi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Movie/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Movie/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Movie/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Movie/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Movie/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Movie/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/MovieCategory/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/MovieCategory/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/MovieCategory/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/MovieCategory/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Rooms/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Rooms/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Rooms/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Rooms/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/ShowTime/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/ShowTime/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/Template/admin_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Template/admin_layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/UserManager/Create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/UserManager/Create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/UserManager/Index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/UserManager/Index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/UserManager/Update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/UserManager/Update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/website/signin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/signin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,6 +186,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\LaravelGroupDeBugI\MyProject\resources\views\admin\PriceTicket" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -185,6 +224,10 @@
       <workItem from="1625363183065" duration="11612000" />
       <workItem from="1625405891752" duration="6658000" />
       <workItem from="1625414572536" duration="332000" />
+      <workItem from="1625447817849" duration="13387000" />
+      <workItem from="1625469683515" duration="1493000" />
+      <workItem from="1625492174481" duration="9049000" />
+      <workItem from="1625501470586" duration="25000" />
     </task>
     <servers />
   </component>
@@ -208,14 +251,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1625024882708" />
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1625044361423">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1625450772399">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1625044361423" />
-    <state x="484" y="127" key="FileChooserDialogImpl" timestamp="1625041099584">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1625450772399" />
+    <state x="484" y="127" key="FileChooserDialogImpl" timestamp="1625448164522">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="484" y="127" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1625041099584" />
+    <state x="484" y="127" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1625448164522" />
     <state x="538" y="296" key="NewPhpFileDialog" timestamp="1625407390563">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -228,13 +271,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1625218360269" />
+    <state x="389" y="99" width="587" height="530" key="find.popup" timestamp="1625500270679">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="389" y="99" width="587" height="530" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1625500270679" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1625036033735">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1625036033735" />
-    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup" timestamp="1625409759553">
+    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup" timestamp="1625501285648">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1625409759553" />
+    <state x="339" y="17" width="672" height="676" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1625501285648" />
   </component>
 </project>

@@ -14,7 +14,7 @@
         <form action="{{route('usermanager.store')}}" method="POST" style="width:95%" enctype="multipart/form-data" id="myForm">
             @csrf
             <div class=row>
-                <div class="col-8">
+                <div class="col-8 mx-auto">
                     <div class="form-group row">
                         <label class="col-sm-3">Name</label>
                         <div class="col-sm-9">
