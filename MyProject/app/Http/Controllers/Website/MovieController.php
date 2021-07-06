@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
 use App\Models\Movie;
+use App\Models\MovieFavorite;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -26,11 +29,13 @@ class MovieController extends Controller
     {
         $user = session()->get('customer');
         if ($user) {
-        } else {
-            return response()->json([
-                'error'   => true,
-                'message' => 'Please login!'
+            MovieFavorite::create([
+                'user_id'=>Session::get('customer')->id,
+                'movie_id'=>$id,
+                'status'=>'0'
             ]);
+        } else {
+            return redirect()->route('signin');
         }
     }
 

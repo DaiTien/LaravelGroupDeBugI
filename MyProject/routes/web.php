@@ -107,6 +107,7 @@ Route::get('/signin', 'website\SigninController@signin')->name('signin');
 Route::get('/signup', 'website\SigninController@signup')->name('signup');
 Route::get('/logout', 'website\SigninController@logout')->name('logout');
 Route::get('/pricing', 'website\PricingController@pricing');
+Route::get('/about-us', 'website\HomeController@about_us')->name('website.about');
 Route::get('/movie/{id}.html', 'website\MovieController@detail')->name('movie.details');
 Route::get('/movie/add-favourite/{movie_id}', 'website\MovieController@add_favourite')->name('movie.add_favourite');
 Route::post('login-customer', 'website\SigninController@login_customer')->name('login_customer');

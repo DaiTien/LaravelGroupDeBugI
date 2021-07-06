@@ -74,7 +74,7 @@
                         </div>
                     </div>
                     <!-- end video player -->
-
+{{--                    show message error--}}
                     <div class="col-12 col-xl-8">
                         <!-- categories -->
                         <div class="categories">
@@ -90,9 +90,7 @@
             <!-- end article -->
         </div>
     </section>
-    <script !src="">
-        $(function () {
-            alert('dấdas');
-        })
+    <script >
+
     </script>
 @endsection
