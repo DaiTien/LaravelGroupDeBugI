@@ -18,9 +18,9 @@ class RoomSeatController extends Controller
 
     public function index(Request $request)
     {
-        dd($request->session()->has('admin'));
         //get list room;
         $room = Room::where('status', 0)->get();
+        if(count($room)>0){
         //lấy ds ghế của phòng đầu tiên
         $name_seat = RoomSeat::select('id', 'name', 'status')->where('room_id', '=', $room[0]->id)->groupBy('name')->get();
         $arr_seat  = [];
@@ -32,7 +32,10 @@ class RoomSeatController extends Controller
         }
         $data['name_seat'] = $name_seat;
         $data['seat']      = $arr_seat;
-
+        }
+        else{
+            $data=null;
+        }
 //        dd($data );
         return view('admin.RoomSeat.index', compact('room', 'data'));
     }

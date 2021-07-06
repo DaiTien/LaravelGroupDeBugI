@@ -15,42 +15,49 @@
         <form method="POST">
             @csrf
             <div class="card-body">
-                <div class="form-group row">
-                    <label class="col-sm-2">Phòng chiếu: </label>
-                    <div class="col-sm-4">
-                        <select name="room" class="form-control list_room">
-                            @foreach($room as $room)
-                                <option value="{{$room->id}}">{{$room->name}}</option>
-                            @endforeach
-                        </select>
+                @if(isset($room))
+                    <div class="form-group row">
+                        <label class="col-sm-2">Phòng chiếu: </label>
+                        <div class="col-sm-4">
+                            <select name="room" class="form-control list_room">
+                                @foreach($room as $room)
+                                    <option value="{{$room->id}}">{{$room->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
-                </div>
+                @endif
                 <div class="table-responsive">
-                    <h4>Sơ đồ phòng chiếu</h4>
-                    <hr>
-                    <table class="table w-50 table-borderless mx-auto">
-                        <thead>
-                        <tr>
-                            <th class="text-center">Dãy ghế</th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                        <tbody class="data">
-                        @foreach($data['name_seat'] as $name_seat)
+                    @if(isset($data))
+                        <h4>Sơ đồ phòng chiếu</h4>
+                        <hr>
+                        <table class="table table-borderless mx-auto w-auto">
+                            <thead>
                             <tr>
-                                <th class="text-center ">
-                                    <a href="javascript:void(0)" id="{{$name_seat->id}}" class="row_seat active">{{$name_seat->name}}</a>
-                                </th>
-                                <td>
-                                    @foreach($data['seat'][$name_seat->name] as $seat)
-                                        <input type="checkbox" id="check_{{$seat->id}}" name="{{$name_seat->name.'_'.$seat->seat_number}}" value="{{$seat->id}}" style="display: none"/>
-                                        <a href="javascript:void(0)" onclick="changStatus({{$seat->id}})" id="{{$seat->id}}" name="{{$name_seat->name.'_'.$seat->seat_number}}" class="seat {{$seat->status ==0 ? "active":""}}">{{$seat->seat_number}}</a>
-                                    @endforeach
-                                </td>
+                                <th class="text-center">Dãy ghế</th>
+                                <th></th>
                             </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody class="data">
+                            @foreach($data['name_seat'] as $name_seat)
+                                <tr>
+                                    <th class="text-center ">
+                                        <a href="javascript:void(0)" id="{{$name_seat->id}}" class="row_seat active">{{$name_seat->name}}</a>
+                                    </th>
+                                    <td>
+                                        @foreach($data['seat'][$name_seat->name] as $seat)
+                                            <input type="checkbox" id="check_{{$seat->id}}" name="{{$name_seat->name.'_'.$seat->seat_number}}" value="{{$seat->id}}" style="display: none"/>
+                                            <a href="javascript:void(0)" onclick="changStatus({{$seat->id}})" id="{{$seat->id}}" name="{{$name_seat->name.'_'.$seat->seat_number}}" class="seat {{$seat->status ==0 ? "active":""}}">{{$seat->seat_number}}</a>
+                                        @endforeach
+                                    </td>
+                                </tr>
+                            @endforeach
+
+                            </tbody>
+                        </table>
+                    @else
+                        <span class="text-center text-danger" colspan="2">Không có dữ liệu</span>
+                    @endif
                 </div>
             </div>
             <div hidden>
@@ -144,8 +151,7 @@
                                 }).then(function () {
                                     location.reload();
                                 })
-                            }
-                            else{
+                            } else {
                                 Swal.fire({
                                     position: 'center',
                                     title: '{{__("TextError")}}',
@@ -195,8 +201,7 @@
                                 }).then(function () {
                                     location.reload();
                                 })
-                            }
-                            else{
+                            } else {
                                 Swal.fire({
                                     position: 'center',
                                     title: '{{__("TextError")}}',
