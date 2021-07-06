@@ -7,6 +7,7 @@ use App\Models\Movie;
 use App\Models\Room;
 use App\Models\ShowTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ShowTimeController extends Controller
@@ -14,7 +15,7 @@ class ShowTimeController extends Controller
     //
     public function index()
     {
-        $data = ShowTime::with(['movie', 'showTimeRoom'])->where('status', '=',0)->paginate(10)->fragment('data');
+        $data = ShowTime::with(['movie', 'showTimeRoom'])->where('status', '=', 0)->paginate(10)->fragment('data');
 
         return view('admin.ShowTime.index', compact('data'));
     }
@@ -22,7 +23,7 @@ class ShowTimeController extends Controller
     public function create()
     {
         //get list movie and room
-        $movie = Movie::where('status', 0)->get();
+        $movie = Movie::where('status', '<>', -1)->get();
         $room  = Room::all();
 
         return view('admin.ShowTime.create', compact('movie', 'room'));
@@ -30,7 +31,7 @@ class ShowTimeController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $validated  = $request->validate([
             'show_date'  => 'required',
             'time_start' => 'required',
             'time_end'   => 'required'
@@ -39,17 +40,28 @@ class ShowTimeController extends Controller
             'time_start.required' => trans('validation.required'),
             'time_end.required'   => trans('validation.required')
         ]);
-        ShowTime::create([
-            'show_date'  => $request->show_date,
-            'time_start' => $request->time_start,
-            'time_end'   => $request->time_end,
-            'movie_id'   => $request->movie,
-            'room_id'    => $request->room,
-            'status'     => 0,
-        ]);
-        Alert::success('Created successfully}');
+        $time_start = Carbon::parse($request->time_start)->format('H:i:s');
+        $time_end   = Carbon::parse($request->time_end)->format('H:i:s');
+        //kiểm tra xem phòng chiếu đó đã có phim nào chiếu vào khung giờ được chọn chưa
+        $check_movie = ShowTime::where([['room_id', $request->room], ['show_date', $request->show_date], ['status', 0]])
+            ->whereBetween('time_start', [$time_start, $time_end])
+            ->orWhereBetween('time_end', [$time_start, $time_end])
+            ->count();
+        if ($check_movie > 0) {
+            return redirect()->back()->with('error', 'Khung giờ chiếu bị trùng');
+        } else {
+            ShowTime::create([
+                'show_date'  => $request->show_date,
+                'time_start' => $request->time_start,
+                'time_end'   => $request->time_end,
+                'movie_id'   => $request->movie,
+                'room_id'    => $request->room,
+                'status'     => 0,
+            ]);
+            Alert::success('Created successfully');
 
-        return redirect()->route('show_time.index');
+            return redirect()->route('show_time.index');
+        }
     }
 
     public function edit($id)
@@ -63,7 +75,7 @@ class ShowTimeController extends Controller
 
     public function update(Request $request)
     {
-        $validated = $request->validate([
+        $validated  = $request->validate([
             'show_date'  => 'required',
             'time_start' => 'required',
             'time_end'   => 'required'
@@ -72,19 +84,33 @@ class ShowTimeController extends Controller
             'time_start.required' => trans('validation.required'),
             'time_end.required'   => trans('validation.required')
         ]);
-        $show_time = ShowTime::all()->find($request->id);
-//        dd($request->all());
-//        die();
-        $show_time->update([
-            'show_date'  => $request->show_date,
-            'time_start' => $request->time_start,
-            'time_end'   => $request->time_end,
-            'movie_id'   => $request->movie,
-            'room_id'    => $request->room,
-        ]);
-        Alert::success('Update successfully!');
+        $time_start = Carbon::parse($request->time_start)->format('H:i:s');
+        $time_end   = Carbon::parse($request->time_end)->format('H:i:s');
+        //kiểm tra xem phòng chiếu đó đã có phim nào chiếu vào khung giờ được chọn chưa
+        $check_movie = ShowTime::where([
+            ['room_id', $request->room],
+            ['show_date', $request->show_date],
+            ['status', 0],
+            ['id', '<>', $request->id]
+        ])->where(function ($query) use ($time_start, $time_end) {
+            $query->whereBetween('time_start', [$time_start, $time_end])
+                ->orWhereBetween('time_end', [$time_start, $time_end]);
+        })->count();
+        if ($check_movie > 0) {
+            return redirect()->back()->with('error', 'Khung giờ chiếu bị trùng');
+        } else {
+            $show_time = ShowTime::all()->find($request->id);
+            $show_time->update([
+                'show_date'  => $request->show_date,
+                'time_start' => $request->time_start,
+                'time_end'   => $request->time_end,
+                'movie_id'   => $request->movie,
+                'room_id'    => $request->room,
+            ]);
+            Alert::success('Update successfully!');
 
-        return redirect()->route('show_time.index');
+            return redirect()->route('show_time.index');
+        }
     }
 
     public function delete($id)

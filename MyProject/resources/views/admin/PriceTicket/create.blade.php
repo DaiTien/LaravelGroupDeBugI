@@ -3,15 +3,15 @@
     <div class="Page breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<a href="/admin">{{__('Home')}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('room.index')}}">{{__('TitleLinkRoom')}}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{__('TitleCreateRoom')}}</li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{{route('price_ticket.index')}}">{{__('TitleLinkPriceTicket')}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{__('TitleCreatePriceTicket')}}</li>
         </ol>
     </div>
 @endsection
 @section('content')
     <div class="m-auto card pl-3">
-        <h3 class="text-center text-uppercase mt-3">{{__('TitleCreateRoom')}}</h3>
-        <form action="{{route('room.store')}}" method="POST" style="width:95%" enctype="multipart/form-data" id="myForm">
+        <h3 class="text-center text-uppercase mt-3">{{__('TitleCreatePriceTicket')}}</h3>
+        <form action="{{route('price_ticket.store')}}" method="POST" style="width:95%" enctype="multipart/form-data" id="myForm">
             @csrf
             <div class=row>
                 <div class="col-8 mx-auto">
@@ -25,29 +25,19 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">row seats</label>
+                        <label class="col-sm-3">Price</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="row seats" name="row_seats" class="form-control" value="{{old('row_seats')}}"/>
-                            @error('row_seats')
+                            <input type="text" placeholder="price" name="price" class="form-control" value="{{old('price')}}" id="CurrencyInput" onkeypress="return valid_numbers(event)"  />
+                            @error('price')
                             <span class="text-danger font-weight-bold">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3">total_seats_of_row</label>
-                        <div class="col-sm-9">
-                            <input type="text" placeholder="total_seats_of_row" name="total_seats_of_row" class="form-control" value="{{old('total_seats_of_row')}}"/>
-                            @error('total_seats_of_row')
-                            <span class="text-danger font-weight-bold">{{ $message }}</span>
-                            @enderror
-                        </div>
-                    </div>
-                    <input type="text" name="status" value="0" hidden>
                 </div>
             </div>
             <div class="form-group text-center">
                 <input type="submit" class="btn btn-primary" value="{{__('textCreateBT')}}"/>
-                <a href="{{route('room.index')}}" class="btn btn-secondary ml-2">{{__("textCancelBT")}}</a>
+                <a href="{{route('price_ticket.index')}}" class="btn btn-secondary ml-2">{{__("textCancelBT")}}</a>
             </div>
         </form>
     </div>
@@ -57,7 +47,7 @@
                 $('span.text-danger').hide();
             }, 1500)
         });
-        $('#CurrencyInput').on('change', function () {
+        $('#CurrencyInput').on('keyup', function () {
             const value = this.value.replace(/,/g, '');
             if (value != "") {
                 this.value = parseFloat(value).toLocaleString('en-US', {

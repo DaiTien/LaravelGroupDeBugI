@@ -16,9 +16,9 @@ class IntroduceController extends Controller
 
     public function index()
     {
-        $data = Introduce::all();
+        $introduce = Introduce::first();
 
-        return view('admin.Introduce.index', compact('data'));
+        return view('admin.Introduce.index', compact('introduce'));
     }
 
     public function edit($id)

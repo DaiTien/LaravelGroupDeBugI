@@ -14,28 +14,45 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         DB::table('users')->insert([
-            'lastname' => "admin",
-            'firstname' => "",
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('12345'),
+            'lastname'  => "admin",
+            'firstname' => "admin",
+            'group_id' => "1",
+            'email'     => 'admin@gmail.com',
+            'password'  => Hash::make('12345'),
         ]);
         DB::table('user_groups')->insert([
-            'name' => "admin",
+            'name'   => "admin",
             'status' => "1",
-            
+
         ]);
         DB::table('user_groups')->insert([
-            'name' => "customer",
+            'name'   => "customer",
             'status' => "0",
-            
+
         ]);
-        \Illuminate\Support\Facades\DB::table('introduces')->insert([
-            'title'=>'This is introduce about my team',
-            'summary'=>'This is summary about my team',
-            'image'=>'upload/debug_team.jpg',
-            'content'=>'This is content about my team',
-            'slug'=> Str::slug('This is introduce about my team','-')
+        DB::table('introduces')->insert([
+            'title'   => 'This is introduce about my team',
+            'summary' => 'This is summary about my team',
+            'image'   => 'upload/debug_team.jpg',
+            'content' => 'This is content about my team',
+            'slug'    => Str::slug('This is introduce about my team', '-')
         ]);
 
+        //price ticker
+        DB::table('price_tickets')->insert([
+            'name'  => "Người lớn",
+            'price' => "60000",
+
+        ]);
+        DB::table('price_tickets')->insert([
+            'name'  => "Trẻ em",
+            'price' => "30000",
+
+        ]);
+        DB::table('price_tickets')->insert([
+            'name'  => "HS-SV",
+            'price' => "45000",
+
+        ]);
     }
 }

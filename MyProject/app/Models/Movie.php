@@ -13,7 +13,7 @@ class Movie extends Model
             'name',
             'title',
             'description',
-            'summary',
+            'year_manufacture',
             'content',
             'image',
             'video',
@@ -28,7 +28,7 @@ class Movie extends Model
 
     public function moviecategory()
     {
-        return $this->belongsTo(MovieCategory::class);
+        return $this->belongsTo(MovieCategory::class,'movie_category_id');
     }
     public function showTimes(){
         return $this->hasMany(ShowTime::class);

@@ -11,20 +11,21 @@
     <div class="card mb-4">
         <div class="m-2">
             <h3 class="text-center">{{__('TitleListMovie')}}</h3>
-            <a href="{{route('movie.create')}}" class="btn btn-primary m-7">{{__("textCreateBT")}}</a>
+            <a href="{{route('movie.create')}}" class="btn btn-primary m-7"><i class="fas fa-plus"></i></a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr class="text-center">
                         <th>STT</th>
-                        <th>Name</th>
-                        <th>Director</th>
-                        <th>Duration</th>
-                        <th>Actors</th>
-                        <th>Country</th>
+                        <th>Tên</th>
+                        <th>Thể loại</th>
+                        <th>Đạo diễn</th>
+                        <th>Thời lượng</th>
+                        <th>Diễn viên</th>
+                        <th>Quốc gia</th>
                         <th>Image</th>
-                        <th>Status</th>
+                        <th>Trạng thái</th>
                         <th>Action</th>
                     </tr>
                     @php
@@ -34,6 +35,7 @@
                         <tr>
                             <td class="__alignItemtable">{{ $i++ }}</td>
                             <td class="__alignItemtable">{{ $item->name }}</td>
+                            <td class="__alignItemtable">{{ $item->moviecategory->name }}</td>
                             <td class="__alignItemtable">{{ $item->director }}</td>
                             <td class="__alignItemtable">{{ $item->duration }}</td>
                             <td class="__alignItemtable">{{ $item->actors }}</td>

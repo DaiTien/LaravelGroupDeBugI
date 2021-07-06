@@ -204,6 +204,7 @@
                                         </svg>
                                         <!--end::Svg Icon-->
                                     </span>
+<<<<<<< HEAD
                                     <span class="menu-text">Dashboard</span>
                                 </a>
                             </li>
@@ -298,6 +299,53 @@
                         <!--end::Menu Nav-->
                     </div>
                     <!--end::Menu Container-->
+=======
+                                <span class="menu-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                            <a href="{{route('introduce.index')}}" class="menu-link menu-toggle">
+                                <span class="menu-text">Introduce</span>
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                            <a href="{{route('moviecategory.index')}}" class="menu-link menu-toggle">
+                                <span class="menu-text">Movie Category</span>
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                            <a href="{{route('movie.index')}}" class="menu-link menu-toggle">
+                                <span class="menu-text">Movie</span>
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                            <a href="{{route('room.index')}}" class="menu-link menu-toggle">
+                                <span class="menu-text">Room</span>
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                            <a href="{{route('room_seat.index')}}" class="menu-link menu-toggle">
+                                <span class="menu-text">Room seat</span>
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                            <a href="{{route('usermanager.index')}}" class="menu-link menu-toggle">
+                                <span class="menu-text">User</span>
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                            <a href="{{route('show_time.index')}}" class="menu-link menu-toggle">
+                                <span class="menu-text">Show time</span>
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                            <a href="{{route('price_ticket.index')}}" class="menu-link menu-toggle">
+                                <span class="menu-text">Price ticket</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--end::Menu Nav-->
+>>>>>>> 2823c4e1d21a73ecc168b901b1e91a6005920e87
                 </div>
                 <!--end::Aside Menu-->
             </div>
