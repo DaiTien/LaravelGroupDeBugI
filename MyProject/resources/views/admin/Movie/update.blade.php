@@ -158,7 +158,7 @@
     <script>
         $(document).ready(function () {
             setTimeout(function () {
-                $('span').hide();
+                $('span.text-danger').hide();
             }, 1500)
         });
         function clickavatar1() {

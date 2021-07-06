@@ -14,7 +14,7 @@ class MovieController extends Controller
     //
     public function index()
     {
-        $data = Movie::paginate(10)->fragment('data');
+        $data = Movie::with('moviecategory')->orderBy('status','DESC')->paginate(10)->fragment('data');
 
         return view('admin.Movie.index', compact('data'));
     }

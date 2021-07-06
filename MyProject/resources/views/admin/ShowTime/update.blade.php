@@ -11,6 +11,11 @@
 @section('content')
     <div class="m-auto card pl-3">
         <h3 class="text-center text-uppercase mt-3">{{__('TitleUpdateShowTime')}}</h3>
+        @if(session()->has('error'))
+            <div class="alert alert-error text-danger">
+                {{ session()->get('error') }}
+            </div>
+        @endif
         <form action="{{route('show_time.update')}}" method="POST" style="width:95%" enctype="multipart/form-data" id="myForm">
             @csrf
             <div class=row>

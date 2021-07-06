@@ -1,7 +1,7 @@
 <div class="table-responsive">
     <h4>Sơ đồ phòng chiếu</h4>
     <hr>
-    <table class="table w-50 table-borderless mx-auto">
+    <table class="table table-borderless mx-auto w-auto">
         <thead>
         <tr>
             <th class="text-center">Dãy ghế</th>

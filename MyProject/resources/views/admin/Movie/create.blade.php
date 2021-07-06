@@ -159,7 +159,7 @@
     <script>
         $(document).ready(function () {
             setTimeout(function () {
-                $('span').hide();
+                $('span.text-danger').hide();
             }, 1500)
         });
         $('#CurrencyInput').on('change', function () {

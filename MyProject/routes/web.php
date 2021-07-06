@@ -102,12 +102,30 @@ Route::group(['prefix' => 'admin'], function () {
 
 Auth::routes();
 
-Route::get('/', 'website\HomeController@index');
-Route::get('/signin', 'website\SigninController@signin')->name('signin');
-Route::get('/signup', 'website\SigninController@signup')->name('signup');
-Route::get('/logout', 'website\SigninController@logout')->name('logout');
-Route::get('/pricing', 'website\PricingController@pricing');
-Route::get('/about-us', 'website\HomeController@about_us')->name('website.about');
-Route::get('/movie/{id}.html', 'website\MovieController@detail')->name('movie.details');
-Route::get('/movie/add-favourite/{movie_id}', 'website\MovieController@add_favourite')->name('movie.add_favourite');
-Route::post('login-customer', 'website\SigninController@login_customer')->name('login_customer');
+//website
+Route::group(['prefix' => '/'], function () {
+    //default
+    Route::get('/', 'website\HomeController@index');
+    //sign in
+    Route::get('/signin', 'website\SigninController@signin')->name('signin');
+    //login
+    Route::post('login-customer', 'website\SigninController@login_customer')->name('login_customer');
+    //sign up
+    Route::get('/signup', 'website\SigninController@signup')->name('signup');
+    //logout
+    Route::get('/logout', 'website\SigninController@logout')->name('logout');
+    Route::get('/pricing', 'website\PricingController@pricing');
+    //about
+    Route::get('/about-us', 'website\HomeController@about_us')->name('website.about');
+    //movie
+    Route::group(['prefix' => 'movie'], function () {
+        //movie detail
+        Route::get('/{id}.html', 'website\MovieController@detail')->name('movie.details');
+        //movie favourite
+        Route::get('/add-favourite/{movie_id}', 'website\MovieController@add_favourite')->name('movie.add_favourite');
+        //book ticket
+        Route::get('book-ticket', 'website\MovieController@book_ticket')->name('movie.book_ticket');
+        //get suất chiếu phim theo ngày
+        Route::get('show-time/{phim_id}/{date}', 'website\MovieController@get_showtime_by_date')->name('movie.get_showtime_by_date');
+    });
+});
