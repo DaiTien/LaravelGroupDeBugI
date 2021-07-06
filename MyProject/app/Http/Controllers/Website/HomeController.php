@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
+use App\Models\Introduce;
 use App\Models\Movie;
+use App\Models\MovieCategory;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,11 +14,14 @@ class HomeController extends Controller
 
         //get ds phim
         $data['movie'] = Movie::with('moviecategory')->get();
-//        dd($data);
+        //get ds loại phim
+        $data['movie_cate']= MovieCategory::all();
          return view('website.index',compact('data'));
     }
-    public function FunctionName()
+    //get about
+    public function about_us()
     {
-        # code...
+        $about = Introduce::all();
+        return view('website.about', compact('about'));
     }
 }

@@ -15,6 +15,7 @@ class UserManagerController extends Controller
     public function index()
     {
         $data = UserManager::with('user_group')->paginate(10)->fragment('data');
+
         return view('admin.UserManager.index', compact('data'));
     }
 
@@ -29,7 +30,7 @@ class UserManagerController extends Controller
     {
         $validated = $request->validate([
             'name'     => 'required|min:3',
-            'phone'    => 'required|unique:users',
+            'phone'    => 'required|unique:users|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'email'    => 'required',
             'password' => 'required',
             'address'  => 'required'
@@ -38,6 +39,8 @@ class UserManagerController extends Controller
             'name.min'          => trans('validation.min'),
             'phone.required'    => trans('validation.required'),
             'phone.unique'      => trans('validation.unique'),
+            'phone.regex'       => trans('validation.regex'),
+            'phone.min'         => trans('validation.min'),
             'email.required'    => trans('validation.required'),
             'password.required' => trans('validation.required'),
             'address.required'  => trans('validation.required'),
@@ -71,7 +74,7 @@ class UserManagerController extends Controller
     {
         $validated = $request->validate([
             'name'     => 'required|min:3',
-            'phone'    => 'required',
+            'phone'    => 'required|unique:users|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'email'    => 'required',
             'password' => 'required',
             'address'  => 'required'
@@ -79,6 +82,9 @@ class UserManagerController extends Controller
             'name.required'    => trans('validation.required'),
             'name.min'         => trans('validation.min'),
             'phone.required'   => trans('validation.required'),
+            'phone.regex'      => trans('validation.regex'),
+            'phone.unique'     => trans('validation.unique'),
+            'phone.min'        => trans('validation.min'),
             'email.required'   => trans('validation.required'),
             'address.required' => trans('validation.required'),
         ]);

@@ -19,7 +19,7 @@
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2 order-1 order-md-2 order-lg-1 order-xl-2 offset-md-2 offset-lg-0 offset-xl-1">
 					<h6 class="footer__title">FlixTV</h6>
 					<div class="footer__nav">
-						<a href="about.html">About us</a>
+						<a href="{{route('website.about')}}">About us</a>
 						<a href="profile.html">My profile</a>
 						<a href="pricing.html">Pricing plans</a>
 						<a href="contacts.html">Contacts</a>
