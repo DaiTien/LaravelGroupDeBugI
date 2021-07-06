@@ -36,18 +36,6 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">lastname</label>
-                        <div class="col-sm-9">
-                            <input type="text" placeholder="lastname" name="lastname" class="form-control" value="{{old('lastname', $user->lastname)}}"/>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3">firstname</label>
-                        <div class="col-sm-9">
-                            <input type="text" placeholder="firstname" name="firstname" class="form-control" value="{{old('firstname', $user->firstname)}}"/>
-                        </div>
-                    </div>
-                    <div class="form-group row">
                         <label class="col-sm-3">phone</label>
                         <div class="col-sm-9">
                             <input type="text" placeholder="phone" name="phone" class="form-control" value="{{old('phone', $user->phone)}}"/>

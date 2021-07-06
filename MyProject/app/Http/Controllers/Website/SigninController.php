@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
+use App\Models\UserManager;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SigninController extends Controller
 {
@@ -63,5 +65,41 @@ class SigninController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    public function register(Request $request)
+    {
+        $validated = $request->validate([
+            'name'     => 'required|min:3',
+            'phone'    => 'required|unique:users|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'email'    => 'required|string|email|unique:users',
+            'password' => 'required',
+            'address'  => 'required'
+        ], [
+            'name.required'     => trans('validation.required'),
+            'name.min'          => trans('validation.min'),
+            'phone.required'    => trans('validation.required'),
+            'phone.unique'      => trans('validation.unique'),
+            'phone.regex'       => trans('validation.regex'),
+            'phone.min'         => trans('validation.min'),
+            'email.required'    => trans('validation.required'),
+            'email.string'    => trans('validation.string'),
+            'email.email'    => trans('validation.email'),
+            'email.unique'    => trans('validation.unique'),
+            'password.required' => trans('validation.required'),
+            'address.required'  => trans('validation.required'),
+        ]);
+
+        UserManager::create([
+            'name'      => $request->name,
+            'group_id'  => 2,
+            'phone'     => $request->phone,
+            'email'     => $request->email,
+            'password'  => Hash::make($request->password),
+            'address'   => $request->address,
+
+        ]);
+
+        return redirect()->route('signin');
     }
 }
