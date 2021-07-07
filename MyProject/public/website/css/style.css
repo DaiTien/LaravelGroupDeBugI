@@ -1,0 +1,128 @@
+ul{
+    padding: 0;
+    margin: 0;
+}
+a,
+a:hover{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.xuatchieu{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.time__list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.time__link:hover,
+.time__link{
+    text-decoration: none;
+    color: #fff;
+}
+.time__item{
+    border: 1px solid #fff;
+    padding: 5px;
+    margin-right: 10px;
+    transition: all 0.3s ease-in-out;
+}
+.time__item:hover{
+    background-color: #fff;
+}
+.time__item:hover .time__link{
+    color: var(--box-bg);
+}
+.pricing-box .nav-item{
+    text-align: center;
+}
+.pricing-name{
+    border-bottom: 3px solid var(--main-color);
+    margin-bottom:10px ;
+}
+.time__list,
+.title__room{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+.pricing-box.pricing-box__image{
+    padding: 0;
+}
+.pricing-box.pricing-box__image:hover{
+    transform: unset;
+}
+.pricing-box-content__image{
+    padding: 13px;
+    margin: 0;
+    text-align: left;
+    font-size: 15px;
+    
+}
+.images__list{
+    padding: 0;
+    margin: 0;
+}
+.images__item:not(:last-child){
+    border-bottom: 1px solid #999;
+    margin-bottom: 7px;
+}
+.images__item p{
+    margin-bottom: 0;
+    margin: 7px 0;
+}
+.images__list .images__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}.images__item:last-child span,
+.images__item:last-child p{
+    font-size: 21px;
+    color: var(--main-color);
+}
+.pricing-name{
+    font-size: 37px;
+}
+.chair__content-sidebar .table td, .table th,
+.chair__content-sidebar .table td, .table thead th {
+    border: none;
+}
+.chair__link{
+    border: 1px solid #fff;
+    padding: 5px 20px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 7px;
+    /* padding: ; */
+}
+.chair__link:hover{
+    color: var(--box-bg);
+    background-color:#fff ;
+    font-weight: 600;
+}
+.screen{
+    border-top: 5px solid #fff;
+    padding-top: 10px;
+}
+a.disabled{
+    pointer-events: none;
+    cursor: default;
+    background-color: var(--secondary);
+}
+/* .chair__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.chair__content-number,
+.chair__content-sidebar{
+display: flex;
+align-items: center;
+justify-content: flex-start;
+width: 100%;
+} */

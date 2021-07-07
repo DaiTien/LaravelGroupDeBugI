@@ -29,7 +29,7 @@ Route::group(['middleware' => 'locale'], function () {
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', 'Admin\HomeController@index')->name('home');
-//    Route::get('/home', 'Admin\HomeController@layout')->name('home');
+    //    Route::get('/home', 'Admin\HomeController@layout')->name('home');
     Route::get('/logout', 'Admin\HomeController@Logout');
     //introduce
     Route::group(['prefix' => 'introduce'], function () {
@@ -128,5 +128,8 @@ Route::group(['prefix' => '/'], function () {
         Route::get('book-ticket', 'website\MovieController@book_ticket')->name('movie.book_ticket');
         //get suất chiếu phim theo ngày
         Route::get('show-time/{phim_id}/{date}', 'website\MovieController@get_showtime_by_date')->name('movie.get_showtime_by_date');
+    });
+    Route::get('/details', function () {
+        return view('website.details_chonghe');
     });
 });
