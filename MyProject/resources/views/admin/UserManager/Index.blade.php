@@ -18,12 +18,11 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr class="text-center">
                         <th>STT</th>
-                        <th>Name</th>
+                        <th>Họ tên</th>
                         <th>Phân quyền</th>
-                        <th>phone</th>
-                        <th>email</th>
-                        <th>address</th>
-                        <th>active</th>
+                        <th>Điện thoại</th>
+                        <th>Email</th>
+                        <th>Địa chỉ</th>
                         <th>Action</th>
                     </tr>
                     @php
@@ -37,9 +36,6 @@
                             <td class="__alignItemtable">{{ $item->phone }}</td>
                             <td class="__alignItemtable">{{ $item->email }}</td>
                             <td class="__alignItemtable">{{ $item->address }}</td>
-                            <td class="__alignItemtable">
-                                {{$item->active ==0 ? 'ẩn':($item->active ==1 ? 'hiện':"")}}
-                            </td>
                             <td class="__alignItemtable">
                                 <div class="text-center d-flex">
                                     <a href="{{route('usermanager.edit', ['id' => $item->id])}}" class="btn btn-success"> <i class="fas fa-edit"></i></a>
