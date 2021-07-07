@@ -31,7 +31,7 @@ class UserManagerController extends Controller
         $validated = $request->validate([
             'name'     => 'required|min:3',
             'phone'    => 'required|unique:users|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'email'    => 'required',
+            'email'    => 'required|string|email|unique:users',
             'password' => 'required',
             'address'  => 'required'
         ], [
@@ -42,19 +42,20 @@ class UserManagerController extends Controller
             'phone.regex'       => trans('validation.regex'),
             'phone.min'         => trans('validation.min'),
             'email.required'    => trans('validation.required'),
+            'email.string'      => trans('validation.string'),
+            'email.email'       => trans('validation.email'),
+            'email.unique'      => trans('validation.unique'),
             'password.required' => trans('validation.required'),
             'address.required'  => trans('validation.required'),
         ]);
 
         UserManager::create([
-            'name'      => $request->name,
-            'group_id'  => $request->group_id,
-            'lastname'  => $request->lastname,
-            'firstname' => $request->firstname,
-            'phone'     => $request->phone,
-            'email'     => $request->email,
-            'password'  => Hash::make($request->password),
-            'address'   => $request->address,
+            'name'     => $request->name,
+            'group_id' => $request->group_id,
+            'phone'    => $request->phone,
+            'email'    => $request->email,
+            'password' => Hash::make($request->password),
+            'address'  => $request->address,
 
         ]);
         Alert::success('Create successfully!');
@@ -75,7 +76,7 @@ class UserManagerController extends Controller
         $validated = $request->validate([
             'name'     => 'required|min:3',
             'phone'    => 'required|unique:users|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'email'    => 'required',
+            'email'    => 'required|string|email|unique:users',
             'password' => 'required',
             'address'  => 'required'
         ], [
@@ -86,17 +87,18 @@ class UserManagerController extends Controller
             'phone.unique'     => trans('validation.unique'),
             'phone.min'        => trans('validation.min'),
             'email.required'   => trans('validation.required'),
+            'email.string'     => trans('validation.string'),
+            'email.email'      => trans('validation.email'),
+            'email.unique'     => trans('validation.unique'),
             'address.required' => trans('validation.required'),
         ]);
         $user      = UserManager::all()->find($request->id);
         $user->update([
-            'name'      => $request->name,
-            'group_id'  => $request->group_id,
-            'lastname'  => $request->lastname,
-            'firstname' => $request->firstname,
-            'phone'     => $request->phone,
-            'email'     => $request->email,
-            'address'   => $request->address,
+            'name'     => $request->name,
+            'group_id' => $request->group_id,
+            'phone'    => $request->phone,
+            'email'    => $request->email,
+            'address'  => $request->address,
 
         ]);
         Alert::success('Update successfully!');

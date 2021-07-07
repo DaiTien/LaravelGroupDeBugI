@@ -112,6 +112,7 @@ Route::group(['prefix' => '/'], function () {
     Route::post('login-customer', 'website\SigninController@login_customer')->name('login_customer');
     //sign up
     Route::get('/signup', 'website\SigninController@signup')->name('signup');
+    Route::post('/register', 'website\SigninController@register')->name('register');
     //logout
     Route::get('/logout', 'website\SigninController@logout')->name('logout');
     Route::get('/pricing', 'website\PricingController@pricing');
