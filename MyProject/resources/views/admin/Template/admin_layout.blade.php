@@ -154,27 +154,6 @@
 
                     </style>
                     <!--end::Logo-->
-                    <!--begin::Toggle-->
-{{--                    --}}{{-- <button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">--}}
-{{--                        <span class="svg-icon svg-icon svg-icon-xl">--}}
-{{--                            <!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Navigation/Angle-double-left.svg-->--}}
-{{--                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"--}}
-{{--                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1">--}}
-{{--                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">--}}
-{{--                                    <polygon points="0 0 24 0 24 24 0 24"/>--}}
-{{--                                    <path--}}
-{{--                                            d="M5.29288961,6.70710318 C4.90236532,6.31657888 4.90236532,5.68341391 5.29288961,5.29288961 C5.68341391,4.90236532 6.31657888,4.90236532 6.70710318,5.29288961 L12.7071032,11.2928896 C13.0856821,11.6714686 13.0989277,12.281055 12.7371505,12.675721 L7.23715054,18.675721 C6.86395813,19.08284 6.23139076,19.1103429 5.82427177,18.7371505 C5.41715278,18.3639581 5.38964985,17.7313908 5.76284226,17.3242718 L10.6158586,12.0300721 L5.29288961,6.70710318 Z"--}}
-{{--                                            fill="#000000" fill-rule="nonzero"--}}
-{{--                                            transform="translate(8.999997, 11.999999) scale(-1, 1) translate(-8.999997, -11.999999)"/>--}}
-{{--                                    <path--}}
-{{--                                            d="M10.7071009,15.7071068 C10.3165766,16.0976311 9.68341162,16.0976311 9.29288733,15.7071068 C8.90236304,15.3165825 8.90236304,14.6834175 9.29288733,14.2928932 L15.2928873,8.29289322 C15.6714663,7.91431428 16.2810527,7.90106866 16.6757187,8.26284586 L22.6757187,13.7628459 C23.0828377,14.1360383 23.1103407,14.7686056 22.7371482,15.1757246 C22.3639558,15.5828436 21.7313885,15.6103465 21.3242695,15.2371541 L16.0300699,10.3841378 L10.7071009,15.7071068 Z"--}}
-{{--                                            fill="#000000" fill-rule="nonzero" opacity="0.3"--}}
-{{--                                            transform="translate(15.999997, 11.999999) scale(-1, 1) rotate(-270.000000) translate(-15.999997, -11.999999)"/>--}}
-{{--                                </g>--}}
-{{--                            </svg>--}}
-{{--                            <!--end::Svg Icon-->--}}
-{{--                        </span>--}}
-{{--                </button> --}}
                     <!--end::Toolbar-->
                 </div>
                 <!--end::Brand-->
@@ -228,8 +207,8 @@
                                 </a>
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                <a href="{{ route('usermanager.index') }}" class="menu-link menu-toggle">
-                                    <span class="menu-text">User</span>
+                                <a href="{{route('room_seat.index')}}" class="menu-link menu-toggle">
+                                    <span class="menu-text">Room seat</span>
                                 </a>
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
@@ -237,114 +216,24 @@
                                     <span class="menu-text">Show time</span>
                                 </a>
                             </li>
-                            {{-- <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover"> --}}
-                            {{-- <a href="javascript:;" class="menu-link menu-toggle"> --}}
-                            {{-- <span class="menu-text">Product</span> --}}
-                            {{-- <i class="menu-arrow"></i> --}}
-                            {{-- </a> --}}
-                            {{-- <div class="menu-submenu"> --}}
-                            {{-- <i class="menu-arrow"></i> --}}
-                            {{-- <ul class="menu-subnav"> --}}
-                            {{-- <li class="menu-item menu-item-parent" aria-haspopup="true"> --}}
-                            {{-- <span class="menu-link"> --}}
-                            {{-- <span class="menu-text">Product</span> --}}
-                            {{-- </span> --}}
-                            {{-- </li> --}}
-                            {{-- <li class="menu-item menu-item-submenu" aria-haspopup="true" --}}
-                            {{-- data-menu-toggle="hover"> --}}
-                            {{-- <a href="/list-product-category" class="menu-link menu-toggle"> --}}
-                            {{-- <i class="menu-bullet menu-bullet-line"> --}}
-                            {{-- <span></span> --}}
-                            {{-- </i> --}}
-                            {{-- <span class="menu-text">Product Category</span> --}}
-                            {{-- </a> --}}
-                            {{-- </li> --}}
-                            {{-- <li class="menu-item menu-item-submenu" aria-haspopup="true" --}}
-                            {{-- data-menu-toggle="hover"> --}}
-                            {{-- <a href="{{route('list-product')}}" class="menu-link menu-toggle"> --}}
-                            {{-- <i class="menu-bullet menu-bullet-line"> --}}
-                            {{-- <span></span> --}}
-                            {{-- </i> --}}
-                            {{-- <span class="menu-text">Product</span> --}}
-                            {{-- </a> --}}
-                            {{-- </li> --}}
-                            {{-- </ul> --}}
-                            {{-- </div> --}}
-                            {{-- </li> --}}
-                            {{-- <li class="menu-section"> --}}
-                            {{-- <h4 class="menu-text">User Manager</h4> --}}
-                            {{-- <i class="menu-icon ki ki-bold-more-hor icon-md"></i> --}}
-                            {{-- </li> --}}
-                            {{-- <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover"> --}}
-                            {{-- <a href="{{route('list-user')}}" class="menu-link menu-toggle"> --}}
-                            {{-- <span class="menu-text">User Manager</span> --}}
-                            {{-- </a> --}}
-                            {{-- </li> --}}
-                            {{-- <li class="menu-section"> --}}
-                            {{-- <h4 class="menu-text">Post</h4> --}}
-                            {{-- <i class="menu-icon ki ki-bold-more-hor icon-md"></i> --}}
-                            {{-- </li> --}}
-                            {{-- <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover"> --}}
-                            {{-- <a href="{{route('list-post')}}" class="menu-link menu-toggle"> --}}
-                            {{-- <span class="menu-text">Post</span> --}}
-                            {{-- </a> --}}
-                            {{-- </li> --}}
-                            {{-- <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover"> --}}
-                            {{-- <a href="{{route('list-post-category')}}" class="menu-link menu-toggle"> --}}
-                            {{-- <span class="menu-text">Post Category</span> --}}
-                            {{-- </a> --}}
-                            {{-- </li> --}}
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="{{route('price_ticket.index')}}" class="menu-link menu-toggle">
+                                    <span class="menu-text">Price ticket</span>
+                                </a>
+                            </li>
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="{{ route('usermanager.index') }}" class="menu-link menu-toggle">
+                                    <span class="menu-text">User</span>
+                                </a>
+                            </li>
+
                         </ul>
                         <!--end::Menu Nav-->
                     </div>
                     <!--end::Menu Container-->
-=======
-                                <span class="menu-text">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                            <a href="{{route('introduce.index')}}" class="menu-link menu-toggle">
-                                <span class="menu-text">Introduce</span>
-                            </a>
-                        </li>
-                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                            <a href="{{route('moviecategory.index')}}" class="menu-link menu-toggle">
-                                <span class="menu-text">Movie Category</span>
-                            </a>
-                        </li>
-                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                            <a href="{{route('movie.index')}}" class="menu-link menu-toggle">
-                                <span class="menu-text">Movie</span>
-                            </a>
-                        </li>
-                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                            <a href="{{route('room.index')}}" class="menu-link menu-toggle">
-                                <span class="menu-text">Room</span>
-                            </a>
-                        </li>
-                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                            <a href="{{route('room_seat.index')}}" class="menu-link menu-toggle">
-                                <span class="menu-text">Room seat</span>
-                            </a>
-                        </li>
-                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                            <a href="{{route('usermanager.index')}}" class="menu-link menu-toggle">
-                                <span class="menu-text">User</span>
-                            </a>
-                        </li>
-                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                            <a href="{{route('show_time.index')}}" class="menu-link menu-toggle">
-                                <span class="menu-text">Show time</span>
-                            </a>
-                        </li>
-                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                            <a href="{{route('price_ticket.index')}}" class="menu-link menu-toggle">
-                                <span class="menu-text">Price ticket</span>
-                            </a>
-                        </li>
+
                     </ul>
                     <!--end::Menu Nav-->
->>>>>>> 2823c4e1d21a73ecc168b901b1e91a6005920e87
                 </div>
                 <!--end::Aside Menu-->
             </div>
@@ -356,8 +245,6 @@
                     <!--begin::Container-->
                     <div class="container-fluid d-flex align-items-stretch justify-content-end">
                         <!--begin::Header Menu Wrapper-->
-
-
                         <!--end::Header Menu Wrapper-->
                         <!--begin::Topbar-->
                         <div class="topbar">
@@ -452,9 +339,11 @@
                                     id="kt_quick_user_toggle">
                                     <span
                                         class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-                                    <span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
-                                        <span class="symbol-label font-size-h5 font-weight-bold">S</span>
-                                    </span>
+                                    <?php
+                                    use Illuminate\Support\Facades\Auth;
+                                    $user = Auth::user();
+                                    ?>
+                                        <span class="symbol-label font-weight-bold font-size-base">{{$user->lastname}}</span>
                                 </div>
                             </div>
                             <!--end::User-->
@@ -547,7 +436,7 @@
                 </div>
                 <div class="d-flex flex-column">
                     <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary"></a>
-                    <div class="text-muted mt-1">Application Developer</div>
+                    <div class="text-muted mt-1">Adminitrator</div>
                     <div class="navi mt-2">
                         <a href="#" class="navi-item">
                             <span class="navi-link p-0 pb-2">
@@ -568,7 +457,7 @@
                                         <!--end::Svg Icon-->
                                     </span>
                                 </span>
-                                <span class="navi-text text-muted text-hover-primary">jm@softplus.com</span>
+                                <span class="navi-text text-muted text-hover-primary">{{$user->email}}</span>
                             </span>
                         </a>
                         <a href="/admin/logout" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Sign
