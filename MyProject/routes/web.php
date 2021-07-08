@@ -121,7 +121,7 @@ Route::group(['prefix' => '/'], function () {
     //movie
     Route::group(['prefix' => 'movie'], function () {
         //movie detail
-        Route::get('/{id}.html', 'website\MovieController@detail')->name('movie.details');
+        Route::get('/{slug}-{id}.html', 'website\MovieController@detail')->name('movie.details');
         //movie favourite
         Route::get('/add-favourite/{movie_id}', 'website\MovieController@add_favourite')->name('movie.add_favourite');
         //book ticket

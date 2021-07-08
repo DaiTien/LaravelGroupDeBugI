@@ -7,124 +7,41 @@
         <div class="hero-slide">
             <div class="owl-carousel carousel-nav-center" id="hero-carousel">
                 <!-- SLIDE ITEM -->
-                <div class="hero-slide-item">
-                    <img src="/website/images/black-banner.png" alt="">
-                    <div class="overlay"></div>
-                    <div class="hero-slide-item-content">
-                        <div class="item-content-wraper">
-                            <div class="item-content-title top-down">
-                                Black Panther
-                            </div>
-                            <div class="movie-infos top-down delay-2">
-                                <div class="movie-info">
-                                    <i class="bx bxs-star"></i>
-                                    <span>9.5</span>
+                @foreach($data['slide'] as $slide)
+                    <div class="hero-slide-item">
+                        <img src="{{$slide->image}}" alt="">
+                        <div class="overlay"></div>
+                        <div class="hero-slide-item-content">
+                            <div class="item-content-wraper">
+                                <div class="item-content-title top-down">
+                                    {{$slide->name}}
                                 </div>
-                                <div class="movie-info">
-                                    <i class="bx bxs-time"></i>
-                                    <span>120 mins</span>
+                                <div class="movie-infos top-down delay-2">
+                                    <div class="movie-info">
+                                        <i class="bx bxs-star"></i>
+                                        <span>9.5</span>
+                                    </div>
+                                    <div class="movie-info">
+                                        <i class="bx bxs-time"></i>
+                                        <span>{{explode(' ',$slide->duration)[0]}} mins</span>
+                                    </div>
+                                    <div class="movie-info">
+                                        <span>HD</span>
+                                    </div>
                                 </div>
-                                <div class="movie-info">
-                                    <span>HD</span>
+                                <div class="item-content-description top-down delay-4">
+                                    {{$slide->description}}
                                 </div>
-                                <div class="movie-info">
-                                    <span>16+</span>
+                                <div class="item-action top-down delay-6">
+                                    <a href="{{$slide->video}}" class="btn btn-hover" target="_blank">
+                                        <i class="bx bxs-right-arrow"></i>
+                                        <span>Watch now</span>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="item-content-description top-down delay-4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, possimus eius. Deserunt non
-                                odit, cum vero reprehenderit laudantium odio vitae autem quam, incidunt molestias ratione
-                                mollitia accusantium, facere ab suscipit.
-                            </div>
-                            <div class="item-action top-down delay-6">
-                                <a href="#" class="btn btn-hover">
-                                    <i class="bx bxs-right-arrow"></i>
-                                    <span>Watch now</span>
-                                </a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- END SLIDE ITEM -->
-                <!-- SLIDE ITEM -->
-                <div class="hero-slide-item">
-                    <img src="/website/images/supergirl-banner.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="hero-slide-item-content">
-                        <div class="item-content-wraper">
-                            <div class="item-content-title top-down">
-                                Supergirl
-                            </div>
-                            <div class="movie-infos top-down delay-2">
-                                <div class="movie-info">
-                                    <i class="bx bxs-star"></i>
-                                    <span>9.5</span>
-                                </div>
-                                <div class="movie-info">
-                                    <i class="bx bxs-time"></i>
-                                    <span>120 mins</span>
-                                </div>
-                                <div class="movie-info">
-                                    <span>HD</span>
-                                </div>
-                                <div class="movie-info">
-                                    <span>16+</span>
-                                </div>
-                            </div>
-                            <div class="item-content-description top-down delay-4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, possimus eius. Deserunt non
-                                odit, cum vero reprehenderit laudantium odio vitae autem quam, incidunt molestias ratione
-                                mollitia accusantium, facere ab suscipit.
-                            </div>
-                            <div class="item-action top-down delay-6">
-                                <a href="#" class="btn btn-hover">
-                                    <i class="bx bxs-right-arrow"></i>
-                                    <span>Watch now</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END SLIDE ITEM -->
-                <!-- SLIDE ITEM -->
-                <div class="hero-slide-item">
-                    <img src="/website/images/wanda-banner.jpg" alt="">
-                    <div class="overlay"></div>
-                    <div class="hero-slide-item-content">
-                        <div class="item-content-wraper">
-                            <div class="item-content-title top-down">
-                                Wanda Vision
-                            </div>
-                            <div class="movie-infos top-down delay-2">
-                                <div class="movie-info">
-                                    <i class="bx bxs-star"></i>
-                                    <span>9.5</span>
-                                </div>
-                                <div class="movie-info">
-                                    <i class="bx bxs-time"></i>
-                                    <span>120 mins</span>
-                                </div>
-                                <div class="movie-info">
-                                    <span>HD</span>
-                                </div>
-                                <div class="movie-info">
-                                    <span>16+</span>
-                                </div>
-                            </div>
-                            <div class="item-content-description top-down delay-4">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, possimus eius. Deserunt non
-                                odit, cum vero reprehenderit laudantium odio vitae autem quam, incidunt molestias ratione
-                                mollitia accusantium, facere ab suscipit.
-                            </div>
-                            <div class="item-action top-down delay-6">
-                                <a href="#" class="btn btn-hover">
-                                    <i class="bx bxs-right-arrow"></i>
-                                    <span>Watch now</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
                 <!-- END SLIDE ITEM -->
             </div>
         </div>
@@ -298,190 +215,34 @@
     <div class="section">
         <div class="container">
             <div class="section-header">
-                latest movies
+                Phim mới
             </div>
             <div class="movies-slide carousel-nav-center owl-carousel">
                 <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="/website/images/movies/theatre-dead.jpg" alt="">
-                    <div class="movie-item-content">
-                        <div class="movie-item-title">
-                            Theatre of the dead
-                        </div>
-                        <div class="movie-infos">
-                            <div class="movie-info">
-                                <i class="bx bxs-star"></i>
-                                <span>9.5</span>
+                @foreach($data['movie_new'] as $movie_new)
+                    <a href="{{route('movie.details',['slug'=>\Illuminate\Support\Str::slug($movie_new->name),'id'=>$movie_new->id])}}" class="movie-item">
+                        <img src="{{$movie_new->image}}" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                {{$movie_new->name}}
                             </div>
-                            <div class="movie-info">
-                                <i class="bx bxs-time"></i>
-                                <span>120 mins</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>HD</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>16+</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="/website/images/movies/transformer.jpg" alt="">
-                    <div class="movie-item-content">
-                        <div class="movie-item-title">
-                            Transformer
-                        </div>
-                        <div class="movie-infos">
-                            <div class="movie-info">
-                                <i class="bx bxs-star"></i>
-                                <span>9.5</span>
-                            </div>
-                            <div class="movie-info">
-                                <i class="bx bxs-time"></i>
-                                <span>120 mins</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>HD</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>16+</span>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>{{explode(' ',$movie_new->duration)[0]}} mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>{{date('d-m-Y', strtotime($movie_new->release_date))}}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="/website/images/movies/resident-evil.jpg" alt="">
-                    <div class="movie-item-content">
-                        <div class="movie-item-title">
-                            Resident Evil
-                        </div>
-                        <div class="movie-infos">
-                            <div class="movie-info">
-                                <i class="bx bxs-star"></i>
-                                <span>9.5</span>
-                            </div>
-                            <div class="movie-info">
-                                <i class="bx bxs-time"></i>
-                                <span>120 mins</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>HD</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>16+</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="/website/images/movies/captain-marvel.png" alt="">
-                    <div class="movie-item-content">
-                        <div class="movie-item-title">
-                            Captain Marvel
-                        </div>
-                        <div class="movie-infos">
-                            <div class="movie-info">
-                                <i class="bx bxs-star"></i>
-                                <span>9.5</span>
-                            </div>
-                            <div class="movie-info">
-                                <i class="bx bxs-time"></i>
-                                <span>120 mins</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>HD</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>16+</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="/website/images/movies/hunter-killer.jpg" alt="">
-                    <div class="movie-item-content">
-                        <div class="movie-item-title">
-                            Hunter Killer
-                        </div>
-                        <div class="movie-infos">
-                            <div class="movie-info">
-                                <i class="bx bxs-star"></i>
-                                <span>9.5</span>
-                            </div>
-                            <div class="movie-info">
-                                <i class="bx bxs-time"></i>
-                                <span>120 mins</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>HD</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>16+</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="/website/images/movies/blood-shot.jpg" alt="">
-                    <div class="movie-item-content">
-                        <div class="movie-item-title">
-                            Bloodshot
-                        </div>
-                        <div class="movie-infos">
-                            <div class="movie-info">
-                                <i class="bx bxs-star"></i>
-                                <span>9.5</span>
-                            </div>
-                            <div class="movie-info">
-                                <i class="bx bxs-time"></i>
-                                <span>120 mins</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>HD</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>16+</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item">
-                    <img src="/website/images/movies/call.jpg" alt="">
-                    <div class="movie-item-content">
-                        <div class="movie-item-title">
-                            Call
-                        </div>
-                        <div class="movie-infos">
-                            <div class="movie-info">
-                                <i class="bx bxs-star"></i>
-                                <span>9.5</span>
-                            </div>
-                            <div class="movie-info">
-                                <i class="bx bxs-time"></i>
-                                <span>120 mins</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>HD</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>16+</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                @endforeach
+
                 <!-- END MOVIE ITEM -->
             </div>
         </div>
@@ -918,89 +679,4 @@
         </div>
     </div>
     <!-- END SPECIAL MOVIE SECTION -->
-
-    <!-- PRICING SECTION -->
-    <div class="section">
-        <div class="container">
-            <div class="pricing">
-                <div class="pricing-header">
-                    Fl<span class="main-color">i</span>x pricing
-                </div>
-                <div class="pricing-list">
-                    <div class="row">
-                        <div class="col-dt-4 col-tb-12 col-mb-12">
-                            <div class="pricing-box">
-                                <div class="pricing-box-header">
-                                    <div class="pricing-name">
-                                        Basic
-                                    </div>
-                                    <div class="pricing-price">
-                                        Free
-                                    </div>
-                                </div>
-                                <div class="pricing-box-content">
-                                    <p>Originals</p>
-                                    <p>Swich plans anytime</p>
-                                    <p><del>65+ top Live</del></p>
-                                    <p><del>TV Channels</del></p>
-                                </div>
-                                <div class="pricing-box-action">
-                                    <a href="#" class="btn btn-hover">
-                                        <span>Register now</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-dt-4 col-tb-12 col-mb-12">
-                            <div class="pricing-box hightlight">
-                                <div class="pricing-box-header">
-                                    <div class="pricing-name">
-                                        Premium
-                                    </div>
-                                    <div class="pricing-price">
-                                        $35.99 <span>/month</span>
-                                    </div>
-                                </div>
-                                <div class="pricing-box-content">
-                                    <p>Originals</p>
-                                    <p>Swich plans anytime</p>
-                                    <p><del>65+ top Live</del></p>
-                                    <p><del>TV Channels</del></p>
-                                </div>
-                                <div class="pricing-box-action">
-                                    <a href="#" class="btn btn-hover">
-                                        <span>Register now</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-dt-4 col-tb-12 col-mb-12">
-                            <div class="pricing-box">
-                                <div class="pricing-box-header">
-                                    <div class="pricing-name">
-                                        VIP
-                                    </div>
-                                    <div class="pricing-price">
-                                        $65.99 <span>/month</span>
-                                    </div>
-                                </div>
-                                <div class="pricing-box-content">
-                                    <p>Originals</p>
-                                    <p>Swich plans anytime</p>
-                                    <p><del>65+ top Live</del></p>
-                                    <p><del>TV Channels</del></p>
-                                </div>
-                                <div class="pricing-box-action">
-                                    <a href="#" class="btn btn-hover">
-                                        <span>Register now</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END PRICING SECTION -->
 @endsection
