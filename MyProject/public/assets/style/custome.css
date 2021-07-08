@@ -29,3 +29,6 @@ a.active {
     color: #FFFFFF;
     font-weight: bold;
 }
+a.row_seat{
+    cursor: default;
+}
