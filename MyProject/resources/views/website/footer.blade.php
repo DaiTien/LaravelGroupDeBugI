@@ -86,7 +86,7 @@
 
     <!-- COPYRIGHT SECTION -->
     <div class="copyright">
-        Copyright 2021 <a href="https://www.youtube.com/channel/UCnNgtK4tGlWcceXVzoyTg8Q" target="_blank">
-            Tuat Tran Anh</a>
+        Copyright 2021 <a href="https://www.facebook.com/profile.php?id=100005233783400" target="_blank">
+            <span class="main-color">Debug</span> team</a>
     </div>
     <!-- END COPYRIGHT SECTION -->
