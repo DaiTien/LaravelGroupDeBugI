@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/website/css/signin.css">
-    <title>
-        Animated login signup
-    </title>
+    <title>Login</title>
 </head>
 
 <body>
@@ -68,50 +66,44 @@
             <!-- END SIGN UP -->
             <!-- SIGN IN -->
             <div class="col align-items-center flex-col sign-in">
-                <div class="form-wrapper align-items-center">
-                    <div class="form sign-in">
-                        <div class="input-group">
-                            <i class='bx bxs-user'></i>
-                            <input type="text" placeholder="Username">
-                        </div>
-                        <div class="input-group">
-                            <i class='bx bxs-lock-alt'></i>
-                            <input type="password" placeholder="Password">
-                        </div>
-                        <button>
-                            Sign in
-                        </button>
-                        <p>
-                            <b>
-                                Forgot password?
-                            </b>
-                        </p>
-                        <p>
+                <form action="{{route('login_customer')}}" method="POST">
+                    @csrf
+                    <div class="form-wrapper align-items-center">
+                        <div class="form sign-in">
+                            @if(session()->has('message'))
+                                <div class="alert alert-danger">
+                                    {{ session()->get('message') }}
+                                </div>
+                            @endif
+                            <div class="input-group">
+                                <i class='bx bxs-user'></i>
+                                <input type="text" placeholder="Email" name="email" value="{{old('email')}}">
+                                @error('email')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="input-group">
+                                <i class='bx bxs-lock-alt'></i>
+                                <input type="password" placeholder="Password" name="password">
+                                @error('password')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <button type="submit">
+                                Sign in
+                            </button>
+                            <p>
                             <span>
                                 Don't have an account?
                             </span>
-                            <b onclick="toggle()" class="pointer">
-                                Sign up here
-                            </b>
-                        </p>
-                    </div>
-                </div>
-                {{-- <div class="form-wrapper">
-                    <div class="social-list align-items-center sign-in">
-                        <div class="align-items-center facebook-bg">
-                            <i class='bx bxl-facebook'></i>
-                        </div>
-                        <div class="align-items-center google-bg">
-                            <i class='bx bxl-google'></i>
-                        </div>
-                        <div class="align-items-center twitter-bg">
-                            <i class='bx bxl-twitter'></i>
-                        </div>
-                        <div class="align-items-center insta-bg">
-                            <i class='bx bxl-instagram-alt'></i>
+                                <b onclick="toggle()" class="pointer">
+                                    Sign up here
+                                </b>
+                            </p>
                         </div>
                     </div>
-                </div> --}}
+                </form>
+
             </div>
             <!-- END SIGN IN -->
         </div>

@@ -19,11 +19,10 @@ class MovieController extends Controller
 {
     //
 
-    public function detail($id)
+    public function detail($slug, $id)
     {
         $movie = Movie::with('moviecategory')->where('id', $id)->first();
-
-        return view('website.details', compact('movie'));
+        return view('website.details_movies', compact('movie'));
     }
 
 
@@ -33,9 +32,9 @@ class MovieController extends Controller
         $user = session()->get('customer');
         if ($user) {
             MovieFavorite::create([
-                'user_id'  => Session::get('customer')->id,
+                'user_id' => Session::get('customer')->id,
                 'movie_id' => $id,
-                'status'   => '0'
+                'status' => '0'
             ]);
 
             return back();
@@ -53,17 +52,34 @@ class MovieController extends Controller
     }
 
     //from book ticker
-    public function book_ticket(Request $request)
+    public function book_ticket(Request $request, $movie_id)
     {
-        //lấy ds7 ngày trong tuần
-        $now  = Carbon::now();
-//        dd($now->format('Y-m-d'));
-        $week = [];
-
-        for ($i = 0; $i < 7; $i++) {
-            $week['Thứ '.($i + 2)] = $now->startOfWeek()->addDay($i)->format('Y-m-d');
+        //ktra xem đã login chưa
+        $user = Session::get('customer');
+        if (!$user) {
+            return redirect()->route('signin');
+        } else {
+            Carbon::setLocale('vi');
+            //lấy ds7 ngày trong tuần
+            $now = Carbon::now('Asia/Ho_Chi_Minh')->timestamp;
+            $week = [];
+            for ($i = 0; $i < 7; $i++) {
+                $date = Carbon::now()->addRealDays($i)->timestamp;
+                $thu = getdate($date)['weekday'];
+                $week[$thu] = date('d/m', $date);
+            }
+            //get ds suất chiếu của ngày đầu tiên trong mảng
+//            $current_date = $now = Carbon::now('Asia/Ho_Chi_Minh')->format('Y-m-d');
+            $key = getdate()['weekday'];
+            $current_date = date('Y-m-d', $now);
+            $suat_chieu = ShowTime::with('showTimeRoom')->where([['show_date', $current_date], ['movie_id', $movie_id], ['status', 0]])->get();
+            foreach ($suat_chieu as $value) {
+                $value->time_start = date('H:i', strtotime($value->time_start));
+                $value->time_end = date('H:i', strtotime($value->time_end));
+            }
+            $data = $suat_chieu;
+            $movie = Movie::with('moviecategory')->where('id', $movie_id)->first();
+            return view('website.book_ticket', compact('week', 'data', 'key','movie'));
         }
-        dd($now->format('Y-m-d'));
-        die();
     }
 }
