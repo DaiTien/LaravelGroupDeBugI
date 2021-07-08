@@ -129,7 +129,10 @@ Route::group(['prefix' => '/'], function () {
         //get suất chiếu phim theo ngày
         Route::get('show-time/{phim_id}/{date}', 'website\MovieController@get_showtime_by_date')->name('movie.get_showtime_by_date');
     });
+    Route::get('/details-movie', function () {
+        return view('website.details_movies');
+    });
     Route::get('/details', function () {
-        return view('website.details_chonghe');
+        return view('website.details');
     });
 });

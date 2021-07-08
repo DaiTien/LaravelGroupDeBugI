@@ -34,6 +34,10 @@ img {
     max-width: 100%;
 }
 
+a:hover {
+    color: #fff;
+}
+
 .main-color {
     color: var(--main-color);
 }
@@ -86,7 +90,7 @@ img {
     padding: 0 20px;
 }
 
-.nav-menu li ~ li {
+.nav-menu li~li {
     margin-left: 30px;
 }
 
@@ -268,7 +272,7 @@ a.movie-item:hover {
     color: var(--main-color);
 }
 
-.movie-info ~ .movie-info {
+.movie-info~.movie-info {
     margin-left: 5px;
 }
 
@@ -502,7 +506,7 @@ footer a.logo:hover {
     color: var(--text-color);
 }
 
-.social-item ~ .social-item {
+.social-item~.social-item {
     margin-left: 20px;
 }
 

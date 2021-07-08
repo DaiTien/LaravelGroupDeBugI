@@ -7,7 +7,7 @@
             </a>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="/">Home</a></li>
-                <li><a href="/details">Details test</a></li>
+                <li><a href="/details-movie">Details test</a></li>
                 <li><a href="#">Movies</a></li>
                 <li><a href="#">Series</a></li>
                 <li><a href="#">About</a></li>
@@ -15,13 +15,13 @@
                 use Illuminate\Support\Facades\Session;
                 $user = Session::get('customer');
                 ?>
-                @if(isset($user))
-                    <a href="{{route('logout')}}" class="btn btn-hover">
-                        <span>{{$user->name}}</span>
+                @if (isset($user))
+                    <a href="{{ route('logout') }}" class="btn btn-hover">
+                        <span>{{ $user->name }}</span>
                     </a>
                 @else
                     <li>
-                        <a href="{{route('signin')}}" class="btn btn-hover">
+                        <a href="{{ route('signin') }}" class="btn btn-hover">
                             <span>Sign in</span>
                         </a>
                     </li>

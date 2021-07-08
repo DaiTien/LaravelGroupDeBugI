@@ -1,56 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="stylesheet" href="/website/css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="/website/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="/website/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/website/css/slider-radio.css">
-    <link rel="stylesheet" href="/website/css/select2.min.css">
-    <link rel="stylesheet" href="/website/css/magnific-popup.css">
-    <link rel="stylesheet" href="/website/css/plyr.css">
-    <link rel="stylesheet" href="/website/css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/website/css/signin.css">
+    <title>
+        Animated login signup
+    </title>
 </head>
 
-<!-- sign in -->
-<div class="sign section--full-bg" data-bg="website/img/bg.jpg">
-    <div class="container">
+<body>
+    <div id="container" class="container">
+        <!-- FORM SECTION -->
         <div class="row">
-            <div class="col-12">
-                <div class="sign__content">
-                    <form action="{{route('login_customer')}}" class="sign__form" method="POST">
-                        @csrf
-                        <a href="/" class="sign__logo">
-                            <img src="website/img/logo.svg" alt="">
-                        </a>
-                        @if(session()->has('message'))
-                            <div class="alert alert-error">
-                                {{ session()->get('message') }}
-                            </div>
-                        @endif
-                        <div class="sign__group">
-                            <input type="text" class="sign__input" placeholder="Email" name="email" value="{{old('email')}}">
-                            @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                            @enderror
+            <!-- SIGN UP -->
+            <div class="col align-items-center flex-col sign-up">
+                <div class="form-wrapper align-items-center">
+                    <div class="form sign-up">
+                        <div class="input-group">
+                            <i class='bx bxs-user'></i>
+                            <input type="text" placeholder="Username">
                         </div>
-                        <div class="sign__group">
-                            <input type="password" class="sign__input" placeholder="Password" name="password">
-                            @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                            @enderror
+                        <div class="input-group">
+                            <i class='bx bx-mail-send'></i>
+                            <input type="email" placeholder="Email">
                         </div>
-                        <button class="sign__btn" type="submit">Sign in</button>
-                        <span class="sign__text">Don't have an account? <a href="{{route('signup')}}">Sign up!</a></span>
-                        <span class="sign__text"><a href="forgot.html">Forgot password?</a></span>
-                    </form>
+                        <div class="input-group">
+                            <i class='bx bxs-lock-alt'></i>
+                            <input type="password" placeholder="Password">
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-lock-alt'></i>
+                            <input type="password" placeholder="Confirm password">
+                        </div>
+                        <button>
+                            Sign up
+                        </button>
+                        <p>
+                            <span>
+                                Already have an account?
+                            </span>
+                            <b onclick="toggle()" class="pointer">
+                                Sign in here
+                            </b>
+                        </p>
+                    </div>
+                </div>
+                <div class="form-wrapper">
+                    <div class="social-list align-items-center sign-up">
+                        <div class="align-items-center facebook-bg">
+                            <i class='bx bxl-facebook'></i>
+                        </div>
+                        <div class="align-items-center google-bg">
+                            <i class='bx bxl-google'></i>
+                        </div>
+                        <div class="align-items-center twitter-bg">
+                            <i class='bx bxl-twitter'></i>
+                        </div>
+                        <div class="align-items-center insta-bg">
+                            <i class='bx bxl-instagram-alt'></i>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!-- END SIGN UP -->
+            <!-- SIGN IN -->
+            <div class="col align-items-center flex-col sign-in">
+                <div class="form-wrapper align-items-center">
+                    <div class="form sign-in">
+                        <div class="input-group">
+                            <i class='bx bxs-user'></i>
+                            <input type="text" placeholder="Username">
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-lock-alt'></i>
+                            <input type="password" placeholder="Password">
+                        </div>
+                        <button>
+                            Sign in
+                        </button>
+                        <p>
+                            <b>
+                                Forgot password?
+                            </b>
+                        </p>
+                        <p>
+                            <span>
+                                Don't have an account?
+                            </span>
+                            <b onclick="toggle()" class="pointer">
+                                Sign up here
+                            </b>
+                        </p>
+                    </div>
+                </div>
+                {{-- <div class="form-wrapper">
+                    <div class="social-list align-items-center sign-in">
+                        <div class="align-items-center facebook-bg">
+                            <i class='bx bxl-facebook'></i>
+                        </div>
+                        <div class="align-items-center google-bg">
+                            <i class='bx bxl-google'></i>
+                        </div>
+                        <div class="align-items-center twitter-bg">
+                            <i class='bx bxl-twitter'></i>
+                        </div>
+                        <div class="align-items-center insta-bg">
+                            <i class='bx bxl-instagram-alt'></i>
+                        </div>
+                    </div>
+                </div> --}}
+            </div>
+            <!-- END SIGN IN -->
         </div>
+        <!-- END FORM SECTION -->
+        <!-- CONTENT SECTION -->
+        <div class="row content-row">
+            <!-- SIGN IN CONTENT -->
+            <div class="col align-items-center flex-col">
+                <div class="text sign-in">
+                    <h2>
+                        Welcome back
+                    </h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit obcaecati, accusantium
+                        molestias, laborum, aspernatur deserunt officia voluptatum tempora dicta quo ab ullam. Assumenda
+                        enim harum minima possimus dignissimos deserunt rem.
+                    </p>
+                </div>
+                <div class="img sign-in">
+                    <img src="/website/images/undraw_horror_movie_3988.svg" alt="welcome">
+                </div>
+            </div>
+            <!-- END SIGN IN CONTENT -->
+            <!-- SIGN UP CONTENT -->
+            <div class="col align-items-center flex-col">
+                <div class="img sign-up">
+                    <img src="/website/images/undraw_movie_night_fldd.svg" alt="welcome">
+                </div>
+                <div class="text sign-up">
+                    <h2>
+                        Join with us
+                    </h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit obcaecati, accusantium
+                        molestias, laborum, aspernatur deserunt officia voluptatum tempora dicta quo ab ullam. Assumenda
+                        enim harum minima possimus dignissimos deserunt rem.
+                    </p>
+                </div>
+            </div>
+            <!-- END SIGN UP CONTENT -->
+        </div>
+        <!-- END CONTENT SECTION -->
     </div>
-</div>
-<!-- end sign in -->
+
+    <script>
+        let container = document.getElementById('container')
+
+        toggle = () => {
+            container.classList.toggle('sign-in')
+            container.classList.toggle('sign-up')
+        }
+
+        setTimeout(() => {
+            container.classList.add('sign-in')
+        }, 200)
+    </script>
+</body>
+
 </html>
