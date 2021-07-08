@@ -10,7 +10,7 @@
                 <li><a href="/details">Details test</a></li>
                 <li><a href="#">Movies</a></li>
                 <li><a href="#">Series</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="{{route('website.about')}}">About</a></li>
                 <?php
                 use Illuminate\Support\Facades\Session;
                 $user = Session::get('customer');
