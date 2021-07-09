@@ -28,10 +28,7 @@
                                     {{--                                    </li>--}}
                                     @foreach($week as $key=>$value)
                                         <li class="nav-item">
-                                            <a class="nav-link active" id="{{$key}}-tab" data-toggle="pill"
-                                               href="#{{$key}}"
-                                               role="tab" aria-controls="{{$key}}"
-                                               aria-selected="true">{{$value}}<br>{{$key}}</a>
+                                            <a class="nav-link active input_date" id="{{$key}}" href="#">{{$value}}</a>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -49,51 +46,18 @@
                                                         </div>
                                                         <ul class="time__list">
                                                             <li class="time__item">
-                                                                <a href="#" class="time__link">{{$item->time_start}}
-                                                                    - {{$item->time_end}}</a>
+                                                                <a href="#" class="time__link">{{$item->time_start}} - {{$item->time_end}}</a>
                                                             </li>
-                                                            {{--                                                            <li class="time__item">--}}
-                                                            {{--                                                                <a href="#" class="time__link">13:45 - 15h:30</a>--}}
-                                                            {{--                                                            </li>--}}
                                                         </ul>
                                                     </div>
                                                 @endforeach
                                             @else
                                                 <p>Chưa có lịch chiếu cho ngày này. Hãy quay lại sau. Xin cám ơn.</p>
                                             @endif
-                                            {{--                                            <div class="xuatchieu">--}}
-                                            {{--                                                <div class="title__room">--}}
-                                            {{--                                                    <h4>Phòng 1</h4>--}}
-                                            {{--                                                </div>--}}
-                                            {{--                                                <ul class="time__list">--}}
-                                            {{--                                                    <li class="time__item">--}}
-                                            {{--                                                        <a href="#" class="time__link">13:45 - 15h:30</a>--}}
-                                            {{--                                                    </li>--}}
-                                            {{--                                                    <li class="time__item">--}}
-                                            {{--                                                        <a href="#" class="time__link">13:45 - 15h:30</a>--}}
-                                            {{--                                                    </li>--}}
-                                            {{--                                                </ul>--}}
-                                            {{--                                            </div>--}}
-                                            {{--                                            <div class="xuatchieu">--}}
-                                            {{--                                                <div class="title__room">--}}
-                                            {{--                                                    <h4>Phòng 2</h4>--}}
-                                            {{--                                                </div>--}}
-                                            {{--                                                <ul class="time__list">--}}
-                                            {{--                                                    <li class="time__item">--}}
-                                            {{--                                                        <a href="#" class="time__link">13:45 - 15h:30</a>--}}
-                                            {{--                                                    </li>--}}
-                                            {{--                                                    <li class="time__item">--}}
-                                            {{--                                                        <a href="#" class="time__link">13:45 - 15h:30</a>--}}
-                                            {{--                                                    </li>--}}
-                                            {{--                                                </ul>--}}
-                                            {{--                                            </div>--}}
+
                                         </div>
-                                        {{--                                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"--}}
-                                        {{--                                             aria-labelledby="pills-profile-tab">...--}}
-                                        {{--                                        </div>--}}
                                         <div class="tab-pane fade show active" id="Friday" role="tabpanel"
                                              aria-labelledby="Friday-tab">
-                                            {{--                                            <p>Chưa có lịch chiếu cho ngày này. Hãy quay lại sau. Xin cám ơn.</p>--}}
                                             <div class="xuatchieu">
                                                 <div class="title__room">
                                                     <h4>sdwqeqw</h4>
@@ -102,43 +66,9 @@
                                                     <li class="time__item">
                                                         <a href="#" class="time__link">dsadsa - dsadsa</a>
                                                     </li>
-                                                    {{--                                                            <li class="time__item">--}}
-                                                    {{--                                                                <a href="#" class="time__link">13:45 - 15h:30</a>--}}
-                                                    {{--                                                            </li>--}}
                                                 </ul>
                                             </div>
-
-                                            <p>Chưa có lịch chiếu cho ngày này. Hãy quay lại sau. Xin cám ơn.</p>
-                                            {{--                                            <div class="xuatchieu">--}}
-                                            {{--                                                <div class="title__room">--}}
-                                            {{--                                                    <h4>Phòng 1</h4>--}}
-                                            {{--                                                </div>--}}
-                                            {{--                                                <ul class="time__list">--}}
-                                            {{--                                                    <li class="time__item">--}}
-                                            {{--                                                        <a href="#" class="time__link">13:45 - 15h:30</a>--}}
-                                            {{--                                                    </li>--}}
-                                            {{--                                                    <li class="time__item">--}}
-                                            {{--                                                        <a href="#" class="time__link">13:45 - 15h:30</a>--}}
-                                            {{--                                                    </li>--}}
-                                            {{--                                                </ul>--}}
-                                            {{--                                            </div>--}}
-                                            {{--                                            <div class="xuatchieu">--}}
-                                            {{--                                                <div class="title__room">--}}
-                                            {{--                                                    <h4>Phòng 2</h4>--}}
-                                            {{--                                                </div>--}}
-                                            {{--                                                <ul class="time__list">--}}
-                                            {{--                                                    <li class="time__item">--}}
-                                            {{--                                                        <a href="#" class="time__link">13:45 - 15h:30</a>--}}
-                                            {{--                                                    </li>--}}
-                                            {{--                                                    <li class="time__item">--}}
-                                            {{--                                                        <a href="#" class="time__link">13:45 - 15h:30</a>--}}
-                                            {{--                                                    </li>--}}
-                                            {{--                                                </ul>--}}
-                                            {{--                                            </div>--}}
                                         </div>
-                                        {{--                                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"--}}
-                                        {{--                                             aria-labelledby="pills-profile-tab">...--}}
-                                        {{--                                        </div>--}}
                                     </div>
                                 </div>
                             </div>
@@ -178,4 +108,9 @@
         </div>
     </div>
     <!-- END PRICING SECTION -->
+    <script>
+        $("a.input_date").onclick(function () {
+            alert('abc');
+        })
+    </script>
 @endsection
