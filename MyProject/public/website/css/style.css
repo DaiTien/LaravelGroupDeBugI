@@ -344,3 +344,13 @@ a.disabled {
 a.btn_tickket {
     display: none;
 }
+.date_default{
+    background: #687580;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+}
+.date_active{
+    background: #007bff;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+}

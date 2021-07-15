@@ -22,11 +22,9 @@
 
                                 </div>
                                 <div class="pricing-box-action">
-                                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/pKFUZ10Wmbw"
-                                            title="YouTube video player" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen></iframe>
-
+                                    <?php
+                                    echo ($movie->video)
+                                    ?>
                                     <div class="article__actions article__actions--details">
                                         <div class="article__download">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -42,7 +40,8 @@
                                         </div>
 
                                         <!-- add .active class -->
-                                        <a class="article__favorites" href="{{route('movie.book_ticket',['movie_id'=>$movie->id])}}">
+                                        <a class="article__favorites"
+                                           href="{{route('movie.book_ticket',['movie_id'=>$movie->id])}}">
                                             <svg height="512pt"
                                                  viewBox="0 -31 512.00026 512" width="512pt"
                                                  xmlns="http://www.w3.org/2000/svg">
@@ -61,11 +60,11 @@
                         </div>
                         <div class="col-dt-4 col-tl-12 col-mb-12">
                             <div class="pricing-box pricing-box__image hightlight">
-                                <a href="#" class="movie-item">
-                                    <img src="/website/images/series/star-trek.jpg" alt="">
+                                <a href="javascipt:void(0)" class="movie-item">
+                                    <img src="/{{$movie->image}}" alt="">
                                     <div class="movie-item-content">
                                         <div class="movie-item-title">
-                                            Star Trek
+                                            {{$movie->name}}
                                         </div>
                                         <div class="movie-infos">
                                             <div class="movie-info">
@@ -74,13 +73,10 @@
                                             </div>
                                             <div class="movie-info">
                                                 <i class="bx bxs-time"></i>
-                                                <span>120 mins</span>
+                                                <span>{{explode(' ', $movie->duration)[0]}} mins</span>
                                             </div>
                                             <div class="movie-info">
                                                 <span>HD</span>
-                                            </div>
-                                            <div class="movie-info">
-                                                <span>16+</span>
                                             </div>
                                         </div>
                                     </div>

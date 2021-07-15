@@ -343,7 +343,13 @@
                                     use Illuminate\Support\Facades\Auth;
                                     $user = Auth::user();
                                     ?>
-                                        <span class="symbol-label font-weight-bold font-size-base">{{$user->lastname}}</span>
+                                        <span class="symbol-label font-weight-bold font-size-base">
+                                            @if(isset($user))
+                                                {{$user->lastname}}
+                                            @else
+
+                                            @endif
+                                        </span>
                                 </div>
                             </div>
                             <!--end::User-->
@@ -457,7 +463,13 @@
                                         <!--end::Svg Icon-->
                                     </span>
                                 </span>
-                                <span class="navi-text text-muted text-hover-primary">{{$user->email}}</span>
+                                <span class="navi-text text-muted text-hover-primary">
+                                     @if(isset($user))
+                                        {{$user->email}}
+                                    @else
+
+                                    @endif
+                                </span>
                             </span>
                         </a>
                         <a href="/admin/logout" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Sign
