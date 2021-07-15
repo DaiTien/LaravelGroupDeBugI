@@ -56,7 +56,8 @@ class RoomController extends Controller
                 RoomSeat::create([
                     'room_id'     => $room->id,
                     'name'        => $arr_Name[$i],
-                    'seat_number' => $j
+                    'seat_number' => $j,
+                    'status' => '0'
                 ]);
             }
         }

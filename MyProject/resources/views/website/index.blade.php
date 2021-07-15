@@ -679,4 +679,5 @@
         </div>
     </div>
     <!-- END SPECIAL MOVIE SECTION -->
+
 @endsection

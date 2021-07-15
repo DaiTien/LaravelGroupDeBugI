@@ -47,7 +47,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3">email</label>
                         <div class="col-sm-9">
-                            <input type="email" placeholder="email" name="email" class="form-control" value="{{old('email', $user->email)}}"/>
+                            <input type="email" placeholder="email" name="email" class="form-control" value="{{old('email', $user->email)}}" disabled/>
                             @error('email')
                             <span class="text-danger font-weight-bold">{{ $message }}</span>
                             @enderror

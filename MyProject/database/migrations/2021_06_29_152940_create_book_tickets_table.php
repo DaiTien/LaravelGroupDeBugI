@@ -22,6 +22,7 @@ class CreateBookTicketsTable extends Migration
             $table->string('total_price')->nullable();
             $table->string('discount')->nullable();
             $table->integer('status')->nullable();
+            $table->string('seats_id')->nullable();
             $table->timestamps();
         });
     }

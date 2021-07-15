@@ -75,8 +75,8 @@ class UserManagerController extends Controller
     {
         $validated = $request->validate([
             'name'     => 'required|min:3',
-            'phone'    => 'required|unique:users|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'email'    => 'required|string|email|unique:users',
+            'phone'    => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+//            'email'    => 'required|string|email|unique:users',
             'password' => 'required',
             'address'  => 'required'
         ], [
@@ -84,12 +84,12 @@ class UserManagerController extends Controller
             'name.min'         => trans('validation.min'),
             'phone.required'   => trans('validation.required'),
             'phone.regex'      => trans('validation.regex'),
-            'phone.unique'     => trans('validation.unique'),
+//            'phone.unique'     => trans('validation.unique'),
             'phone.min'        => trans('validation.min'),
-            'email.required'   => trans('validation.required'),
-            'email.string'     => trans('validation.string'),
-            'email.email'      => trans('validation.email'),
-            'email.unique'     => trans('validation.unique'),
+//            'email.required'   => trans('validation.required'),
+//            'email.string'     => trans('validation.string'),
+//            'email.email'      => trans('validation.email'),
+//            'email.unique'     => trans('validation.unique'),
             'address.required' => trans('validation.required'),
         ]);
         $user      = UserManager::all()->find($request->id);

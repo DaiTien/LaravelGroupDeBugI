@@ -51,6 +51,7 @@
         crossorigin="anonymous"></script>
     <!-- APP SCRIPT -->
     <script src="/website/js/app.js"></script>
+{{--    @include('sweetalert::alert')--}}
 </body>
 
 </html>

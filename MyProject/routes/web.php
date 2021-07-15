@@ -128,6 +128,12 @@ Route::group(['prefix' => '/'], function () {
         Route::get('book-ticket/{movie_id}', 'website\MovieController@book_ticket')->name('movie.book_ticket');
         //get suất chiếu phim theo ngày
         Route::get('show-time/{phim_id}/{date}', 'website\MovieController@get_showtime_by_date')->name('movie.get_showtime_by_date');
+        //chọn số lượng vé
+        Route::get('choose-ticket/{phim_id}/{date}/{show_id}', 'website\MovieController@choose_ticket')->name('movie.choose_ticket');
+        //chọn chỗ
+        Route::get('choose-seats/{show_id}', 'website\MovieController@choose_seat')->name('movie.choose_seat');
+        //xác nhận đặt vé
+        Route::post('confirm_book_ticket', 'website\MovieController@save_book_ticket')->name('movie.save_book_ticket');
     });
     Route::get('/details-movie', function () {
         return view('website.details_movies');
