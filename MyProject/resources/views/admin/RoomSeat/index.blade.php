@@ -127,6 +127,8 @@
         }
 
         $(".list_room").change(function() {
+            $("#txtDanhSachChecked").val('');
+            $("#txtCountChecked").val(0);
             $value = $(this).val();
             $.ajax({
                 method: 'GET',

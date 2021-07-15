@@ -1,227 +1,104 @@
-@extends('website.layouts.master')
-@section('title', 'Details')
-@section('content')
-    <!-- PRICING SECTION -->
-    <div class="section">
-        <div class="container">
-            <div class="pricing">
-                {{-- <div class="pricing-header">
-                    <span class="main-color"></span>Chọn ghế
-                </div> --}}
-                <div class="pricing-list">
-                    <div class="row">
-                        <div class="col-dt-9 col-tl-12 col-mb-12">
-                            <div class="pricing-box hightlight">
-                                <div class="pricing-box-header">
-                                    <div class="pricing-name">
-                                        Chọn ghế
-                                    </div>
-                                </div>
-                                <div class="pricing-box-content">
-                                    <div class="chair__content">
-                                        <div class="chair__content-sidebar">
-                                            <ul class="list__sreen">
-                                                <li class="list__item">
-                                                    <p class="list__color"></p>
-                                                    <span class="list__title">Ghế đang chọn</span>
-                                                </li>
-                                                <li class="list__item">
-                                                    <p class="list__color"></p>
-                                                    <span class="list__title">Ghế đã bán</span>
-                                                </li>
-                                                <li class="list__item">
-                                                    <p class="list__color"></p>
-                                                    <span class="list__title">Có thế chọn</span>
-                                                </li>
-                                                <li class="list__item">
-                                                    <p class="list__color"></p>
-                                                    <span class="list__title">Không thể chọn </span>
-                                                </li>
+<div class="tab-content">
+    <div class="pricing-box-header">
+        <div class="pricing-name">
+            Chọn ghế
+        </div>
+    </div>
+    <div class="pricing-box-content">
+        <div class="chair__content">
+            <div class="chair__content-sidebar">
+                <ul class="list__sreen">
+                    <li class="list__item">
+                        <p class="list__color"></p>
+                        <span class="list__title">Đang chọn</span>
+                    </li>
+                    <li class="list__item">
+                        <p class="list__color"></p>
+                        <span class="list__title">Đã được chọn</span>
+                    </li>
+                    <li class="list__item">
+                        <p class="list__color"></p>
+                        <span class="list__title">Có thế chọn</span>
+                    </li>
+                    <li class="list__item">
+                        <p class="list__color"></p>
+                        <span class="list__title">Không thể chọn </span>
+                    </li>
 
-                                            </ul>
-                                            <h5 class="screen">
-                                                Màn hình
-                                            </h5>
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col" class="text-left" colspan="5">Dãy ghế</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th class="text-left scope=" row"><a href="#"
-                                                                class="chair__link disabled" tabindex="-1">A</a></th>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="text-left" scope="row"><a href="#"
-                                                                class="chair__link chair__link--active disabled">B</a></th>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="text-left" scope="row"><a href="#"
-                                                                class="chair__link chair__link--active disabled">C</a></th>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__link--active">1</a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="text-left" scope="row"><a href="#"
-                                                                class="chair__link disabled">Hư</a></th>
-                                                        <td><a href="#" class="chair__link chair__disable">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__disable">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__disable">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__disable">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__disable">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__disable">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__disable">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__disable">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__disable">1</a></td>
-                                                        <td><a href="#" class="chair__link chair__disable">1</a></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-dt-3 col-tl-12 col-mb-12">
-                            <div class="pricing-box pricing-box__image hightlight">
-                                <a href="#" class="movie-item">
-                                    <img src="/website/images/series/star-trek.jpg" alt="">
-                                    <div class="movie-item-content">
-                                        <div class="movie-item-title">
-                                            Star Trek
-                                        </div>
-                                        <div class="movie-infos">
-                                            <div class="movie-info">
-                                                <i class="bx bxs-star"></i>
-                                                <span>9.5</span>
-                                            </div>
-                                            <div class="movie-info">
-                                                <i class="bx bxs-time"></i>
-                                                <span>120 mins</span>
-                                            </div>
-                                            <div class="movie-info">
-                                                <span>HD</span>
-                                            </div>
-                                            <div class="movie-info">
-                                                <span>16+</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="pricing-box-content pricing-box-content__image">
-                                    <ul class="images__list">
-                                        <li class="images__item">
-                                            <p>Phòng : 1</p> <span></span>
-                                        </li>
-                                        <li class="images__item">
-                                            <p>Suất chiếu : </p> <span>13:45 | Thứ 2, 07/07/2021</span>
-                                        </li>
-                                        <li class="images__item">
-                                            <p>Tổng : </p> <span>0 VND</span>
-                                        </li>
-                                        <li class="images__item">
-                                            <a href="#" class="btn btn-hover" data-toggle="modal"
-                                                data-target="#exampleModal">
-                                                <span class="text-white">Tiếp tục</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            {{-- <div class="pricing-box-action">
-
-                            </div> --}}
-                        </div>
-
-                    </div>
-                </div>
+                </ul>
+                <h5 class="screen">
+                    Màn hình
+                </h5>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="text-left" colspan="5">Dãy ghế</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($data['name_seat'] as $name)
+                        <tr>
+                            <th class="text-left scope="><a href="javascript:void(0)" class="chair__link disabled"
+                                                            tabindex="-1">{{$name->name}}</a></th>
+                            @foreach ($data['seat'][$name->name] as $seat)
+                                <td><a href="javascript:void(0)" id="{{$seat->id}}" onclick="choose_seat({{$seat->id}})"
+                                       name="{{ $name->name . '' . $seat->seat_number}}"
+                                       class="chair__link chair__link--active
+                                       {{$seat->status ==1?'ghe_khongthechon':($seat->status ==2?'ghe_dachon':'')}}">{{ $seat->seat_number }}</a>
+                                </td>
+                            @endforeach
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-    {{-- MODAL --}}
-    <!-- Button trigger modal -->
-    {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-    </button> --}}
+</div>
+<div hidden>
+    <input id="txtDanhSachChecked" name="ds_id" type="text"/>
+    <input id="txtCountChecked" name="count" type="text"/>
+    <input id="txtDanhSachGhe" name="ds_id" type="text"/>
+    <input id="txtCountSeat" name="count" type="text"/>
+</div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Thông tin vé</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="modal__info">
-                        <label for="">Họ và tên : </label>
-                        <input type="text" value="Lưu Văn Quyết" disabled>
-                    </div>
-                    <div class="modal__info">
-                        <label for="">Email : </label>
-                        <input type="text" value="" disabled>
-                    </div>
-                    <div class="modal__info">
-                        <label for="">Số điện thoại : </label>
-                        <input type="text" value="" disabled>
-                    </div>
-                    <div class="modal__info">
-                        <label for="">Phòng : </label>
-                        <input type="text" value="1" disabled>
-                    </div>
-                    <div class="modal__info">
-                        <label for="">Suất chiếu : </label>
-                        <input type="text" value="13:45 | Thứ 2, 07/07/2021" disabled>
-                    </div>
-                    <div class="modal__info">
-                        <label for="">Ghế : </label>
-                        <input type="text" value="A1,B2" disabled>
-                    </div>
+<script>
+    $(document).ready(function () {
+        $('a.btn_next').css('display', 'none')
+        $('a.btn_tickket').css('display', 'block')
+    });
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{-- END MODAL --}}
-    <!-- END PRICING SECTION -->
-
-@endsection
+    function choose_seat(id) {
+        if ($('a#' + id).hasClass('ghe_dangchon')) {
+            $('a#' + id).removeClass('ghe_dangchon');
+        } else {
+            $('a#' + id).addClass('ghe_dangchon');
+        }
+        var name_seat = $('a#' + id).attr('name');
+        // console.log(name_seat)
+        var arrValue = document.getElementById("txtDanhSachChecked").value;
+        var arr = document.getElementById("txtDanhSachGhe").value;
+        // console.log(arrValue)
+        // console.log(arr)
+        var array = JSON.parse("[" + arrValue + "]");
+        var array2 = arr.split(',')
+        // var arraySeat = [];
+        var index = array.indexOf(id);
+        var indexSeat = array2.indexOf(name_seat);
+        if (index != -1) {
+            array.splice(index, 1);
+            array2.splice(indexSeat, 1);
+            document.getElementById("txtDanhSachChecked").value = array;
+            document.getElementById("txtDanhSachGhe").value = array2;
+            document.getElementById("txtCountChecked").value = document.getElementById("txtCountChecked").value - 1;
+            document.getElementById("txtCountSeat").value = document.getElementById("txtCountSeat").value - 1;
+        } else {
+            // arraySeat=arraySeat.push(name_seat);
+            document.getElementById("txtCountChecked").value = array.push(id);
+            document.getElementById("txtCountSeat").value = array2.push(name_seat);
+            document.getElementById("txtDanhSachChecked").value = array;
+            document.getElementById("txtDanhSachGhe").value = array2;
+        }
+        // console.log(arraySeat)
+    }
+</script>

@@ -309,3 +309,38 @@ a.disabled {
     margin-right: 6px;
     margin-bottom: 3px;
 }
+
+/*adđ class*/
+.showtime_active {
+    color: #fff;
+    background: blue;
+}
+
+.disable_btn_next, .disable_btn_next:hover {
+    cursor: default !important;
+    color: #7e8299 !important;
+    background-color: #f3f6f9;
+    border-color: #f3f6f9;
+    pointer-events: none;
+}
+
+.ghe_dangchon {
+    background-color: var(--green);
+    color: #FFFFFF;
+}
+
+.ghe_dachon {
+    background-color: var(--red);
+    color: #FFFFFF;
+    pointer-events: none;
+}
+
+.ghe_khongthechon {
+    background-color: var(--cyan);
+    color: #FFFFFF;
+    pointer-events: none;
+}
+
+a.btn_tickket {
+    display: none;
+}

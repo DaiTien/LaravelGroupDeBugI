@@ -17,8 +17,9 @@ class CreateBookTicketDetailsTable extends Migration
             $table->id();
             $table->integer('user_id')->nullable();
             $table->integer('book_ticket_id')->nullable();
-            $table->integer('room_seat_id')->nullable();
+            $table->integer('type_price_id')->nullable();
             $table->string('price')->nullable();
+            $table->integer('quantity')->nullable();
             $table->timestamps();
         });
     }
