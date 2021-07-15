@@ -21,7 +21,7 @@
                                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                     @foreach($week as $key=>$value)
                                         <li class="nav-item">
-                                            <a class="nav-link active input_date" id="{{$key}}"
+                                            <a class="active input_date date_default" id="{{$key}}"
                                                href="javascript:void(0)">{{$value}}</a>
                                         </li>
                                     @endforeach
@@ -92,6 +92,7 @@
     <script>
         $(document).ready(function () {
             var date = new Date().toISOString().slice(0, 10);
+
             $("input[name*='date']").val(date);
             var values_ = $("input[name*='show_id']").val();
             if (values_ != "") {
@@ -100,10 +101,12 @@
                 $("a.btn_next").attr('disabled', true);
                 $("a.btn_next").addClass('disable_btn_next');
             }
-
+           $('a#'+date).addClass('date_active');
         })
         $("a.input_date").click(function () {
             $date = $(this).attr('id');
+            $('a.input_date').removeClass('date_active')
+            $(this).addClass('date_active');
             var currentURL = document.URL;
             $arr = currentURL.split('/');
             $movie_id = $arr[$arr.length - 1];
@@ -119,6 +122,7 @@
             $("input[name*='date']").val($date);
             $("a.btn_next").attr('disabled', true);
             $("a.btn_next").addClass('disable_btn_next');
+
         })
         $("a.btn_showtime").click(function () {
             $show_time_id = $(this).attr('id');
