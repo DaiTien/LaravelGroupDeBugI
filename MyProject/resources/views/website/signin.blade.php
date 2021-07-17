@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/website/css/signin.css">
-    <title>Login</title>
+    <title>Đăng nhập</title>
 </head>
 
 <body>
@@ -30,13 +30,38 @@
         }
 
         .back {
-            z-index: 99999;
-            color: #fff
+            z-index: 10;
+            color: #fff;
+            user-select: text;
+            pointer-events: visible;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 25px;
+            justify-content: flex-end;
+            transition: all 0.3s ease-in-out;
         }
+
+        .back:hover {
+            transform: translateY(-10px);
+        }
+
+        .back i {
+            padding-right: 7px;
+        }
+
+        .bx-tada {
+            -webkit-animation: tada 1.5s ease infinite;
+            animation: tada 1.5s ease infinite;
+        }
+
+        /* .main-color {
+            color: var(--main-color);
+        } */
 
     </style>
     <div id="container" class="container">
-        <a class="back" href="#">Back</a>
+        {{-- <a class="back" href="#">Back</a> --}}
         <!-- FORM SECTION -->
         <div class="row">
             <!-- SIGN UP -->
@@ -139,6 +164,7 @@
             <!-- SIGN IN CONTENT -->
             <div class="col align-items-center flex-col">
                 <div class="text sign-in">
+                    <a class="back" href="/"><i class='bx bx-arrow-back main-color bx-tada'></i>Quay lại</a>
                     <h2>
                         Welcome back
                     </h2>
@@ -159,6 +185,7 @@
                     <img src="/website/images/undraw_movie_night_fldd.svg" alt="welcome">
                 </div>
                 <div class="text sign-up">
+                    <a class="back" href="/"><i class='bx bx-arrow-back main-color bx-tada'></i>Quay lại</a>
                     <h2>
                         Join with us
                     </h2>
