@@ -28,6 +28,8 @@
     "TitleListPriceTicket": "List price ticket",
     "TitleCreatePriceTicket": "Create price ticket",
     "TitleUpdatePriceTicket": "Update price ticket",
+    "TitleLinkBookTicket": "Book ticket",
+    "TitleListBookTicket": "List book ticket",
     "textCreateBT": "Create",
     "textUpdateBT": "Update",
     "textDeleteBT": "Delete",
@@ -51,5 +53,7 @@
     "ConfirmEnableTitle": "Are you sure enable seats?",
     "TextDisableSuccess": "Disable seats successfully!",
     "TextEnableSuccess": "Enable seats successfully!",
-    "TextError": "Error! An error occurred. Please try again later!"
+    "TextError": "Error! An error occurred. Please try again later!",
+    "ConfirmBookTitle": "Would you like to confirm this ticket?",
+    "ConfirmSuccessTitle": "Confirm successfully!"
 }

@@ -96,7 +96,13 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('save-create', 'Admin\PriceTicketController@store')->name('price_ticket.store');
         Route::get('update/{id}', 'Admin\PriceTicketController@edit')->name('price_ticket.edit');
         Route::post('save-update', 'Admin\PriceTicketController@update')->name('price_ticket.update');
-        Route::get('delete/{id}', 'Admin\PriceTicketController@Delete')->name('price_ticket.delete');;
+        Route::get('delete/{id}', 'Admin\PriceTicketController@Delete')->name('price_ticket.delete');
+    });
+    //book ticket
+    Route::group(['prefix' => 'book-ticket'], function () {
+        Route::get('/', 'Admin\BookTicketController@index')->name('book_ticket.index');
+        Route::get('/detail/{book_id}', 'Admin\BookTicketController@detail')->name('book_ticket.detail');
+        Route::post('/confirm/{book_id}', 'Admin\BookTicketController@confirm')->name('book_ticket.confirm');
     });
 });
 

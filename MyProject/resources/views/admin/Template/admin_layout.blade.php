@@ -222,6 +222,11 @@
                                 </a>
                             </li>
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                <a href="{{route('book_ticket.index')}}" class="menu-link menu-toggle">
+                                    <span class="menu-text">Book ticket</span>
+                                </a>
+                            </li>
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
                                 <a href="{{ route('usermanager.index') }}" class="menu-link menu-toggle">
                                     <span class="menu-text">User</span>
                                 </a>

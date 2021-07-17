@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class BookTicket extends Model
@@ -19,4 +20,13 @@ class BookTicket extends Model
             'status',
             'seats_id'
         ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
+    public function movie()
+    {
+        return $this->belongsTo(Movie::class);
+    }
 }

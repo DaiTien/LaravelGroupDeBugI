@@ -28,6 +28,8 @@
     "TitleListPriceTicket": "Danh sách giá vé",
     "TitleCreatePriceTicket": "Thêm mới giá vé",
     "TitleUpdatePriceTicket": "Cập nhật giá vé",
+    "TitleLinkBookTicket": "Đặt vé",
+    "TitleListBookTicket": "Danh sách đặt vé",
     "textCreateBT": "Thêm mới",
     "textUpdateBT": "Cập nhật",
     "textDeleteBT": "Xóa",
@@ -51,5 +53,7 @@
     "ConfirmEnableTitle": "Bạn có thực sự muốn kích hoạt ghế?",
     "TextDisableSuccess": "Khóa ghế thành công!",
     "TextEnableSuccess": "Kích hoạt ghế thành côngs!",
-    "TextError": "Lỗi! Đã xảy ra lỗi. Vui lòng thử lại sau!"
+    "TextError": "Lỗi! Đã xảy ra lỗi. Vui lòng thử lại sau!",
+    "ConfirmBookTitle": "Bạn có muốn xác nhận vé này?",
+    "ConfirmSuccessTitle": "Xác nhận thành công!"
 }

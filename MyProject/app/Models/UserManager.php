@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserManager extends Model
 {
-  
+
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +21,10 @@ class UserManager extends Model
     {
         return $this->belongsTo(UserGroup::class,'group_id');
     }
-    
+    public function bookticker()
+    {
+        return $this->hasMany(BookTicket::class);
+    }
 
     /**
      * The attributes that should be hidden for arrays.
