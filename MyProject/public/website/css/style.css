@@ -12,6 +12,21 @@ li {
     list-style: none;
 }
 
+.pricing-box {
+    padding: 20px 30px 0 30px;
+}
+
+.pricing-box-content {
+    margin-top: 30px;
+}
+
+.title-details__movie {
+    border-left: 4px solid var(--main-color);
+    padding-left: 17px;
+}
+
+
+
 .xuatchieu {
     display: flex;
     align-items: center;
@@ -238,7 +253,7 @@ a.disabled {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-end;
     width: 100%;
     flex-wrap: wrap;
 }
@@ -426,11 +441,12 @@ h2.about-heading {
     font-size: 50px;
     font-weight: 600;
     margin-bottom: 50px;
+    text-transform: uppercase;
 }
 
 .about-title {
     font-size: 30px;
-    text-transform: capitalize;
+    text-transform: uppercase;
     /* color: #2a2a2a; */
     font-weight: 700;
     letter-spacing: 0.25px;
@@ -438,7 +454,7 @@ h2.about-heading {
     z-index: 2;
     line-height: 44px;
     margin-bottom: -5px;
-    margin-bottom: 45px;
+    margin-bottom: 27px;
 
 }
 
@@ -460,7 +476,7 @@ h2.about-heading {
 }
 
 .about-desc span {
-    color: #fff !important;
+    color: rgba(189, 185, 185, 0.8) !important;
 }
 
 /* Fix details */

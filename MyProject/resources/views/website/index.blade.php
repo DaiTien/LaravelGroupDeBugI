@@ -35,7 +35,7 @@
                                 <div class="item-action top-down delay-6">
                                     <a href="{{ $slide->video }}" class="btn btn-hover" target="_blank">
                                         <i class="bx bxs-right-arrow"></i>
-                                        <span>Watch now</span>
+                                        <span>Xem ngay</span>
                                     </a>
                                 </div>
                             </div>
@@ -214,7 +214,8 @@
     <div class="section" id="sectionAbout">
         @if (isset($data['intro']))
             <div class="container">
-                <h2 class="about-heading">Giới thiệu</h2>
+                <h2 class="about-heading"> BOOK <span class="main-color">MOVIES</span> in <span
+                        class="BOOK MOVIES">WEEKEND</span> </h2>
                 <div class="about-content">
                     <div class="row">
                         <div class="col-dt-5 col-tl-12 col-mb-12 ">
@@ -281,7 +282,7 @@
     <div class="section">
         <div class="container">
             <div class="section-header">
-                latest series
+                Phim thịnh hành
             </div>
             <div class="movies-slide carousel-nav-center owl-carousel">
                 <!-- MOVIE ITEM -->
@@ -475,7 +476,7 @@
     <div class="section">
         <div class="container">
             <div class="section-header">
-                latest cartoons
+                Phim hoạt hình
             </div>
             <div class="movies-slide carousel-nav-center owl-carousel">
                 <!-- MOVIE ITEM -->
@@ -699,7 +700,7 @@
                     <div class="item-action">
                         <a href="#" class="btn btn-hover">
                             <i class="bx bxs-right-arrow"></i>
-                            <span>Watch now</span>
+                            <span>Xem ngay</span>
                         </a>
                     </div>
                 </div>

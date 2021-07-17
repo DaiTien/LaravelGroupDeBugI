@@ -39,10 +39,10 @@
                             <td class="__alignItemtable">{{ $item->address }}</td>
                             <td class="__alignItemtable">
                                 <div class="text-center d-flex">
-
-                                        <a href="{{route('usermanager.edit', ['id' => $item->id])}}"
-                                           class="btn btn-success" style="pointer-events: {{$item->group_id==1?'default':'none'}}"> <i class="fas fa-edit"></i></a>
-
+                                    <a href="{{route('usermanager.edit', ['id' => $item->id])}}"
+                                       class="btn btn-success"
+                                       style="pointer-events: {{$item->group_id==1?'default':'none'}}"> <i
+                                            class="fas fa-edit"></i></a>
                                     <a onclick="Delete({{$item->id}})" class="btn btn-danger ml-2"><i
                                             class="fas fa-trash-alt"></i></a>
                                 </div>

@@ -10,7 +10,33 @@
 </head>
 
 <body>
+    <style>
+        /* .form.sign-in .input-group {
+            position: relative;
+        } */
+        .form.sign-in .input-group input {
+            display: flex;
+            align-items: center;
+            /* justify-content: space-between; */
+        }
+
+        .alert-danger__note {
+            /* position: absolute;
+            top: 0;
+            left: 100%; */
+            color: red;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .back {
+            z-index: 99999;
+            color: #fff
+        }
+
+    </style>
     <div id="container" class="container">
+        <a class="back" href="#">Back</a>
         <!-- FORM SECTION -->
         <div class="row">
             <!-- SIGN UP -->
@@ -34,19 +60,19 @@
                             <input type="password" placeholder="Confirm password">
                         </div>
                         <button>
-                            Sign up
+                            Đăng ký
                         </button>
                         <p>
                             <span>
-                                Already have an account?
+                                Bạn đã có tài khoản ?
                             </span>
                             <b onclick="toggle()" class="pointer">
-                                Sign in here
+                                Đăng nhập tại đây
                             </b>
                         </p>
                     </div>
                 </div>
-                <div class="form-wrapper">
+                {{-- <div class="form-wrapper">
                     <div class="social-list align-items-center sign-up">
                         <div class="align-items-center facebook-bg">
                             <i class='bx bxl-facebook'></i>
@@ -61,7 +87,7 @@
                             <i class='bx bxl-instagram-alt'></i>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <!-- END SIGN UP -->
             <!-- SIGN IN -->
@@ -71,7 +97,7 @@
                     <div class="form-wrapper align-items-center">
                         <div class="form sign-in">
                             @if (session()->has('message'))
-                                <div class="alert alert-danger">
+                                <div class="alert alert-danger alert-danger__note ">
                                     {{ session()->get('message') }}
                                 </div>
                             @endif
@@ -79,25 +105,25 @@
                                 <i class='bx bxs-user'></i>
                                 <input type="text" placeholder="Email" name="email" value="{{ old('email') }}">
                                 @error('email')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="alert alert-danger alert-danger__note ">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-group">
                                 <i class='bx bxs-lock-alt'></i>
                                 <input type="password" placeholder="Password" name="password">
                                 @error('password')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="alert alert-danger alert-danger__note ">{{ $message }}</div>
                                 @enderror
                             </div>
                             <button type="submit">
-                                Sign in
+                                Đăng nhập
                             </button>
                             <p>
                                 <span>
-                                    Don't have an account?
+                                    Bạn chưa có tài khoản?
                                 </span>
                                 <b onclick="toggle()" class="pointer">
-                                    Sign up here
+                                    Đăng ký tại đây
                                 </b>
                             </p>
                         </div>
