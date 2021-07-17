@@ -68,3 +68,13 @@ $(document).ready(() => {
         },
     });
 });
+const userInfo = document.querySelector(".user-info");
+const dropdownList = document.querySelector(".dropdown-info-list");
+
+userInfo.addEventListener("click", function () {
+    dropdownList.classList.toggle("open-dropdown");
+});
+// document.addEventListener("click", function (event) {
+//     if (event.target.closest(".dropdown-info-list")) return;
+//     dropdownList.classList.remove("open-dropdown");
+// });

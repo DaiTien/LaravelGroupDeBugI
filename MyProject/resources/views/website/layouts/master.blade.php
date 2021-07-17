@@ -11,7 +11,11 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap"
+    {{-- <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap"
+        rel="stylesheet"> --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;600;700;900&display=swap"
         rel="stylesheet">
     <!-- OWL CAROUSEL -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
@@ -27,7 +31,7 @@
 
 </head>
 
-<body>
+<body id="wrapper">
     @include('website.header')
     @yield('content')
     @include('website.footer')
@@ -51,7 +55,38 @@
         crossorigin="anonymous"></script>
     <!-- APP SCRIPT -->
     <script src="/website/js/app.js"></script>
-{{--    @include('sweetalert::alert')--}}
+    <script src="https://cdn.jsdelivr.net/npm/@thelevicole/youtube-to-html5-loader@4.0.1/dist/YouTubeToHtml5.min.js">
+    </script>
+    <script>
+        new YouTubeToHtml5({
+            selector: '.youtube-video',
+            attribute: 'data-yt2html5',
+            withAudio: true
+        });
+        $('.owl-carousel-bottom').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 5
+                }
+            }
+        })
+        // $('.scroll-div').click(function() {
+        //     $('html,body').animate({
+        //         scrollTop: $(".section").offset().top
+        //     }, 'slow')
+        // })
+    </script>
+    {{-- @include('sweetalert::alert') --}}
 </body>
 
 </html>

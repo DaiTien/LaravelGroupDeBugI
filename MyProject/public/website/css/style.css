@@ -316,7 +316,8 @@ a.disabled {
     background: blue;
 }
 
-.disable_btn_next, .disable_btn_next:hover {
+.disable_btn_next,
+.disable_btn_next:hover {
     cursor: default !important;
     color: #7e8299 !important;
     background-color: #f3f6f9;
@@ -344,13 +345,140 @@ a.disabled {
 a.btn_tickket {
     display: none;
 }
-.date_default{
+
+.date_default {
     background: #687580;
     padding: .5rem 1rem;
     border-radius: .25rem;
 }
-.date_active{
+
+.date_active {
     background: #007bff;
     padding: .5rem 1rem;
     border-radius: .25rem;
+}
+
+/* Fix index */
+.movie-item.movie-item--image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Fix header */
+.dropdown-info {
+    position: relative;
+}
+
+.dropdown-info-list {
+    position: absolute;
+    top: 75px;
+    right: 0;
+    background-color: #000000;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-info-list.open-dropdown {
+    opacity: 1;
+    visibility: visible;
+    top: 55px;
+}
+
+.dropdown-info-link {
+    display: block;
+    padding: 7px 0 7px 7px;
+}
+
+.dropdown-info-list .dropdown-info-item {
+    margin-left: 7px;
+}
+
+.dropdown-info-list::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 15px;
+    border-width: 10px;
+    border-color: transparent transparent #000000 transparent;
+    border-style: solid;
+}
+
+.dropdown-info-list::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    background: transparent;
+    top: -30px;
+    left: 0;
+}
+
+.pricing-box-content.text-left.content-details__movie p i,
+.pricing-box-content.text-left.content-details__movie p font,
+.pricing-box-content.text-left.content-details__movie p a {
+    color: #fff !important;
+}
+
+h2.about-heading {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.about-title {
+    font-size: 30px;
+    text-transform: capitalize;
+    /* color: #2a2a2a; */
+    font-weight: 700;
+    letter-spacing: 0.25px;
+    position: relative;
+    z-index: 2;
+    line-height: 44px;
+    margin-bottom: -5px;
+    margin-bottom: 45px;
+
+}
+
+.about-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 17;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.7rem;
+    text-overflow: ellipsis;
+}
+
+.owcarousel-content {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.about-desc span {
+    color: #fff !important;
+}
+
+/* Fix details */
+.youtube-video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+}
+
+.btn-movies {
+    border: 1px dashed var(--main-color);
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-movies:hover {
+    background-color: #fff;
+}
+
+.btn-movies:hover .text-white {
+    color: var(--main-color) !important;
 }

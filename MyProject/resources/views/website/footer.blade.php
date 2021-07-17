@@ -5,7 +5,7 @@
                 <div class="col-dt-4 col-tl-6 col-mb-12">
                     <div class="content">
                         <a href="#" class="logo">
-                            <i class='bx bx-movie-play bx-tada main-color'></i>Fl<span class="main-color">i</span>x
+                            <i class='bx bx-movie-play bx-tada main-color'></i>B<span class="main-color">M</span>W
                         </a>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut veniam ex quos hic id nobis

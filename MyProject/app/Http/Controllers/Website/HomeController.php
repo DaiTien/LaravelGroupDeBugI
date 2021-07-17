@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(Request $request){
+    public function index(Request $request)
+    {
 
 
         //get movie slide
@@ -18,10 +19,13 @@ class HomeController extends Controller
         //get ds phim
         $data['movie'] = Movie::with('moviecategory')->get();
         //get ds loại phim
-        $data['movie_cate']= MovieCategory::all();
+        $data['movie_cate'] = MovieCategory::all();
+
+        $data['intro'] = Introduce::first();
+        // dd($data['intro']-> image);
         //phim mới
         $data['movie_new'] = Movie::with('moviecategory')->take(5)->orderByDesc('release_date')->get();
-         return view('website.index',compact('data'));
+        return view('website.index', compact('data'));
     }
     //get about
     public function about_us()

@@ -181,6 +181,7 @@
 // func hủy
         function xacnhanhuy() {
             console.log('dsadsd')
+            console.log('dấd')
 
         }
         //func delete

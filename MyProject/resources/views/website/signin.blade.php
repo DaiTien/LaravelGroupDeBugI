@@ -66,36 +66,36 @@
             <!-- END SIGN UP -->
             <!-- SIGN IN -->
             <div class="col align-items-center flex-col sign-in">
-                <form action="{{route('login_customer')}}" method="POST">
-                    @csrf
+                <form action="{{ route('login_customer') }}" method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-wrapper align-items-center">
                         <div class="form sign-in">
-                            @if(session()->has('message'))
+                            @if (session()->has('message'))
                                 <div class="alert alert-danger">
                                     {{ session()->get('message') }}
                                 </div>
                             @endif
                             <div class="input-group">
                                 <i class='bx bxs-user'></i>
-                                <input type="text" placeholder="Email" name="email" value="{{old('email')}}">
+                                <input type="text" placeholder="Email" name="email" value="{{ old('email') }}">
                                 @error('email')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="input-group">
                                 <i class='bx bxs-lock-alt'></i>
                                 <input type="password" placeholder="Password" name="password">
                                 @error('password')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                    <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <button type="submit">
                                 Sign in
                             </button>
                             <p>
-                            <span>
-                                Don't have an account?
-                            </span>
+                                <span>
+                                    Don't have an account?
+                                </span>
                                 <b onclick="toggle()" class="pointer">
                                     Sign up here
                                 </b>
