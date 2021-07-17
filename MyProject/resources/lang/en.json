@@ -1,7 +1,7 @@
 {
     "Home": "Home",
-    "Introduce": "About",
-    "IntroduceUpdate": "Update about",
+    "Introduce": "Introduce",
+    "IntroduceUpdate": "Update introduce",
     "TitleLinkMovieCategory": "Movie category",
     "TitleListMovieCategory": "List movie category",
     "TitleCreateMovieCategory": "Create movie category",
@@ -55,5 +55,6 @@
     "TextEnableSuccess": "Enable seats successfully!",
     "TextError": "Error! An error occurred. Please try again later!",
     "ConfirmBookTitle": "Would you like to confirm this ticket?",
-    "ConfirmSuccessTitle": "Confirm successfully!"
+    "ConfirmSuccessTitle": "Confirm successfully!",
+    "CancelSuccessTitle": "Cancel successfully!"
 }

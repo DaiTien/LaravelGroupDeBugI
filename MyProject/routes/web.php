@@ -103,6 +103,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/', 'Admin\BookTicketController@index')->name('book_ticket.index');
         Route::get('/detail/{book_id}', 'Admin\BookTicketController@detail')->name('book_ticket.detail');
         Route::post('/confirm/{book_id}', 'Admin\BookTicketController@confirm')->name('book_ticket.confirm');
+        Route::post('/cancel/{book_id}', 'Admin\BookTicketController@cancel')->name('book_ticket.cancel');
     });
 });
 
