@@ -37,7 +37,7 @@
                 @else
                     <li>
                         <a href="{{ route('signin') }}" class="btn btn-hover">
-                            <span>Sign in</span>
+                            <span>Đăng nhập</span>
                         </a>
                     </li>
                 @endif
