@@ -55,5 +55,6 @@
     "TextEnableSuccess": "Kích hoạt ghế thành côngs!",
     "TextError": "Lỗi! Đã xảy ra lỗi. Vui lòng thử lại sau!",
     "ConfirmBookTitle": "Bạn có muốn xác nhận vé này?",
-    "ConfirmSuccessTitle": "Xác nhận thành công!"
+    "ConfirmSuccessTitle": "Xác nhận thành công!",
+    "CancelSuccessTitle": "Hủy thành công!"
 }

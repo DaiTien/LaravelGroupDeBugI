@@ -47,9 +47,13 @@
                                         <a onclick="duyetve({{$item->id}})" class="btn btn-success"><i
                                                 class="fas fa-check"></i></a>
                                     @endif
-
-                                    <a data-toggle="modal" data-target="#exampleModal_Huy" class="btn btn-danger ml-2" title="Hủy vé"><i
-                                            class="fas fa-times"></i></a>
+                                    @if($item->status==2)
+                                    @else
+                                        <a id="{{$item->id}}" data-id="{{$item->id}}" data-toggle="modal"
+                                           data-target="#exampleModal_Huy" class="btn btn-danger ml-2 btn_cancel"
+                                           title="Hủy vé"><i
+                                                class="fas fa-times"></i></a>
+                                    @endif
                                 </div>
                             </td>
                         </tr>
@@ -93,19 +97,19 @@
             <div class="modal-content">
                 <form action="">
                     @csrf
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Lý do hủy</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <textarea name="lydo" id=""  rows="5" class="form-control"></textarea>
-                </div>
-                <div class="modal-footer">
-{{--                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
-                    <a onclick="xacnhanhuy()" class="btn btn-primary">Xác nhận hủy</a>
-                </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Lý do hủy</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" name="book_id" hidden>
+                        <textarea name="lydo" id="txtlydo" rows="5" class="form-control"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <a onclick="xacnhanhuy()" class="btn btn-primary">Xác nhận hủy</a>
+                    </div>
                 </form>
             </div>
         </div>
@@ -178,12 +182,59 @@
                 }
             })
         }
-// func hủy
+
+        // func hủy
         function xacnhanhuy() {
-            console.log('dsadsd')
-            console.log('dấd')
+            $book_id = $('input[name=book_id]').val();
+            var lydo = $('#txtlydo').val();
+            if (lydo == "") {
+                Swal.fire({
+                    position: 'center',
+                    title: 'Vui lòng điền lý do hủy!',
+                    icon: "error",
+                    showConfirmButton: true,
+                }).then(function () {
+                    $('#txtlydo').focus();
+                })
+            } else {
+                $.ajax({
+                    data: {
+                        book_id: $book_id,
+                        lydo: lydo,
+                        "_token": "{{ csrf_token() }}"
+                    },
+                    method: 'POST',
+                    type: 'UPDATE',
+                    dataType: 'json',
+                    url: '/admin/book-ticket/cancel/' + $book_id,
+                    success: function (data) {
+                        if (data.success == true) {
+                            Swal.fire({
+                                position: 'center',
+                                title: '{{__("CancelSuccessTitle")}}',
+                                icon: "success",
+                                showConfirmButton: false,
+                                timer: 1500
+                            }).then(function () {
+                                location = "{{route('book_ticket.index')}}";
+                            })
+                        } else {
+                            Swal.fire({
+                                position: 'center',
+                                title: '{{__("TextError")}}',
+                                icon: "error",
+                                showConfirmButton: false,
+                                timer: 1500
+                            }).then(function () {
+                                location = "{{route('book_ticket.index')}}";
+                            })
+                        }
+                    }
+                })
+            }
 
         }
+
         //func delete
         function Delete(id) {
             Swal.fire({
@@ -216,5 +267,10 @@
                 }
             })
         }
+
+        $(document).on("click", "a.btn_cancel", function () {
+            var book_id = $(this).data('id');
+            $('input[name=book_id]').val(book_id);
+        });
     </script>
 @endsection

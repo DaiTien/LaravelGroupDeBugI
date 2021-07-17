@@ -2,7 +2,8 @@
 @section('titleForm')
     <div class="Page breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<a href="/admin">{{__('Home')}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<a
+                    href="/admin">{{__('Home')}}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{__('TitleListUser')}}</li>
         </ol>
     </div>
@@ -38,8 +39,12 @@
                             <td class="__alignItemtable">{{ $item->address }}</td>
                             <td class="__alignItemtable">
                                 <div class="text-center d-flex">
-                                    <a href="{{route('usermanager.edit', ['id' => $item->id])}}" class="btn btn-success"> <i class="fas fa-edit"></i></a>
-                                    <a onclick="Delete({{$item->id}})" class="btn btn-danger ml-2"><i class="fas fa-trash-alt"></i></a>
+                                    <a href="{{route('usermanager.edit', ['id' => $item->id])}}"
+                                       class="btn btn-success"
+                                       style="pointer-events: {{$item->group_id==1?'default':'none'}}"> <i
+                                            class="fas fa-edit"></i></a>
+                                    <a onclick="Delete({{$item->id}})" class="btn btn-danger ml-2"><i
+                                            class="fas fa-trash-alt"></i></a>
                                 </div>
                             </td>
                         </tr>
