@@ -330,6 +330,7 @@ a.disabled {
     transition: all 0.3s ease-in-out;
 }
 
+/* fix active */
 .showtime_active {
     color: #fff;
     background: var(--blue);
