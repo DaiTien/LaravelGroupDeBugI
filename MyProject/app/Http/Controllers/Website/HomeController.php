@@ -25,6 +25,13 @@ class HomeController extends Controller
         // dd($data['intro']-> image);
         //phim mới
         $data['movie_new'] = Movie::with('moviecategory')->take(5)->orderByDesc('release_date')->get();
+
+        //movie by cate
+        $data['cate']  = MovieCategory::query()->has('movies')->get();
+        foreach ($data['cate'] as $cate){
+            $data['item'] = Movie::with('moviecategory')->has('moviecategory')->get();
+        }
+//        dd($data);
         return view('website.index', compact('data'));
     }
     //get about

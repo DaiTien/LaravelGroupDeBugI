@@ -16,18 +16,18 @@
             <div class=row>
                 <div class="col-8 mx-auto">
                     <div class="form-group row">
-                        <label class="col-sm-3">Name</label>
+                        <label class="col-sm-3">Loại vé</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="name" name="name" class="form-control" value="{{old('name')}}">
+                            <input type="text" placeholder="Loại vé" name="name" class="form-control" value="{{old('name')}}">
                             @error('name')
                             <span class="text-danger font-weight-bold">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">Price</label>
+                        <label class="col-sm-3">Giá vé</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="price" name="price" class="form-control" value="{{old('price')}}" id="CurrencyInput" onkeypress="return valid_numbers(event)"  />
+                            <input type="text" placeholder="Giá vé" name="price" class="form-control" value="{{old('price')}}" id="CurrencyInput" onkeypress="return valid_numbers(event)"  />
                             @error('price')
                             <span class="text-danger font-weight-bold">{{ $message }}</span>
                             @enderror

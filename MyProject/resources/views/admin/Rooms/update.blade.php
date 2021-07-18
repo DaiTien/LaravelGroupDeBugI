@@ -14,7 +14,7 @@
         <form action="{{route('room.update')}}" method="POST" style="width:95%" enctype="multipart/form-data">
             @csrf
             <div class=row>
-                <div class="col-8">
+                <div class="col-8 mx-auto">
                     <div class="form-group row" hidden>
                         <label class="col-sm-3">ID</label>
                         <div class="col-sm-9">
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">Name</label>
+                        <label class="col-sm-3">Tên phòng chiếu</label>
                         <div class="col-sm-9">
                             <input type="text" placeholder="name" name="name" class="form-control" value="{{old('name', $room->name)}}">
                             @error('name')
@@ -30,38 +30,22 @@
                             @enderror
                         </div>
                     </div>
-
                     <div class="form-group row">
-                        <label class="col-sm-3">total_seats</label>
+                        <label class="col-sm-3">Số dãy</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="total_seats" name="total_seats" class="form-control" value="{{old('total_seats',$room->total_seats)}}"/>
+                            <input type="text" placeholder="row_seats" name="row_seats" class="form-control" value="{{old('row_seats',$room->row_seats)}}" disabled/>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">row_seats</label>
+                        <label class="col-sm-3">Số ghế mỗi dãy</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="row_seats" name="row_seats" class="form-control" value="{{old('row_seats',$room->row_seats)}}"/>
+                            <input type="text" placeholder="total_seats_of_row" name="total_seats_of_row" class="form-control" value="{{old('total_seats_of_row',$room->total_seats_of_row)}}" disabled/>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">total_seats_of_row</label>
+                        <label class="col-sm-3">Tổng số ghế</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="total_seats_of_row" name="total_seats_of_row" class="form-control" value="{{old('total_seats_of_row',$room->total_seats_of_row)}}"/>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3">Trạng thái</label>
-                        <div class="col-sm-9">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" value="0" name="status" {{$room->status==0?"checked":""}}>Còn ghế trống
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" value="1" name="status" {{$room->status==1?"checked":""}}>Hết ghế
-                                </label>
-                            </div>
+                            <input type="text" placeholder="total_seats" name="total_seats" class="form-control" value="{{old('total_seats',$room->total_seats)}}" disabled/>
                         </div>
                     </div>
                     <div class="form-group text-center">

@@ -16,14 +16,16 @@
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <input type="text" value="{{$data->id}}" name="id" hidden>
                 <div class="form-group row">
-                    <label class="col-sm-3">Name</label>
+                    <label class="col-sm-3">Tên loại phim</label>
                     <div class="col-sm-9">
-                        <input type="text" placeholder="name" name="name" class="form-control" id="txtName" value="{{old('name',$data->name)}}" autocomplete="off">
-                        <span class="text-danger font-weight-bold" id="txtErrorName"></span>
+                        <input type="text" placeholder="Tên loại phim" name="name" class="form-control" id="txtName" value="{{old('name',$data->name)}}" autocomplete="off">
+                        @error('name')
+                        <span class="text-danger font-weight-bold">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group text-center">
-                    <a href="javascript:void(0)" onclick="checkvalidation()" class="btn btn-primary">{{__("textUpdateBT")}}</a>
+                    <input type="submit" class="btn btn-primary" value="{{__('textUpdateBT')}}">
                     <a href="{{route('moviecategory.index')}}" class="btn btn-secondary ml-2">{{__("textCancelBT")}}</a>
                 </div>
             </form>
@@ -31,42 +33,42 @@
     </div>
     <script>
         //hidden txterror
-        $("#txtName").focus(function () {
-            $("#txtErrorName").hide();
-        })
-        function checkvalidation() {
-            var id = $("input[name='id']").val();
-            var name = $("#txtName").val();
-            $.ajax({
-                data: {
-                    id: id,
-                    name: name,
-                    "_token": "{{csrf_token()}}"
-                },
-                url: '{{route('moviecategory.update')}}',
-                method: "POST",
-                dataType: "json",
-                success: function (data) {
-                    console.log(data);
-                    if (data.errors == true) {
-                        $("#txtErrorName").html('').append(data.name);
-                        $("#txtErrorName").show();
-                    } else {
-                        $("#txtErrorName").html('');
-                        Swal.fire({
-                            position: 'center',
-                            icon: 'success',
-                            title: '{{__("TextUpdateSuccess")}}',
-                            showConfirmButton: false,
-                            timer: 1500
-                        }).then(function () {
-                            // $('#myForm').trigger("reset");
-                            window.location.href = '{{route('moviecategory.index')}}'
-                        })
-                    }
-                }
-            })
-        }
+        {{--$("#txtName").focus(function () {--}}
+        {{--    $("#txtErrorName").hide();--}}
+        {{--})--}}
+        {{--function checkvalidation() {--}}
+        {{--    var id = $("input[name='id']").val();--}}
+        {{--    var name = $("#txtName").val();--}}
+        {{--    $.ajax({--}}
+        {{--        data: {--}}
+        {{--            id: id,--}}
+        {{--            name: name,--}}
+        {{--            "_token": "{{csrf_token()}}"--}}
+        {{--        },--}}
+        {{--        url: '{{route('moviecategory.update')}}',--}}
+        {{--        method: "POST",--}}
+        {{--        dataType: "json",--}}
+        {{--        success: function (data) {--}}
+        {{--            console.log(data);--}}
+        {{--            if (data.errors == true) {--}}
+        {{--                $("#txtErrorName").html('').append(data.name);--}}
+        {{--                $("#txtErrorName").show();--}}
+        {{--            } else {--}}
+        {{--                $("#txtErrorName").html('');--}}
+        {{--                Swal.fire({--}}
+        {{--                    position: 'center',--}}
+        {{--                    icon: 'success',--}}
+        {{--                    title: '{{__("TextUpdateSuccess")}}',--}}
+        {{--                    showConfirmButton: false,--}}
+        {{--                    timer: 1500--}}
+        {{--                }).then(function () {--}}
+        {{--                    // $('#myForm').trigger("reset");--}}
+        {{--                    window.location.href = '{{route('moviecategory.index')}}'--}}
+        {{--                })--}}
+        {{--            }--}}
+        {{--        }--}}
+        {{--    })--}}
+        {{--}--}}
 
         // $('#CurrencyInput').on('change', function() {
         //     const value = this.value.replace(/,/g, '');

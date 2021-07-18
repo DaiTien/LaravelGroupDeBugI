@@ -15,4 +15,8 @@ class BookTicketDetail extends Model
         'quantity',
         'price'
     ];
+    public function bookticket()
+    {
+        return $this->belongsTo(BookTicket::class,'book_ticket_id');
+    }
 }

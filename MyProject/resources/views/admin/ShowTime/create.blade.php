@@ -60,7 +60,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3">Giờ bắt đầu</label>
                         <div class="col-sm-9">
-                            <input type="time" placeholder="time start" name="time_start" class="form-control" value="{{old('time_start')}}"/>
+                            <input type="time" placeholder="time start" name="time_start" class="form-control" value="{{old('time_start')}}" min="TIMENOW()"/>
                             @error('time_start')
                             <span class="text-danger font-weight-bold">{{ $message }}</span>
                             @enderror

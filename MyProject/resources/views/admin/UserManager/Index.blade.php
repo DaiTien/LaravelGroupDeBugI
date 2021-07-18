@@ -20,7 +20,7 @@
                     <tr class="text-center">
                         <th>STT</th>
                         <th>Họ tên</th>
-                        <th>Phân quyền</th>
+                        <th>Quyền hạn</th>
                         <th>Điện thoại</th>
                         <th>Email</th>
                         <th>Địa chỉ</th>

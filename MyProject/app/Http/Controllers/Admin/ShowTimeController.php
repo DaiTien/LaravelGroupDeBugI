@@ -15,7 +15,7 @@ class ShowTimeController extends Controller
     //
     public function index()
     {
-        $data = ShowTime::with(['movie', 'showTimeRoom'])->where('status', '=', 0)->paginate(10)->fragment('data');
+        $data = ShowTime::with(['movie', 'showTimeRoom'])->where('status', '=', 0)->orderByDesc('id')->paginate(10)->fragment('data');
 
         return view('admin.ShowTime.index', compact('data'));
     }
@@ -42,13 +42,15 @@ class ShowTimeController extends Controller
         ]);
         $time_start = Carbon::parse($request->time_start)->format('H:i:s');
         $time_end   = Carbon::parse($request->time_end)->format('H:i:s');
+//        dd($request->all());
         //kiểm tra xem phòng chiếu đó đã có phim nào chiếu vào khung giờ được chọn chưa
         $check_movie = ShowTime::where([['room_id', $request->room], ['show_date', $request->show_date], ['status', 0]])
             ->whereBetween('time_start', [$time_start, $time_end])
             ->orWhereBetween('time_end', [$time_start, $time_end])
-            ->count();
-        if ($check_movie > 0) {
-            return redirect()->back()->with('error', 'Khung giờ chiếu bị trùng');
+            ->get();
+//        dd(count($check_movie));
+        if (count($check_movie) > 0) {
+            return back()->withInput($request->all())->with('error', 'Khung giờ chiếu bị trùng');
         } else {
             ShowTime::create([
                 'show_date'  => $request->show_date,

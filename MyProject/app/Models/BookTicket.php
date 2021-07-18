@@ -29,4 +29,9 @@ class BookTicket extends Model
     {
         return $this->belongsTo(Movie::class);
     }
+    public function bookticketdetails()
+    {
+        return $this->hasMany(BookTicketDetail::class);
+    }
+
 }

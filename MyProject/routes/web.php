@@ -63,6 +63,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('update/{id}', 'Admin\RoomController@edit')->name('room.edit');
         Route::post('save-update', 'Admin\RoomController@update')->name('room.update');
         Route::get('delete/{id}', 'Admin\RoomController@delete')->name('room.delete');
+        Route::get('list-seat-by-room/{room_id}', 'Admin\RoomController@list_seat_by_room')->name('room.list_seat_by_room');
     });
     //user
     Route::group(['prefix' => 'usermanager'], function () {

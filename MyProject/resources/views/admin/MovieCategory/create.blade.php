@@ -15,14 +15,16 @@
             <form action="{{route('moviecategory.store')}}" method="POST" style="width:95%" enctype="multipart/form-data" id="myForm">
                 @csrf
                 <div class="form-group row">
-                    <label class="col-sm-3">Name</label>
+                    <label class="col-sm-3">Tên loại phim</label>
                     <div class="col-sm-9">
-                        <input type="text" placeholder="name" name="name" class="form-control" id="txtName" autocomplete="off" value="{{old('name')}}">
-                        <span class="text-danger font-weight-bold" id="txtErrorName"></span>
+                        <input type="text" placeholder="Tên loại phim" name="name" class="form-control" id="txtName" autocomplete="off" value="{{old('name')}}">
+                        @error('name')
+                        <span class="text-danger font-weight-bold">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group text-center">
-                    <a href="javascript:void(0)" onclick="checkvalidation()" class="btn btn-primary">{{__("textCreateBT")}}</a>
+                    <input type="submit" class="btn btn-primary" value="{{__('textCreateBT')}}">
                     <a href="{{route('moviecategory.index')}}" class="btn btn-secondary ml-2">{{__("textCancelBT")}}</a>
                 </div>
             </form>
@@ -30,39 +32,39 @@
     </div>
     <script>
         //hidden txterror
-        $("#txtName").focus(function () {
-            $("#txtErrorName").hide();
-        })
-        function checkvalidation() {
-            var name = $("#txtName").val();
-            $.ajax({
-                data: {
-                    name: name,
-                    "_token": "{{csrf_token()}}"
-                },
-                url: '{{route('moviecategory.store')}}',
-                method: "POST",
-                dataType: "json",
-                success: function (data) {
-                    if (data.errors == true) {
-                        $("#txtErrorName").html('').append(data.name);
-                        $("#txtErrorName").show();
-                    } else {
-                        $("#txtErrorName").html('');
-                        Swal.fire({
-                            position: 'center',
-                            icon: 'success',
-                            title: '{{__("TextCreateSuccess")}}',
-                            showConfirmButton: false,
-                            timer: 1500
-                        }).then(function () {
-                            // $('#myForm').trigger("reset");
-                            window.location.href = '{{route('moviecategory.index')}}'
-                        })
-                    }
-                }
-            })
-        }
+        {{--$("#txtName").focus(function () {--}}
+        {{--    $("#txtErrorName").hide();--}}
+        {{--})--}}
+        {{--function checkvalidation() {--}}
+        {{--    var name = $("#txtName").val();--}}
+        {{--    $.ajax({--}}
+        {{--        data: {--}}
+        {{--            name: name,--}}
+        {{--            "_token": "{{csrf_token()}}"--}}
+        {{--        },--}}
+        {{--        url: '{{route('moviecategory.store')}}',--}}
+        {{--        method: "POST",--}}
+        {{--        dataType: "json",--}}
+        {{--        success: function (data) {--}}
+        {{--            if (data.errors == true) {--}}
+        {{--                $("#txtErrorName").html('').append(data.name);--}}
+        {{--                $("#txtErrorName").show();--}}
+        {{--            } else {--}}
+        {{--                $("#txtErrorName").html('');--}}
+        {{--                Swal.fire({--}}
+        {{--                    position: 'center',--}}
+        {{--                    icon: 'success',--}}
+        {{--                    title: '{{__("TextCreateSuccess")}}',--}}
+        {{--                    showConfirmButton: false,--}}
+        {{--                    timer: 1500--}}
+        {{--                }).then(function () {--}}
+        {{--                    // $('#myForm').trigger("reset");--}}
+        {{--                    window.location.href = '{{route('moviecategory.index')}}'--}}
+        {{--                })--}}
+        {{--            }--}}
+        {{--        }--}}
+        {{--    })--}}
+        {{--}--}}
 
         // $('#CurrencyInput').on('change', function() {
         //     const value = this.value.replace(/,/g, '');

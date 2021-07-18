@@ -1,32 +1,32 @@
+<div class="modal-body tab-content">
+    <table class="table table_detail">
+        <tbody>
 
+        <tr>
+            <th>Tổng ghế đặt:</th>
+            <td>{{$data['detail']->total_seat}}</td>
+        </tr>
+        <tr>
+            <th>Tổng tiền:</th>
+            <td>{{$data['detail']->total_price}}</td>
+        </tr>
+        <tr>
+            <th>Giảm giá:</th>
+            <td>{{$data['detail']->discount}} VND</td>
+        </tr>
+        <tr>
+            <th>Phòng đặt:</th>
+            <td>{{$data['detail']->room_name}}</td>
+        </tr>
+        <tr>
+            <th>Vị trí ghế đặt:</th>
+            <td>
+                @foreach($data['name_seat'] as $item)
+                    {{$item->seat_name}}{{$item->seat_location}} &nbsp;
+                @endforeach
+            </td>
+        </tr>
 
-<table class="table">
-    <thead class="thead-light">
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-    </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-    </tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>

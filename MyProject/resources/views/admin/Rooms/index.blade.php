@@ -18,12 +18,11 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr class="text-center">
                         <th>STT</th>
-                        <th>Name</th>
-                        <th>total_seats</th>
-                        <th>row_seats</th>
-                        <th>total_seats_of_row</th>
-{{--                        <th>Status</th>--}}
-                        <th>Action</th>
+                        <th>Tên phòng chiếu</th>
+                        <th>Tổng ghế</th>
+                        <th>Tổng dãy</th>
+                        <th>Số ghế mỗi dãy</th>
+                        <th>Hành động</th>
                     </tr>
                     @php
                         $i = 1;
@@ -40,7 +39,8 @@
 {{--                            </td>--}}
                             <td class="__alignItemtable">
                                 <div class="text-center d-flex">
-                                    <a hidden href="{{route('room.edit', ['id' => $item->id])}}" class="btn btn-success"> <i class="fas fa-edit"></i></a>
+                                    <a href="{{route('room.list_seat_by_room',['room_id'=>$item->id])}}" class="btn btn-info mr-2" title="Danh sách ghế"><i class="fas fa-list"></i></a>
+                                    <a href="{{route('room.edit', ['id' => $item->id])}}" class="btn btn-success"> <i class="fas fa-edit"></i></a>
                                     <a onclick="Delete({{$item->id}})" class="btn btn-danger ml-2"><i class="fas fa-trash-alt"></i></a>
                                 </div>
                             </td>

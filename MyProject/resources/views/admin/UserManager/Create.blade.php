@@ -16,16 +16,16 @@
             <div class=row>
                 <div class="col-8 mx-auto">
                     <div class="form-group row">
-                        <label class="col-sm-3">Name</label>
+                        <label class="col-sm-3">Họ tên</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="name" name="name" class="form-control" value="{{old('name')}}">
+                            <input type="text" placeholder="Họ tên" name="name" class="form-control" value="{{old('name')}}">
                             @error('name')
                             <span class="text-danger font-weight-bold">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">role</label>
+                        <label class="col-sm-3">Quyền hạn</label>
                         <div class="col-sm-9">
                             <select name="group_id" class="form-control">
                                 @foreach($user_group as $user_group)
@@ -35,16 +35,16 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">phone</label>
+                        <label class="col-sm-3">Điện thoại</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="phone" name="phone" class="form-control" value="{{old('phone')}}"/>
+                            <input type="text" placeholder="Điện thoại" name="phone" class="form-control" value="{{old('phone')}}"/>
                             @error('phone')
                             <span class="text-danger font-weight-bold">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">email</label>
+                        <label class="col-sm-3">Email</label>
                         <div class="col-sm-9">
                             <input type="email" placeholder="email" name="email" class="form-control" value="{{old('email')}}"/>
                             @error('email')
@@ -53,18 +53,18 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">password</label>
+                        <label class="col-sm-3">Mật khẩu</label>
                         <div class="col-sm-9">
-                            <input type="password" placeholder="password" name="password" class="form-control" value="{{old('password')}}"/>
+                            <input type="password" placeholder="Mật khẩu" name="password" class="form-control" value="{{old('password')}}"/>
                             @error('password')
                             <span class="text-danger font-weight-bold">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">address</label>
+                        <label class="col-sm-3">Địa chỉ</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="address" name="address" class="form-control" value="{{old('address')}}"/>
+                            <input type="text" placeholder="Địa chỉ" name="address" class="form-control" value="{{old('address')}}"/>
                         </div>
                     </div>
                 </div>
