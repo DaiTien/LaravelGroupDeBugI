@@ -138,7 +138,7 @@
                         <input type="text" id="ticket_3" name="ticket_3" hidden>
                         <div class="modal__info">
                             <label for="">Họ và tên : </label>
-                            <input type="text" name="username" value="{{ $user->name }}" disabled>
+                                <input type="text" name="username" value="{{ $user->name }}" disabled>
                             <input type="text" name="user_id" value="{{ $user->id }}" hidden>
                         </div>
                         <div class="modal__info">

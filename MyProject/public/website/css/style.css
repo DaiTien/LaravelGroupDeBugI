@@ -26,7 +26,6 @@ li {
 }
 
 
-
 .xuatchieu {
     display: flex;
     align-items: center;
@@ -270,17 +269,20 @@ a.disabled {
 }
 
 .article__favorites {
-    display: flex;
+    /*display: flex;*/
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     width: auto;
     margin-bottom: 20px;
     color: #fff;
-    font-size: 14px;
+    /*font-size: 14px;*/
     background-color: transparent;
     border: none;
+    padding-left: 17px;
+    font-size: 20px;
 }
+
 
 .article__download a {
     margin-left: 10px;
@@ -303,7 +305,7 @@ a.disabled {
 
 .article__download,
 .article__favorites {
-    font-size: 16px;
+    font-size: 20px;
     margin-top: 10px;
 }
 
@@ -333,11 +335,16 @@ a.disabled {
 /* fix active */
 .showtime_active {
     color: #fff;
+<<<<<<< HEAD
+    background: #007bff;
+    padding: 6px;
+=======
     background: var(--blue);
     display: block;
     margin: -15px;
     border: 1px solid #fff;
     padding: 7px;
+>>>>>>> main
 }
 
 .disable_btn_next,
