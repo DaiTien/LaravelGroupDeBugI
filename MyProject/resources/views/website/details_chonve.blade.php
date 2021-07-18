@@ -21,32 +21,32 @@
                                 <div class="pricing-box-content">
                                     <table class="table">
                                         <thead class="thead-light">
-                                            <tr>
-                                                <th scope="col">Loại vé</th>
-                                                <th scope="col">Số lượng</th>
-                                                <th scope="col">Giá (VNĐ)</th>
-                                                <th scope="col">Tổng (VNĐ</th>
-                                            </tr>
+                                        <tr>
+                                            <th scope="col">Loại vé</th>
+                                            <th scope="col">Số lượng</th>
+                                            <th scope="col">Giá (VNĐ)</th>
+                                            <th scope="col">Tổng (VNĐ</th>
+                                        </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($price_ticket as $price_ticket)
-                                                <tr>
-                                                    <th scope="row">{{ $price_ticket->name }}</th>
-                                                    <td><input class="text-center number_ticket"
-                                                            id="num_{{ $price_ticket->id }}" name="number" type="number"
-                                                            min="0" value="0" autocomplete="off" /></td>
-                                                    <td><span id="price_{{ $price_ticket->id }}"
-                                                            name="price_book">{{ number_format($price_ticket->price, 0, ',', ',') }}</span>
-                                                    </td>
-                                                    <td class="text-right"><span id="total_{{ $price_ticket->id }}"
-                                                            class="total_price_id">0</span>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                            <tr class="text-left">
-                                                <th scope="row" colspan="3">Tổng</th>
-                                                <td class="text-right"><span id="total_price"></span></td>
+                                        @foreach ($price_ticket as $price_ticket)
+                                            <tr>
+                                                <th scope="row">{{ $price_ticket->name }}</th>
+                                                <td><input class="text-center number_ticket"
+                                                           id="num_{{ $price_ticket->id }}" name="number" type="number"
+                                                           min="0" value="0" autocomplete="off"/></td>
+                                                <td><span id="price_{{ $price_ticket->id }}"
+                                                          name="price_book">{{ number_format($price_ticket->price, 0, ',', ',') }}</span>
+                                                </td>
+                                                <td class="text-right"><span id="total_{{ $price_ticket->id }}"
+                                                                             class="total_price_id">0</span>
+                                                </td>
                                             </tr>
+                                        @endforeach
+                                        <tr class="text-left">
+                                            <th scope="row" colspan="3">Tổng</th>
+                                            <td class="text-right"><span id="total_price"></span></td>
+                                        </tr>
 
                                         </tbody>
                                     </table>
@@ -92,11 +92,11 @@
                                         </li>
                                         <li class="images__item">
                                             <a href="javascript:void(0)" onclick="check_chonve()"
-                                                class="btn btn-movies btn_next">
+                                               class="btn btn-movies btn_next">
                                                 <span class="text-white">Tiếp tục</span>
                                             </a>
                                             <a href="javascript:void(0)" onclick="check_ticket()"
-                                                class="btn btn-movies btn_tickket">
+                                               class="btn btn-movies btn_tickket">
                                                 <span class="text-white">Đặt vé</span>
                                             </a>
                                             {{-- <a href="javascript:void(0)" class="btn btn-hover btn_tickket"
@@ -121,7 +121,7 @@
         Launch demo modal
     </button>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -138,7 +138,7 @@
                         <input type="text" id="ticket_3" name="ticket_3" hidden>
                         <div class="modal__info">
                             <label for="">Họ và tên : </label>
-                                <input type="text" name="username" value="{{ $user->name }}" disabled>
+                            <input type="text" name="username" value="{{ $user->name }}" disabled>
                             <input type="text" name="user_id" value="{{ $user->id }}" hidden>
                         </div>
                         <div class="modal__info">
@@ -161,7 +161,7 @@
                         <div class="modal__info">
                             <label for="">Suất chiếu : </label>
                             <input type="text" name="show_time"
-                                value="{{ $show->time_start }} | {{ $show->show_date }}" disabled>
+                                   value="{{ $show->time_start }} | {{ $show->show_date }}" disabled>
                             <input type="text" name="show_time_id" value="{{ $show->id }}" hidden>
                         </div>
                         <div class="modal__info">
@@ -188,10 +188,14 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- END PRICING SECTION -->
     <script>
-        $("input[name *=number]").change(function() {
+        $("input[name *=number]").change(function () {
             $id = $(this).attr('id').split('_')[1];
             $price = $("span#price_" + $id).html().replace(',', '');
             $num_ticket = $("input#num_" + $id).val();
+            if ($num_ticket < 0) {
+                $num_ticket = 0
+                $("input#num_" + $id).val($num_ticket);
+            }
             $total = $price * $num_ticket;
             $("span#total_" + $id).html($total.toLocaleString());
             $tp = document.querySelector('.total_price_id').innerHTML;
@@ -254,7 +258,7 @@
                     method: 'GET',
                     url: '/movie/choose-seats/' + $show_id,
                     dataType: 'html',
-                    success: function(data) {
+                    success: function (data) {
                         // console.log(data)
                         $(".tab-content").html(data);
                     }
@@ -279,7 +283,7 @@
             } else if ($count_choose != $count_ticket) {
                 swal({
                     title: "Số chỗ ngồi bạn chọn không hợp lệ!",
-                    text: 'Bạn chỉ được chọn '+$count_ticket+' ghế!',
+                    text: 'Bạn chỉ được chọn ' + $count_ticket + ' ghế!',
                     icon: "warning",
                 });
             } else {
@@ -294,7 +298,7 @@
             }
         }
 
-        $(document).on('click', 'a.btn-confirm', function() {
+        $(document).on('click', 'a.btn-confirm', function () {
             var ticket_1 = $('input[name=ticket_1]').val();
             var ticket_2 = $('input[name=ticket_2]').val();
             var ticket_3 = $('input[name=ticket_3]').val();
@@ -320,7 +324,7 @@
                 url: '{{ route('movie.save_book_ticket') }}',
                 method: "POST",
                 dataType: "json",
-                success: function(data) {
+                success: function (data) {
                     if (data.success == true) {
                         swal({
                             position: 'center',
@@ -328,7 +332,7 @@
                             title: 'Đặt vé thành công!',
                             showConfirmButton: false,
                             timer: 1500
-                        }).then(function() {
+                        }).then(function () {
                             // $('#myForm').trigger("reset");
                             window.location.href = '/'
                         })
