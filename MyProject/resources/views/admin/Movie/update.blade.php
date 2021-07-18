@@ -22,9 +22,9 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">Name</label>
+                        <label class="col-sm-3">Tên phim</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="name" name="name" class="form-control" value="{{old('name', $movie->name)}}">
+                            <input type="text" placeholder="Tên phim" name="name" class="form-control" value="{{old('name', $movie->name)}}">
                             @error('name')
                             <span class="text-danger font-weight-bold">{{ $message }}</span>
                             @enderror
@@ -41,48 +41,48 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">Directer</label>
+                        <label class="col-sm-3">Đạo diễn</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="director" name="director" class="form-control" value="{{old('director',$movie->director)}}"/>
+                            <input type="text" placeholder="Đạo diễn" name="director" class="form-control" value="{{old('director',$movie->director)}}"/>
                             @error('director')
                             <span class="text-danger font-weight-bold">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">Actors</label>
+                        <label class="col-sm-3">Diễn viên chính</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="actors" name="actors" class="form-control" value="{{old('actors',$movie->actors)}}"/>
+                            <input type="text" placeholder="Diễn viên chính" name="actors" class="form-control" value="{{old('actors',$movie->actors)}}"/>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">Country</label>
+                        <label class="col-sm-3">Quốc gia</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="country" name="country" class="form-control" value="{{old('country',$movie->country)}}"/>
+                            <input type="text" placeholder="Quốc gia" name="country" class="form-control" value="{{old('country',$movie->country)}}"/>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">Duration</label>
+                        <label class="col-sm-3">Thời lượng</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="duration" name="duration" class="form-control" value="{{old('duration',$movie->duration)}}"/>
+                            <input type="text" placeholder="Thời lượng" name="duration" class="form-control" value="{{old('duration',$movie->duration)}}"/>
                             @error('duration')
                             <span class="text-danger font-weight-bold">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">Year manufacture</label>
+                        <label class="col-sm-3">Năm sản xuất</label>
                         <div class="col-sm-9">
-                            <input type="text" placeholder="Year manufacture" name="year_manufacture" class="form-control" value="{{old('year_manufacture',$movie->year_manufacture)}}"/>
+                            <input type="text" placeholder="Năm sản xuất" name="year_manufacture" class="form-control" value="{{old('year_manufacture',$movie->year_manufacture)}}"/>
                             @error('year_manufacture')
                             <span class="text-danger font-weight-bold">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">Release date</label>
+                        <label class="col-sm-3">Ngày công chiếu</label>
                         <div class="col-sm-9">
-                            <input type="date" placeholder="release_date" name="release_date" class="form-control" value="{{old('release_date',$movie->release_date)}}"/>
+                            <input type="date" placeholder="Ngày công chiếu" name="release_date" class="form-control" value="{{old('release_date',$movie->release_date)}}"/>
                             @error('release_date')
                             <span class="text-danger font-weight-bold">{{ $message }}</span>
                             @enderror
@@ -114,9 +114,9 @@
             <div class=row>
                 <div class="col-12">
                     <div class="form-group row">
-                        <label class="col-sm-2">Description</label>
+                        <label class="col-sm-2">Mô tả</label>
                         <div class="col-sm-9">
-                            <textarea type="text" placeholder="description" name="description" class="form-control" rows="3">{{old('description', $movie->description)}}</textarea>
+                            <textarea type="text" placeholder="Mô tả" name="description" class="form-control" rows="3">{{old('description', $movie->description)}}</textarea>
                             @error('description')
                             <span class="text-danger font-weight-bold">{{ $message }}</span>
                             @enderror
@@ -125,9 +125,9 @@
                 </div>
                 <div class="col-12">
                     <div class="form-group row">
-                        <label class="col-sm-2">Content</label>
+                        <label class="col-sm-2">Nội dung</label>
                         <div class="col-sm-9">
-                            <textarea type="text" placeholder="content" name="contents" id="summernote" class="form-control">{{old('content',$movie->content)}}</textarea>
+                            <textarea type="text" placeholder="Nội dung" name="contents" id="summernote" class="form-control">{{old('content',$movie->content)}}</textarea>
                         </div>
                     </div>
                 </div>

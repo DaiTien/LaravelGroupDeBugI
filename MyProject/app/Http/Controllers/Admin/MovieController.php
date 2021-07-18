@@ -14,7 +14,7 @@ class MovieController extends Controller
     //
     public function index()
     {
-        $data = Movie::with('moviecategory')->orderBy('status','DESC')->paginate(10)->fragment('data');
+        $data = Movie::with('moviecategory')->orderByRaw('id DESC, status DESC')->paginate(10)->fragment('data');
 
         return view('admin.Movie.index', compact('data'));
     }
@@ -70,7 +70,7 @@ class MovieController extends Controller
             'status'            => $request->status,
             'image'             => $image,
         ]);
-        Alert::success('Create successfully!');
+        Alert::success('Thêm thành công!');
 
         return redirect()->route('movie.index');
     }
@@ -128,7 +128,7 @@ class MovieController extends Controller
             'status'            => $request->status,
             'image'             => $image,
         ]);
-        Alert::success('Update successfully!');
+        Alert::success('Cập nhật thành công!');
 
         return redirect()->route('movie.index');
     }

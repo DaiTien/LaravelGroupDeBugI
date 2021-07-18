@@ -18,13 +18,13 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr class="text-center">
                         <th>STT</th>
+                        <th>Hình ảnh</th>
                         <th>Tên</th>
                         <th>Thể loại</th>
                         <th>Đạo diễn</th>
                         <th>Thời lượng</th>
                         <th>Diễn viên</th>
                         <th>Quốc gia</th>
-                        <th>Image</th>
                         <th>Trạng thái</th>
                         <th>Action</th>
                     </tr>
@@ -34,15 +34,15 @@
                     @foreach ($data as $item)
                         <tr>
                             <td class="__alignItemtable">{{ $i++ }}</td>
+                            <td class="__alignItemtable">
+                                <img src="/{{$item->image}}" style="max-width:150px; height: 100px">
+                            </td>
                             <td class="__alignItemtable">{{ $item->name }}</td>
                             <td class="__alignItemtable">{{ $item->moviecategory->name }}</td>
                             <td class="__alignItemtable">{{ $item->director }}</td>
                             <td class="__alignItemtable">{{ $item->duration }}</td>
                             <td class="__alignItemtable">{{ $item->actors }}</td>
                             <td class="__alignItemtable">{{ $item->country }}</td>
-                            <td class="__alignItemtable">
-                                <img src="/{{$item->image}}" style="max-width:150px; height: 100px">
-                            </td>
                             <td class="__alignItemtable">
                                 {{$item->status ==0 ? 'Sắp chiếu':($item->status ==1 ? 'Đang chiếu':"")}}
                             </td>

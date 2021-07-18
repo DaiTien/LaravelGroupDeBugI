@@ -18,7 +18,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr class="text-center">
                         <th>STT</th>
-                        <th>Tên</th>
+                        <th>Thể loại phim</th>
                         <th>Action</th>
                     </tr>
                     @php
@@ -27,7 +27,7 @@
                     @foreach ($data as $item)
                         <tr>
                             <td class="__alignItemtable">{{ $i++ }}</td>
-                            <td class="__alignItemtable">{{ $item->name }}</td>
+                            <td class="__alignItemtable text-left">{{ $item->name }}</td>
                             <td class="__alignItemtable w-250px">
                                 <div class="text-center">
                                     <a href="{{route('moviecategory.edit', ['id' => $item->id])}}" class="btn btn-success"> <i class="fas fa-edit"></i></a>

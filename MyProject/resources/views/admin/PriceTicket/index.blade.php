@@ -18,9 +18,9 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <tr class="text-center">
                         <th>STT</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Action</th>
+                        <th>Loại vé</th>
+                        <th>Giá vé</th>
+                        <th>Hành động</th>
                     </tr>
                     @php
                         $i = 1;

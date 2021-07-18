@@ -15,7 +15,7 @@ class MovieCategoryController extends Controller
     //
     public function index()
     {
-        $data = MovieCategory::paginate(10)->fragment('data');
+        $data = MovieCategory::orderByDesc('id')->paginate(10)->fragment('data');
 
         return view('admin.MovieCategory.index', compact('data'));
     }
@@ -29,28 +29,21 @@ class MovieCategoryController extends Controller
     public function store(Request $request)
     {
         //check validator
-        $validated = Validator::make(
-            $request->all(),
-            [
-                'name' => 'required|min:3'
-            ],
-            [
+        $validated = $request->validate([
+            'name' => 'required|min:3'
+        ], [
                 'name.required' => trans('validation.required'),
-                'name.min'      => trans('validation.min'),
+                'name.min' => trans('validation.min'),
             ]
         );
-        if ($validated->fails()) {
-            return response()->json([
-                'errors' => TRUE,
-                'name'   => $validated->errors()->first('name'),
-            ]);
-        }
         MovieCategory::create([
             'name' => $request->name,
-            'slug' => Str::slug($request->name, '-')
+            'slug' => Str::slug($request->name, '-'),
+            'status' => '0'
         ]);
+        Alert::success('Thêm thành công!');
 
-        return response()->json(['success' => 'Data is successfully added']);
+        return redirect()->route('moviecategory.index');
     }
 
     public function edit($id)
@@ -65,30 +58,23 @@ class MovieCategoryController extends Controller
     public function update(Request $request)
     {
         //check validate
-        $validated = Validator::make(
-            $request->all(),
-            [
-                'name' => 'required|min:3'
-            ],
-            [
+        $validated = $request->validate([
+            'name' => 'required|min:3'
+        ], [
                 'name.required' => trans('validation.required'),
-                'name.min'      => trans('validation.min'),
+                'name.min' => trans('validation.min'),
             ]
         );
-        if ($validated->fails()) {
-            return response()->json([
-                'errors' => TRUE,
-                'name'   => $validated->errors()->first('name'),
-            ]);
-        }
         // get data
         $movie_cate = MovieCategory::where('id', $request->id)->update([
             'name' => $request->name,
             'slug' => Str::slug($request->name, '-')
         ]);
 
+        Alert::success('Cập nhật thành công!');
 
-        return response()->json(['success' => 'Data is successfully added']);
+        return redirect()->route('moviecategory.index');
+
     }
 
     public function DeleteMovieCategory($id)

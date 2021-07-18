@@ -278,8 +278,8 @@
                 });
             } else if ($count_choose != $count_ticket) {
                 swal({
-                    title: "Cảnh báo!",
-                    text: 'Số chỗ ngồi bạn chọn không khớp với số vé đã chọn trước đó!',
+                    title: "Số chỗ ngồi bạn chọn không hợp lệ!",
+                    text: 'Bạn chỉ được chọn '+$count_ticket+' ghế!',
                     icon: "warning",
                 });
             } else {
@@ -287,7 +287,7 @@
                 // console.log('success')
                 $('input[name*=room_seat]').val(arr_ghe);
                 $('input[name*=seat_id]').val(arr_id);
-                $('input[name=total_price]').val($("span#total_price").html() + ' VND');
+                $('input[name=total_price]').val($("span#total_price").html());
                 $('input[name=price]').val($("span#total_price").html());
                 $('input[name=count_seats]').val($count_choose);
                 $('button.btn_confirm').click();

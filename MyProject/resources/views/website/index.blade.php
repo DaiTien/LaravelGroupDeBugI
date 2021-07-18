@@ -280,195 +280,198 @@
 
     <!-- LATEST SERIES SECTION -->
     <div class="section">
-        <div class="container">
-            <div class="section-header">
-                Phim thịnh hành
+
+        @foreach($data['cate'] as $cate)
+            <div class="container">
+                <div class="section-header">
+                    {{$cate->name}}
+                </div>
+                <div class="movies-slide carousel-nav-center owl-carousel">
+                    <!-- MOVIE ITEM -->
+                    @foreach($data['item'] as $item)
+                    <a href="" class="movie-item movie-item--image">
+                        <img src="/{{$item->image}}" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                {{$item->name}}
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>{{ explode(' ', $item->duration)[0] }} mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
+                    <!-- END MOVIE ITEM -->
+                    <!-- MOVIE ITEM -->
+{{--                    <a href="#" class="movie-item movie-item--image">--}}
+{{--                        <img src="/website/images/series/stranger-thing.jpg" alt="">--}}
+{{--                        <div class="movie-item-content">--}}
+{{--                            <div class="movie-item-title">--}}
+{{--                                Stranger Things--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-infos">--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <i class="bx bxs-star"></i>--}}
+{{--                                    <span>9.5</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <i class="bx bxs-time"></i>--}}
+{{--                                    <span>120 mins</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <span>HD</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <span>16+</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <!-- END MOVIE ITEM -->--}}
+{{--                    <!-- MOVIE ITEM -->--}}
+{{--                    <a href="#" class="movie-item movie-item--image">--}}
+{{--                        <img src="/website/images/series/star-trek.jpg" alt="">--}}
+{{--                        <div class="movie-item-content">--}}
+{{--                            <div class="movie-item-title">--}}
+{{--                                Star Trek--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-infos">--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <i class="bx bxs-star"></i>--}}
+{{--                                    <span>9.5</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <i class="bx bxs-time"></i>--}}
+{{--                                    <span>120 mins</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <span>HD</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <span>16+</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <!-- END MOVIE ITEM -->--}}
+{{--                    <!-- MOVIE ITEM -->--}}
+{{--                    <a href="#" class="movie-item movie-item--image">--}}
+{{--                        <img src="/website/images/series/penthouses.jpg" alt="">--}}
+{{--                        <div class="movie-item-content">--}}
+{{--                            <div class="movie-item-title">--}}
+{{--                                Penthouses--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-infos">--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <i class="bx bxs-star"></i>--}}
+{{--                                    <span>9.5</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <i class="bx bxs-time"></i>--}}
+{{--                                    <span>120 mins</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <span>HD</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <span>16+</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <!-- END MOVIE ITEM -->--}}
+{{--                    <!-- MOVIE ITEM -->--}}
+{{--                    <a href="#" class="movie-item movie-item--image">--}}
+{{--                        <img src="/website/images/series/mandalorian.jpg" alt="">--}}
+{{--                        <div class="movie-item-content">--}}
+{{--                            <div class="movie-item-title">--}}
+{{--                                Mandalorian--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-infos">--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <i class="bx bxs-star"></i>--}}
+{{--                                    <span>9.5</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <i class="bx bxs-time"></i>--}}
+{{--                                    <span>120 mins</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <span>HD</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <span>16+</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <!-- END MOVIE ITEM -->--}}
+{{--                    <!-- MOVIE ITEM -->--}}
+{{--                    <a href="#" class="movie-item movie-item--image">--}}
+{{--                        <img src="/website/images/series/the-falcon.webp" alt="">--}}
+{{--                        <div class="movie-item-content">--}}
+{{--                            <div class="movie-item-title">--}}
+{{--                                The Falcon And The Winter Soldier--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-infos">--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <i class="bx bxs-star"></i>--}}
+{{--                                    <span>9.5</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <i class="bx bxs-time"></i>--}}
+{{--                                    <span>120 mins</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <span>HD</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <span>16+</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+{{--                    <!-- END MOVIE ITEM -->--}}
+{{--                    <!-- MOVIE ITEM -->--}}
+{{--                    <a href="#" class="movie-item movie-item--image">--}}
+{{--                        <img src="/website/images/series/wanda.png" alt="">--}}
+{{--                        <div class="movie-item-content">--}}
+{{--                            <div class="movie-item-title">--}}
+{{--                                Wanda Vision--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-infos">--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <i class="bx bxs-star"></i>--}}
+{{--                                    <span>9.5</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <i class="bx bxs-time"></i>--}}
+{{--                                    <span>120 mins</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <span>HD</span>--}}
+{{--                                </div>--}}
+{{--                                <div class="movie-info">--}}
+{{--                                    <span>16+</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </a>--}}
+                    <!-- END MOVIE ITEM -->
+                </div>
             </div>
-            <div class="movies-slide carousel-nav-center owl-carousel">
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item movie-item--image">
-                    <img src="/website/images/series/supergirl.jpg" alt="">
-                    <div class="movie-item-content">
-                        <div class="movie-item-title">
-                            Supergirl
-                        </div>
-                        <div class="movie-infos">
-                            <div class="movie-info">
-                                <i class="bx bxs-star"></i>
-                                <span>9.5</span>
-                            </div>
-                            <div class="movie-info">
-                                <i class="bx bxs-time"></i>
-                                <span>120 mins</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>HD</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>16+</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item movie-item--image">
-                    <img src="/website/images/series/stranger-thing.jpg" alt="">
-                    <div class="movie-item-content">
-                        <div class="movie-item-title">
-                            Stranger Things
-                        </div>
-                        <div class="movie-infos">
-                            <div class="movie-info">
-                                <i class="bx bxs-star"></i>
-                                <span>9.5</span>
-                            </div>
-                            <div class="movie-info">
-                                <i class="bx bxs-time"></i>
-                                <span>120 mins</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>HD</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>16+</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item movie-item--image">
-                    <img src="/website/images/series/star-trek.jpg" alt="">
-                    <div class="movie-item-content">
-                        <div class="movie-item-title">
-                            Star Trek
-                        </div>
-                        <div class="movie-infos">
-                            <div class="movie-info">
-                                <i class="bx bxs-star"></i>
-                                <span>9.5</span>
-                            </div>
-                            <div class="movie-info">
-                                <i class="bx bxs-time"></i>
-                                <span>120 mins</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>HD</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>16+</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item movie-item--image">
-                    <img src="/website/images/series/penthouses.jpg" alt="">
-                    <div class="movie-item-content">
-                        <div class="movie-item-title">
-                            Penthouses
-                        </div>
-                        <div class="movie-infos">
-                            <div class="movie-info">
-                                <i class="bx bxs-star"></i>
-                                <span>9.5</span>
-                            </div>
-                            <div class="movie-info">
-                                <i class="bx bxs-time"></i>
-                                <span>120 mins</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>HD</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>16+</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item movie-item--image">
-                    <img src="/website/images/series/mandalorian.jpg" alt="">
-                    <div class="movie-item-content">
-                        <div class="movie-item-title">
-                            Mandalorian
-                        </div>
-                        <div class="movie-infos">
-                            <div class="movie-info">
-                                <i class="bx bxs-star"></i>
-                                <span>9.5</span>
-                            </div>
-                            <div class="movie-info">
-                                <i class="bx bxs-time"></i>
-                                <span>120 mins</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>HD</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>16+</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item movie-item--image">
-                    <img src="/website/images/series/the-falcon.webp" alt="">
-                    <div class="movie-item-content">
-                        <div class="movie-item-title">
-                            The Falcon And The Winter Soldier
-                        </div>
-                        <div class="movie-infos">
-                            <div class="movie-info">
-                                <i class="bx bxs-star"></i>
-                                <span>9.5</span>
-                            </div>
-                            <div class="movie-info">
-                                <i class="bx bxs-time"></i>
-                                <span>120 mins</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>HD</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>16+</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-                <!-- MOVIE ITEM -->
-                <a href="#" class="movie-item movie-item--image">
-                    <img src="/website/images/series/wanda.png" alt="">
-                    <div class="movie-item-content">
-                        <div class="movie-item-title">
-                            Wanda Vision
-                        </div>
-                        <div class="movie-infos">
-                            <div class="movie-info">
-                                <i class="bx bxs-star"></i>
-                                <span>9.5</span>
-                            </div>
-                            <div class="movie-info">
-                                <i class="bx bxs-time"></i>
-                                <span>120 mins</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>HD</span>
-                            </div>
-                            <div class="movie-info">
-                                <span>16+</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- END MOVIE ITEM -->
-            </div>
-        </div>
+        @endforeach
     </div>
     <!-- END LATEST SERIES SECTION -->
 
@@ -663,6 +666,195 @@
                 <!-- END MOVIE ITEM -->
             </div>
         </div>
+{{--        <div class="container">--}}
+{{--            <div class="section-header">--}}
+{{--                Phim hoạt hình--}}
+{{--            </div>--}}
+{{--            <div class="movies-slide carousel-nav-center owl-carousel">--}}
+{{--                <!-- MOVIE ITEM -->--}}
+{{--                <a href="#" class="movie-item movie-item--image">--}}
+{{--                    <img src="/website/images/cartoons/demon-slayer.jpg" alt="">--}}
+{{--                    <div class="movie-item-content">--}}
+{{--                        <div class="movie-item-title">--}}
+{{--                            Demon Slayer--}}
+{{--                        </div>--}}
+{{--                        <div class="movie-infos">--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <i class="bx bxs-star"></i>--}}
+{{--                                <span>9.5</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <i class="bx bxs-time"></i>--}}
+{{--                                <span>120 mins</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <span>HD</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <span>16+</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--                <!-- END MOVIE ITEM -->--}}
+{{--                <!-- MOVIE ITEM -->--}}
+{{--                <a href="#" class="movie-item movie-item--image">--}}
+{{--                    <img src="/website/images/cartoons/croods.jpg" alt="">--}}
+{{--                    <div class="movie-item-content">--}}
+{{--                        <div class="movie-item-title">--}}
+{{--                            Croods--}}
+{{--                        </div>--}}
+{{--                        <div class="movie-infos">--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <i class="bx bxs-star"></i>--}}
+{{--                                <span>9.5</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <i class="bx bxs-time"></i>--}}
+{{--                                <span>120 mins</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <span>HD</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <span>16+</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--                <!-- END MOVIE ITEM -->--}}
+{{--                <!-- MOVIE ITEM -->--}}
+{{--                <a href="#" class="movie-item movie-item--image">--}}
+{{--                    <img src="/website/images/cartoons/dragon.jpg" alt="">--}}
+{{--                    <div class="movie-item-content">--}}
+{{--                        <div class="movie-item-title">--}}
+{{--                            Dragonball--}}
+{{--                        </div>--}}
+{{--                        <div class="movie-infos">--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <i class="bx bxs-star"></i>--}}
+{{--                                <span>9.5</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <i class="bx bxs-time"></i>--}}
+{{--                                <span>120 mins</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <span>HD</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <span>16+</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--                <!-- END MOVIE ITEM -->--}}
+{{--                <!-- MOVIE ITEM -->--}}
+{{--                <a href="#" class="movie-item movie-item--image">--}}
+{{--                    <img src="/website/images/cartoons/over-the-moon.jpg" alt="">--}}
+{{--                    <div class="movie-item-content">--}}
+{{--                        <div class="movie-item-title">--}}
+{{--                            Over The Moon--}}
+{{--                        </div>--}}
+{{--                        <div class="movie-infos">--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <i class="bx bxs-star"></i>--}}
+{{--                                <span>9.5</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <i class="bx bxs-time"></i>--}}
+{{--                                <span>120 mins</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <span>HD</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <span>16+</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--                <!-- END MOVIE ITEM -->--}}
+{{--                <!-- MOVIE ITEM -->--}}
+{{--                <a href="#" class="movie-item movie-item--image">--}}
+{{--                    <img src="/website/images/cartoons/weathering.jpg" alt="">--}}
+{{--                    <div class="movie-item-content">--}}
+{{--                        <div class="movie-item-title">--}}
+{{--                            Weathering With You--}}
+{{--                        </div>--}}
+{{--                        <div class="movie-infos">--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <i class="bx bxs-star"></i>--}}
+{{--                                <span>9.5</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <i class="bx bxs-time"></i>--}}
+{{--                                <span>120 mins</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <span>HD</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <span>16+</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--                <!-- END MOVIE ITEM -->--}}
+{{--                <!-- MOVIE ITEM -->--}}
+{{--                <a href="#" class="movie-item movie-item--image">--}}
+{{--                    <img src="/website/images/cartoons/your-name.jpg" alt="">--}}
+{{--                    <div class="movie-item-content">--}}
+{{--                        <div class="movie-item-title">--}}
+{{--                            Your Name--}}
+{{--                        </div>--}}
+{{--                        <div class="movie-infos">--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <i class="bx bxs-star"></i>--}}
+{{--                                <span>9.5</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <i class="bx bxs-time"></i>--}}
+{{--                                <span>120 mins</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <span>HD</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <span>16+</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--                <!-- END MOVIE ITEM -->--}}
+{{--                <!-- MOVIE ITEM -->--}}
+{{--                <a href="#" class="movie-item movie-item--image">--}}
+{{--                    <img src="/website/images/cartoons/coco.jpg" alt="">--}}
+{{--                    <div class="movie-item-content">--}}
+{{--                        <div class="movie-item-title">--}}
+{{--                            Coco--}}
+{{--                        </div>--}}
+{{--                        <div class="movie-infos">--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <i class="bx bxs-star"></i>--}}
+{{--                                <span>9.5</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <i class="bx bxs-time"></i>--}}
+{{--                                <span>120 mins</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <span>HD</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="movie-info">--}}
+{{--                                <span>16+</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--                <!-- END MOVIE ITEM -->--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
     <!-- END LATEST CARTOONS SECTION -->
 

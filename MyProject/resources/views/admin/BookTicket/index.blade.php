@@ -36,15 +36,15 @@
                             <td class="__alignItemtable">{{ $item->user->name }}</td>
                             <td class="__alignItemtable">{{ $item->movie->name }}</td>
                             <td class="__alignItemtable">{{ $item->total_seat }}</td>
-                            <td class="__alignItemtable text-right">{{ $item->total_price }} VND</td>
+                            <td class="__alignItemtable text-right">{{ $item->total_price }}</td>
                             <td class="__alignItemtable">{{ date('d/m/Y', strtotime($item->created_at)) }}</td>
                             <td class="__alignItemtable">{{ $item->status==0?'Chưa duyệt':($item->status==1?'Đã duyệt':'Đã hủy') }}</td>
                             <td class="__alignItemtable">
                                 <div class="text-center d-flex">
-                                    <a onclick="details_book_ticket({{$item->id}})" class="btn btn-info" hidden><i
+                                    <a onclick="details_book_ticket({{$item->id}})" class="btn btn-info mr-2" title="Chi tiết"><i
                                             class="fas fa-list"></i></a>
                                     @if($item->status==0)
-                                        <a onclick="duyetve({{$item->id}})" class="btn btn-success"><i
+                                        <a onclick="duyetve({{$item->id}})" class="btn btn-success" title="Xác nhận"><i
                                                 class="fas fa-check"></i></a>
                                     @endif
                                     @if($item->status==2)
@@ -73,7 +73,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Detail</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Chi tiết đặt vé</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -82,8 +82,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button>
                 </div>
             </div>
         </div>
@@ -124,7 +123,7 @@
                 url: '/admin/book-ticket/detail/' + $book_id,
                 dataType: 'html',
                 success: function (data) {
-                    // console.log(data)
+                    console.log(data)
                     $(".tab-content").html(data);
                 }
             })

@@ -34,12 +34,21 @@ a.active {
 
 a.row_seat {
     cursor: default;
+    background: #1d4aea;
+    color: #FFFFFF;
+    border: 1px solid #1d4aea;
 }
 
-input[type="checkbox"]:checked+.seat.active {
+input[type="checkbox"]:checked+.seat{
     background-color: var(--blue);
     border: navajowhite;
     outline: none;
     border-color: var(--blue);
     border-style: double;
+    color: #FFFFFF;
+}
+table.table_detail th,
+table.table_detail td
+{
+    border: none;
 }
