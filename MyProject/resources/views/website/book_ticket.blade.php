@@ -49,6 +49,7 @@
                                             @endif
                                         </div>
                                     </div>
+                                    <a class="btn btn-danger btn_next float-right">Tiếp tục</a>
                                     <input type="text" name="show_id" id="show_id" hidden>
                                     <input type="text" name="date" hidden>
                                 </div>
@@ -83,7 +84,7 @@
                             </div>
                         </div>
                     </div>
-                    <a class="btn btn-danger btn_next">Tiếp tục</a>
+
                 </div>
             </div>
         </div>
