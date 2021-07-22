@@ -417,6 +417,7 @@ a.btn_tickket {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease-in-out;
+    white-space: nowrap;
 }
 
 .dropdown-info-list.open-dropdown {
@@ -427,7 +428,7 @@ a.btn_tickket {
 
 .dropdown-info-link {
     display: block;
-    padding: 7px 0 7px 7px;
+    padding: 7px 5px 7px 7px;
 }
 
 .dropdown-info-list .dropdown-info-item {
@@ -521,4 +522,44 @@ h2.about-heading {
 
 .btn-movies:hover .text-white {
     color: var(--main-color) !important;
+}
+
+
+.pricing-box-action .table td,
+.table th,
+.chair__content-sidebar .table td,
+.table thead th {
+    border: 1px solid #dee2e6;
+}
+
+.info-avatar {
+    --avatar: 100px;
+    width: var(--avatar);
+    height: var(--avatar);
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    margin-right: 17px;
+}
+
+.title-details__info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info i {
+    font-size: 12px;
+    margin-left: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.user-info.open-icon i {
+    transform: rotate(90deg);
 }

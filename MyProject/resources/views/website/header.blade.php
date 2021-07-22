@@ -7,7 +7,7 @@
             </a>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="/">Trang chủ</a></li>
-                {{-- <li><a href="/details-movie">Details test</a></li> --}}
+                {{-- <li><a href="/history">History</a></li> --}}
                 <li><a class="scroll-div" href="#sectionMovies">
                         Phim</a></li>
                 {{-- <li><a href="#">Series</a></li> --}}
@@ -21,13 +21,14 @@
                         <span>{{ $user->name }}</span>
                     </a> --}}
                     <li class="dropdown-info">
-                        <a class="user-info" href="javascript:void(0)">Xin chào : {{ $user->name }}</a>
+                        <a class="user-info" href="javascript:void(0)">Xin chào : {{ $user->name }} <i
+                                class='bx bxs-right-arrow'></i></a>
                         <ul class="dropdown-info-list">
                             <li class="dropdown-info-item">
-                                <a href="#" class="dropdown-info-link">Thông tin tài khoản</a>
+                                <a href="/info" class="dropdown-info-link">Thông tin tài khoản</a>
                             </li>
                             <li class="dropdown-info-item">
-                                <a href="#" class="dropdown-info-link">Lịch sử đặt vé</a>
+                                <a href="/history" class="dropdown-info-link">Lịch sử đặt vé</a>
                             </li>
                             <li class="dropdown-info-item">
                                 <a href="{{ route('logout') }}" class="dropdown-info-link">Đăng xuất</a>

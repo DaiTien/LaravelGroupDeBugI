@@ -149,4 +149,10 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/details', function () {
         return view('website.details');
     });
+    Route::get('/history', function () {
+        return view('website.history');
+    });
+    Route::get('/info', function () {
+        return view('website.info');
+    });
 });

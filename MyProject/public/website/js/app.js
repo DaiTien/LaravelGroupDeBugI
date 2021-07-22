@@ -72,6 +72,7 @@ const userInfo = document.querySelector(".user-info");
 const dropdownList = document.querySelector(".dropdown-info-list");
 
 userInfo.addEventListener("click", function () {
+    userInfo.classList.toggle("open-icon");
     dropdownList.classList.toggle("open-dropdown");
 });
 // document.addEventListener("click", function (event) {
