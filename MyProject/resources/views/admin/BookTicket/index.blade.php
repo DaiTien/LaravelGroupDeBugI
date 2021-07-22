@@ -30,6 +30,7 @@
                     @php
                         $i = 1;
                     @endphp
+                    @if(sizeof($data)>0)
                     @foreach ($data as $item)
                         <tr>
                             <td class="__alignItemtable">{{ $i++ }}</td>
@@ -58,6 +59,11 @@
                             </td>
                         </tr>
                     @endforeach
+                    @else
+                    <tr>
+                        <td colspan="8" class="text-center" >Không có dữ liệu</td>
+                    </tr>
+                    @endif
                 </table>
             </div>
         </div>
