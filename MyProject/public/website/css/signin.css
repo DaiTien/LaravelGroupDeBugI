@@ -114,6 +114,7 @@ body {
 
 .flex-col {
     flex-direction: column;
+    pointer-events: visible;
 }
 
 .social-list {

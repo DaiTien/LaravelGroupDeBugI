@@ -12,8 +12,12 @@ li {
     list-style: none;
 }
 
+.movies-slide {
+    margin-bottom: 17px;
+}
+
 .pricing-box {
-    padding: 20px 30px 25px 30px;
+    padding: 20px 30px 50px 30px;
 }
 
 .pricing-box-content {
@@ -23,6 +27,9 @@ li {
 .title-details__movie {
     border-left: 4px solid var(--main-color);
     padding-left: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
@@ -283,6 +290,10 @@ a.disabled {
     font-size: 20px;
 }
 
+.article__favorites svg {
+    color: #fff;
+}
+
 
 .article__download a {
     margin-left: 10px;
@@ -335,16 +346,13 @@ a.disabled {
 /* fix active */
 .showtime_active {
     color: #fff;
-<<<<<<< HEAD
     background: #007bff;
     padding: 6px;
-=======
     background: var(--blue);
     display: block;
     margin: -15px;
     border: 1px solid #fff;
     padding: 7px;
->>>>>>> main
 }
 
 .disable_btn_next,
