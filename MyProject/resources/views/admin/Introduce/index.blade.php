@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3">Title</label>
+                        <label class="col-sm-3">Tiêu đề</label>
                         <div class="col-sm-9">
                             <input type="text" placeholder="name" value="{{old('title', $introduce->title)}}" name="title" class="form-control">
                             @error('title')
@@ -47,7 +47,7 @@
             <div class=row>
                 <div class="col-12">
                     <div class="form-group row">
-                        <label class="col-sm-2">Summary</label>
+                        <label class="col-sm-2">Tóm tắt</label>
                         <div class="col-sm-9">
                             <textarea type="text" placeholder="summary" name="summary" class="form-control" rows="3">{{old('summary',$introduce->summary)}}</textarea>
                             @error('summary')
@@ -58,7 +58,7 @@
                 </div>
                 <div class="col-12">
                     <div class="form-group row">
-                        <label class="col-sm-2">Content</label>
+                        <label class="col-sm-2">Nội dung</label>
                         <div class="col-sm-9">
                             <textarea type="text" placeholder="content" name="contents" id="summernote" class="form-control">{{old('content',$introduce->content)}}</textarea>
                             @error('contents')

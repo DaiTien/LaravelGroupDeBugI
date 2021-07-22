@@ -152,7 +152,6 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/history', function () {
         return view('website.history');
     });
-    Route::get('/info', function () {
-        return view('website.info');
-    });
+    Route::get('/info', 'website\HomeController@info')->name('user_info');
+    Route::post('/update-info', 'website\HomeController@updateinfo')->name('update_info');
 });

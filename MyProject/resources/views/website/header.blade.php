@@ -25,7 +25,7 @@
                                 class='bx bxs-right-arrow'></i></a>
                         <ul class="dropdown-info-list">
                             <li class="dropdown-info-item">
-                                <a href="/info" class="dropdown-info-link">Thông tin tài khoản</a>
+                                <a href="{{route('user_info')}}" class="dropdown-info-link">Thông tin tài khoản</a>
                             </li>
                             <li class="dropdown-info-item">
                                 <a href="/history" class="dropdown-info-link">Lịch sử đặt vé</a>
