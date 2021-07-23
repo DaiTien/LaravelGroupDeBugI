@@ -33,7 +33,7 @@
                                     {{ $slide->description }}
                                 </div>
                                 <div class="item-action top-down delay-6">
-                                    <a href="{{ $slide->video }}" class="btn btn-hover" target="_blank">
+                                    <a href="{{$slide->video}}" class="btn btn-hover" target="_blank">
                                         <i class="bx bxs-right-arrow"></i>
                                         <span>Xem ngay</span>
                                     </a>
@@ -289,7 +289,7 @@
                 <div class="movies-slide carousel-nav-center owl-carousel">
                     <!-- MOVIE ITEM -->
                     @foreach($data['moviebycat'][$cate->id] as $item)
-                    <a href="" class="movie-item movie-item--image">
+                    <a href="{{ route('movie.details', ['slug' => \Illuminate\Support\Str::slug($item->name), 'id' => $item->id]) }}" class="movie-item movie-item--image">
                         <img src="/{{$item->image}}" alt="">
                         <div class="movie-item-content">
                             <div class="movie-item-title">

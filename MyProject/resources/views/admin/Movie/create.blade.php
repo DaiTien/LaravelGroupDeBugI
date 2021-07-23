@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-3"></label>
+                        <label class="col-sm-3">Quốc gia</label>
                         <div class="col-sm-9">
                             <input type="text" placeholder="Quốc gia" name="country" class="form-control" value="{{old('country')}}"/>
                             @error('country')
