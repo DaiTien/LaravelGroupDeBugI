@@ -44,8 +44,8 @@
                                             </tr>
                                         @endforeach
                                         <tr class="text-left">
-                                            <th scope="row" colspan="3">Tổng</th>
-                                            <td class="text-right"><span id="total_price"></span></td>
+                                            <th scope="row">Tổng</th>
+                                            <td class="text-right" colspan="3" style="border-right"><span id="total_price"></span></td>
                                         </tr>
 
                                         </tbody>
@@ -197,7 +197,7 @@
                 $("input#num_" + $id).val($num_ticket);
             }
             $total = $price * $num_ticket;
-            $("span#total_" + $id).html($total.toLocaleString());
+            $("span#total_" + $id).html($total.toLocaleString('en-US'));
             $tp = document.querySelector('.total_price_id').innerHTML;
             var x = document.getElementsByClassName("total_price_id");
             var y = document.getElementsByClassName("number_ticket");
@@ -213,6 +213,8 @@
             }
             // console.log($countTicket)
             //get tongo giá
+            $("span#total_price").html($countPrice.toLocaleString('en-US'));
+
             $("span#total_price").html($countPrice.toLocaleString() + " VND");
             $("input[name=count_ticket]").val($countTicket);
 

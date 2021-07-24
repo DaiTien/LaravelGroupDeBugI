@@ -27,9 +27,9 @@
                             <li class="dropdown-info-item">
                                 <a href="{{ route('user_info') }}" class="dropdown-info-link">Thông tin tài khoản</a>
                             </li>
-                            <li class="dropdown-info-item">
+                            <!-- <li class="dropdown-info-item">
                                 <a href="/history" class="dropdown-info-link">Lịch sử đặt vé</a>
-                            </li>
+                            </li> -->
                             <li class="dropdown-info-item">
                                 <a href="{{ route('logout') }}" class="dropdown-info-link">Đăng xuất</a>
                             </li>

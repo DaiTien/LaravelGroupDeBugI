@@ -16,7 +16,7 @@
                                 <div class="pricing-box-content text-left content-details__movie">
                                     <div class="title-details__movie title-details__info">
                                         <img src="/website/images/cartoons/coco.jpg" alt="" class="info-avatar">
-                                        <h4 class="name-info">Lưu Văn Quyết</h4>
+                                        <h4 class="name-info">{{$user-> name}}</h4>
                                     </div>
                                 </div>
                                 @if (session()->has('message'))
