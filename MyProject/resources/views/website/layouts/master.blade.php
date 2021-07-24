@@ -61,7 +61,8 @@
         new YouTubeToHtml5({
             selector: '.youtube-video',
             attribute: 'data-yt2html5',
-            withAudio: true
+            withAudio: true,
+            autoPlay:false
         });
         $('.owl-carousel-bottom').owlCarousel({
             loop: true,
