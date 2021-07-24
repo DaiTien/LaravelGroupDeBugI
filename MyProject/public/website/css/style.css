@@ -455,11 +455,18 @@ a.btn_tickket {
     left: 0;
 }
 
+.pricing-box-content.text-left.content-details__movie h2 i,
+.pricing-box-content.text-left.content-details__movie h2 font,
+.pricing-box-content.text-left.content-details__movie h2 a,
+.pricing-box-content.text-left.content-details__movie h2 span,
+
 .pricing-box-content.text-left.content-details__movie p i,
 .pricing-box-content.text-left.content-details__movie p font,
 .pricing-box-content.text-left.content-details__movie p a,
 .pricing-box-content.text-left.content-details__movie p span {
     color: #fff !important;
+    background-color: transparent !important;
+    cursor: default !important;
 }
 
 h2.about-heading {

@@ -62,7 +62,7 @@
             selector: '.youtube-video',
             attribute: 'data-yt2html5',
             withAudio: true,
-            autoPlay:false
+            // autoload: false
         });
         $('.owl-carousel-bottom').owlCarousel({
             loop: true,

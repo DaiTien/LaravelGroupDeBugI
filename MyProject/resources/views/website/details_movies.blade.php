@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="pricing-box-action">
                                     <video class="youtube-video" autostart="false" data-yt2html5="{{ $movie->video }}"
-                                        controls autoplay></video>
+                                        controls></video>
                                     <div class="article__actions article__actions--details">
                                         <div class="article__download">
                                             {{-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
