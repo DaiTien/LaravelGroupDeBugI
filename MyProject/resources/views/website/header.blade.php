@@ -2,7 +2,7 @@
 <div class="nav-wrapper">
     <div class="container">
         <div class="nav">
-            <a href="#" class="logo">
+            <a href="/" class="logo">
                 <i class='bx bx-movie-play bx-tada main-color'></i>B<span class="main-color">M</span>W
             </a>
             <ul class="nav-menu" id="nav-menu">
@@ -25,7 +25,7 @@
                                 class='bx bxs-right-arrow'></i></a>
                         <ul class="dropdown-info-list">
                             <li class="dropdown-info-item">
-                                <a href="{{route('user_info')}}" class="dropdown-info-link">Thông tin tài khoản</a>
+                                <a href="{{ route('user_info') }}" class="dropdown-info-link">Thông tin tài khoản</a>
                             </li>
                             <li class="dropdown-info-item">
                                 <a href="/history" class="dropdown-info-link">Lịch sử đặt vé</a>
