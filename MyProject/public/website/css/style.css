@@ -457,7 +457,8 @@ a.btn_tickket {
 
 .pricing-box-content.text-left.content-details__movie p i,
 .pricing-box-content.text-left.content-details__movie p font,
-.pricing-box-content.text-left.content-details__movie p a {
+.pricing-box-content.text-left.content-details__movie p a,
+.pricing-box-content.text-left.content-details__movie p span {
     color: #fff !important;
 }
 
